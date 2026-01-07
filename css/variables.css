@@ -1,0 +1,132 @@
+/* ============================================
+   DESIGN TOKENS
+   Ce Que New York M'a Fait
+   ============================================ */
+
+:root {
+    /* Color Palette */
+    --color-midnight: #0D1B2A;
+    --color-midnight-light: #1B2838;
+    --color-midnight-dark: #070F17;
+
+    --color-cream: #F5F1E6;
+    --color-cream-light: #FAF8F3;
+    --color-cream-dark: #E8E2D3;
+
+    --color-gold: #C9A227;
+    --color-gold-light: #D4B44A;
+    --color-gold-dark: #A88620;
+
+    --color-blush: #E8D4C4;
+    --color-blush-light: #F2E6DC;
+    --color-blush-dark: #D4BBA8;
+
+    --color-rust: #A85632;
+    --color-burgundy: #722F37;
+
+    /* Text Colors */
+    --color-text: #1A1A1A;
+    --color-text-light: #4A4A4A;
+    --color-text-muted: #6B6B6B;
+    --color-text-inverse: #F5F1E6;
+
+    /* Semantic Colors */
+    --color-background: var(--color-cream);
+    --color-background-dark: var(--color-midnight);
+    --color-accent: var(--color-gold);
+    --color-accent-hover: var(--color-gold-dark);
+
+    /* Typography */
+    --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+    --font-body: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+    --font-accent: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+
+    /* Font Sizes - Fluid Typography (LARGER for conversion) */
+    --text-xs: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
+    --text-sm: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
+    --text-base: clamp(1.125rem, 1rem + 0.625vw, 1.3125rem);
+    --text-lg: clamp(1.3125rem, 1.15rem + 0.8vw, 1.5rem);
+    --text-xl: clamp(1.5rem, 1.3rem + 1vw, 1.75rem);
+    --text-2xl: clamp(1.75rem, 1.5rem + 1.25vw, 2.25rem);
+    --text-3xl: clamp(2.25rem, 1.875rem + 1.875vw, 3rem);
+    --text-4xl: clamp(2.75rem, 2.25rem + 2.5vw, 4rem);
+    --text-5xl: clamp(3.5rem, 2.5rem + 5vw, 6rem);
+
+    /* Font Weights */
+    --font-light: 300;
+    --font-normal: 400;
+    --font-medium: 500;
+    --font-semibold: 600;
+    --font-bold: 700;
+
+    /* Line Heights */
+    --leading-none: 1;
+    --leading-tight: 1.2;
+    --leading-snug: 1.375;
+    --leading-normal: 1.5;
+    --leading-relaxed: 1.625;
+    --leading-loose: 1.875;
+
+    /* Letter Spacing */
+    --tracking-tighter: -0.05em;
+    --tracking-tight: -0.025em;
+    --tracking-normal: 0;
+    --tracking-wide: 0.025em;
+    --tracking-wider: 0.05em;
+    --tracking-widest: 0.1em;
+
+    /* Spacing Scale */
+    --space-0: 0;
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.25rem;
+    --space-6: 1.5rem;
+    --space-8: 2rem;
+    --space-10: 2.5rem;
+    --space-12: 3rem;
+    --space-16: 4rem;
+    --space-20: 5rem;
+    --space-24: 6rem;
+    --space-32: 8rem;
+    --space-40: 10rem;
+    --space-48: 12rem;
+
+    /* Container */
+    --container-sm: 640px;
+    --container-md: 768px;
+    --container-lg: 1024px;
+    --container-xl: 1200px;
+    --container-padding: clamp(1rem, 5vw, 2rem);
+
+    /* Border Radius */
+    --radius-sm: 0.25rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 1rem;
+    --radius-xl: 1.5rem;
+    --radius-full: 9999px;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+    --shadow-book: 0 20px 40px -10px rgb(0 0 0 / 0.3), 0 10px 20px -5px rgb(0 0 0 / 0.2);
+
+    /* Transitions */
+    --transition-fast: 150ms ease;
+    --transition-base: 300ms ease;
+    --transition-slow: 500ms ease;
+    --transition-slower: 700ms ease;
+
+    /* Z-Index Scale */
+    --z-base: 0;
+    --z-above: 10;
+    --z-dropdown: 100;
+    --z-sticky: 500;
+    --z-modal: 1000;
+    --z-overlay: 1500;
+    --z-max: 9999;
+}
