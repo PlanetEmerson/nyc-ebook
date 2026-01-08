@@ -4,37 +4,67 @@
    ============================================ */
 
 :root {
-    /* Color Palette */
-    --color-midnight: #0D1B2A;
-    --color-midnight-light: #1B2838;
-    --color-midnight-dark: #070F17;
+    /* ============================================
+       BRAND REFRESH 2026: Eat Pray Love Aesthetic
+       From midnight noir → golden hour warmth
+       ============================================ */
 
-    --color-cream: #F5F1E6;
-    --color-cream-light: #FAF8F3;
-    --color-cream-dark: #E8E2D3;
+    /* Primary: Honey Gold - Warmth, transformation, sunlight */
+    --color-honey: #D4A84B;
+    --color-honey-light: #E5C47A;
+    --color-honey-dark: #B8923F;
 
-    --color-gold: #C9A227;
-    --color-gold-light: #D4B44A;
-    --color-gold-dark: #A88620;
+    /* Primary: Warm Cream - Light, openness, invitation */
+    --color-cream: #FBF7F0;
+    --color-cream-light: #FFFFF8;
+    --color-cream-dark: #F0E8DC;
 
-    --color-blush: #E8D4C4;
-    --color-blush-light: #F2E6DC;
-    --color-blush-dark: #D4BBA8;
+    /* Secondary: Terracotta - Brownstone warmth, NYC brick */
+    --color-terracotta: #C4724D;
+    --color-terracotta-light: #D4917A;
+    --color-terracotta-dark: #A85D3D;
 
-    --color-rust: #A85632;
-    --color-burgundy: #722F37;
+    /* Secondary: Sage Green - Nature, growth, hope, Village charm */
+    --color-sage: #8FA882;
+    --color-sage-light: #A8BF9C;
+    --color-sage-dark: #6E8A62;
 
-    /* Text Colors */
-    --color-text: #1A1A1A;
-    --color-text-light: #4A4A4A;
-    --color-text-muted: #6B6B6B;
-    --color-text-inverse: #F5F1E6;
+    /* Accent: Soft Sky - Openness, possibility */
+    --color-sky: #B8D4E3;
+    --color-sky-light: #D4E8F2;
+    --color-sky-dark: #9AC4D8;
+
+    /* Accent: Blush Pink - Cherry blossoms, softness */
+    --color-blush: #E8C4B8;
+    --color-blush-light: #F2DCD4;
+    --color-blush-dark: #D4A898;
+
+    /* Deep tones for contrast (sparingly) */
+    --color-deep-brick: #8B4D3B;
+    --color-warm-charcoal: #3D3530;
+
+    /* Legacy mappings for compatibility */
+    --color-gold: var(--color-honey);
+    --color-gold-light: var(--color-honey-light);
+    --color-gold-dark: var(--color-honey-dark);
+    --color-midnight: var(--color-warm-charcoal);
+    --color-midnight-light: #4D4540;
+    --color-midnight-dark: #2D2520;
+    --color-rust: var(--color-terracotta-dark);
+    --color-burgundy: #8B4D3B;
+
+    /* Text Colors - Warm, not harsh black */
+    --color-text: #3D3530;
+    --color-text-light: #5D5550;
+    --color-text-muted: #8D8580;
+    --color-text-inverse: #FBF7F0;
 
     /* Semantic Colors */
     --color-background: var(--color-cream);
-    --color-background-dark: var(--color-midnight);
-    --color-accent: var(--color-gold);
-    --color-accent-hover: var(--color-gold-dark);
+    --color-background-alt: var(--color-cream-dark);
+    --color-background-dark: var(--color-warm-charcoal);
+    --color-accent: var(--color-honey);
+    --color-accent-hover: var(--color-honey-dark);
 
     /* Typography */
     --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
