@@ -402,9 +402,10 @@
 
 .newsletter-form .cta-button {
     white-space: nowrap;
-    padding: var(--space-4) var(--space-6);
-    min-width: fit-content;
+    padding: var(--space-4) var(--space-8);
+    min-width: 120px;
     flex-shrink: 0;
+    overflow: visible;
 }
 
 .newsletter-note {
