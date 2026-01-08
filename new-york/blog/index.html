@@ -428,6 +428,7 @@
                     img.width = 400;
                     img.height = 225;
                     img.loading = 'lazy';
+                    img.className = 'loaded';
                     img.onerror = function() { this.src = '/images/textures/paper.png'; };
 
                     imageDiv.appendChild(img);
