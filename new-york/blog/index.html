@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Blog New York — Secrets, quartiers et reflexions | F.B. Emerson</title>
+    <meta name="title" content="Blog New York — Secrets, quartiers et reflexions | F.B. Emerson">
+    <meta name="description" content="Découvrez New York autrement. Secrets de quartiers, reflexions de voyage, et les coulisses du livre Ce Que New York M'a Fait par F.B. Emerson.">
+    <meta name="author" content="F.B. Emerson">
+    <meta name="robots" content="index, follow">
+    <meta name="keywords" content="blog new york, voyage new york, quartiers new york, secrets new york, F.B. Emerson">
+    <link rel="canonical" href="https://fbemerson.com/new-york/blog/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fbemerson.com/new-york/blog/">
+    <meta property="og:title" content="Blog New York — F.B. Emerson">
+    <meta property="og:description" content="Découvrez New York autrement. Secrets de quartiers, reflexions de voyage, et les coulisses du livre.">
+    <meta property="og:image" content="https://fbemerson.com/images/og-image.jpg">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="F.B. Emerson">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://fbemerson.com/new-york/blog/">
+    <meta name="twitter:title" content="Blog New York — F.B. Emerson">
+    <meta name="twitter:description" content="Découvrez New York autrement. Secrets de quartiers, reflexions de voyage.">
+    <meta name="twitter:image" content="https://fbemerson.com/images/og-image.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗽</text></svg>">
+
+    <!-- RSS Feed -->
+    <link rel="alternate" type="application/rss+xml" title="Blog New York — F.B. Emerson" href="https://fbemerson.com/new-york/blog/feed.xml">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;1,8..60,400;1,8..60,500&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../css/variables.css">
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/animations.css">
+    <link rel="stylesheet" href="../../css/author.css">
+
+    <!-- Blog Index Styles -->
+    <style>
+        .blog-index {
+            background: var(--color-midnight);
+            min-height: 100vh;
+        }
+
+        .blog-hero {
+            padding: var(--space-16) var(--container-padding) var(--space-12);
+            text-align: center;
+            background: linear-gradient(180deg, var(--color-midnight-dark), var(--color-midnight));
+        }
+
+        .blog-hero h1 {
+            font-family: var(--font-display);
+            font-size: var(--text-4xl);
+            font-weight: var(--font-bold);
+            color: var(--color-cream);
+            margin-bottom: var(--space-4);
+        }
+
+        .blog-hero p {
+            font-family: var(--font-accent);
+            font-size: var(--text-xl);
+            color: var(--color-blush);
+            max-width: 600px;
+            margin: 0 auto;
+            font-style: italic;
+        }
+
+        .blog-grid-section {
+            padding: var(--space-12) var(--container-padding) var(--space-20);
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-8);
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        @media (min-width: 640px) {
+            .blog-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .blog-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .blog-card {
+            background: var(--color-midnight-light);
+            border: 1px solid var(--color-gold-dark);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            text-decoration: none;
+            transition: border-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+        }
+
+        .blog-card:hover {
+            border-color: var(--color-gold);
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .blog-card-image {
+            aspect-ratio: 16/9;
+            overflow: hidden;
+        }
+
+        .blog-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform var(--transition-slow);
+        }
+
+        .blog-card:hover .blog-card-image img {
+            transform: scale(1.05);
+        }
+
+        .blog-card-content {
+            padding: var(--space-5);
+        }
+
+        .blog-card-meta {
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+            font-size: var(--text-xs);
+            color: var(--color-text-muted);
+            margin-bottom: var(--space-3);
+        }
+
+        .blog-card-category {
+            color: var(--color-gold);
+            text-transform: uppercase;
+            letter-spacing: var(--tracking-wider);
+            font-weight: var(--font-medium);
+        }
+
+        .blog-card h2 {
+            font-family: var(--font-display);
+            font-size: var(--text-lg);
+            font-weight: var(--font-semibold);
+            color: var(--color-cream);
+            line-height: var(--leading-snug);
+            margin-bottom: var(--space-3);
+        }
+
+        .blog-card p {
+            font-size: var(--text-sm);
+            color: var(--color-blush);
+            line-height: var(--leading-relaxed);
+        }
+
+        .blog-empty {
+            text-align: center;
+            padding: var(--space-20) var(--container-padding);
+            color: var(--color-blush);
+        }
+
+        .blog-empty h2 {
+            font-family: var(--font-display);
+            font-size: var(--text-2xl);
+            color: var(--color-cream);
+            margin-bottom: var(--space-4);
+        }
+
+        /* CTA Section */
+        .blog-cta {
+            background: linear-gradient(135deg, var(--color-burgundy), var(--color-midnight-light));
+            padding: var(--space-16) var(--container-padding);
+            text-align: center;
+        }
+
+        .blog-cta h2 {
+            font-family: var(--font-display);
+            font-size: var(--text-3xl);
+            color: var(--color-cream);
+            margin-bottom: var(--space-4);
+        }
+
+        .blog-cta p {
+            font-size: var(--text-lg);
+            color: var(--color-blush);
+            max-width: 500px;
+            margin: 0 auto var(--space-8);
+        }
+    </style>
+
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "Blog New York — F.B. Emerson",
+        "description": "Découvrez New York autrement. Secrets de quartiers, reflexions de voyage, et les coulisses du livre Ce Que New York M'a Fait.",
+        "url": "https://fbemerson.com/new-york/blog/",
+        "author": {
+            "@type": "Person",
+            "name": "F.B. Emerson",
+            "url": "https://fbemerson.com/a-propos/"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "F.B. Emerson",
+            "url": "https://fbemerson.com"
+        },
+        "inLanguage": "fr-FR"
+    }
+    </script>
+</head>
+
+<body class="author-page blog-index">
+
+    <!-- Header -->
+    <header class="author-header">
+        <nav class="author-nav container">
+            <a href="/" class="nav-logo">F.B. Emerson</a>
+            <ul class="nav-links">
+                <li><a href="/">Accueil</a></li>
+                <li><a href="/new-york/" class="active">New York</a></li>
+                <li><a href="/a-propos/">À propos</a></li>
+                <li><a href="/newsletter/">Newsletter</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section class="blog-hero">
+            <h1>Le Blog de New York</h1>
+            <p>Ce que les guides ne racontent pas. Les secrets, les quartiers, les réflexions d'une Européenne possédée par cette ville.</p>
+        </section>
+
+        <!-- Blog Grid -->
+        <section class="blog-grid-section">
+            <div class="blog-grid" id="blog-posts">
+                <!-- Dynamically loaded from posts.json -->
+            </div>
+            <div class="blog-empty" id="blog-empty" style="display: none;">
+                <h2>Bientôt ici...</h2>
+                <p>Les premiers articles arrivent. En attendant, découvrez l'histoire complète dans le livre.</p>
+                <a href="/new-york/" class="cta-button primary" style="margin-top: var(--space-6); display: inline-block;">Découvrir le livre</a>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="blog-cta">
+            <h2>Envie de l'histoire complète?</h2>
+            <p>Ces articles ne sont qu'un aperçu. Le livre raconte tout.</p>
+            <a href="/new-york/" class="cta-button primary">Découvrir Ce Que New York M'a Fait</a>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="author-footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-copyright">© 2026 F.B. Emerson</p>
+                <nav class="footer-nav">
+                    <a href="/new-york/contact/">Contact</a>
+                    <a href="/mentions-legales/">Mentions légales</a>
+                    <a href="/newsletter/">Newsletter</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+    <script>
+        // Mobile menu
+        document.querySelector('.mobile-menu-toggle')?.addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+            this.classList.toggle('active');
+        });
+
+        // Load blog posts
+        async function loadPosts() {
+            try {
+                const response = await fetch('/new-york/blog/posts.json');
+                const posts = await response.json();
+
+                if (!posts || posts.length === 0) {
+                    document.getElementById('blog-posts').style.display = 'none';
+                    document.getElementById('blog-empty').style.display = 'block';
+                    return;
+                }
+
+                const container = document.getElementById('blog-posts');
+                container.textContent = '';
+
+                posts.forEach(post => {
+                    const card = document.createElement('a');
+                    card.href = '/new-york/blog/' + post.slug + '/';
+                    card.className = 'blog-card';
+
+                    const imageDiv = document.createElement('div');
+                    imageDiv.className = 'blog-card-image';
+
+                    const img = document.createElement('img');
+                    img.src = '/new-york/blog/' + post.slug + '/featured.jpg';
+                    img.alt = post.title;
+                    img.width = 400;
+                    img.height = 225;
+                    img.loading = 'lazy';
+                    img.onerror = function() { this.src = '/images/textures/paper.png'; };
+
+                    imageDiv.appendChild(img);
+
+                    const content = document.createElement('div');
+                    content.className = 'blog-card-content';
+
+                    const meta = document.createElement('div');
+                    meta.className = 'blog-card-meta';
+
+                    const category = document.createElement('span');
+                    category.className = 'blog-card-category';
+                    category.textContent = post.category;
+
+                    const separator = document.createElement('span');
+                    separator.textContent = '•';
+
+                    const date = document.createElement('span');
+                    date.textContent = post.date;
+
+                    meta.appendChild(category);
+                    meta.appendChild(separator);
+                    meta.appendChild(date);
+
+                    const title = document.createElement('h2');
+                    title.textContent = post.title;
+
+                    const desc = document.createElement('p');
+                    desc.textContent = post.description;
+
+                    content.appendChild(meta);
+                    content.appendChild(title);
+                    content.appendChild(desc);
+
+                    card.appendChild(imageDiv);
+                    card.appendChild(content);
+
+                    container.appendChild(card);
+                });
+            } catch (e) {
+                document.getElementById('blog-posts').style.display = 'none';
+                document.getElementById('blog-empty').style.display = 'block';
+            }
+        }
+        loadPosts();
+    </script>
+</body>
+</html>
