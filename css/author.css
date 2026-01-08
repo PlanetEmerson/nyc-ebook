@@ -131,6 +131,114 @@
 }
 
 /* ============================================
+   NAV DROPDOWN
+   ============================================ */
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--color-cream);
+    border: 1px solid var(--color-cream-dark);
+    border-radius: var(--radius-md);
+    padding: var(--space-2) 0;
+    min-width: 160px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition-fast), visibility var(--transition-fast), transform var(--transition-fast);
+    transform: translateX(-50%) translateY(10px);
+    z-index: 100;
+}
+
+.nav-links li:hover .nav-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.nav-dropdown a {
+    display: block;
+    padding: var(--space-2) var(--space-4);
+    font-size: var(--text-sm) !important;
+    text-transform: none !important;
+    letter-spacing: normal !important;
+    color: var(--color-text-light);
+    white-space: nowrap;
+}
+
+.nav-dropdown a:hover {
+    background: var(--color-cream-dark);
+    color: var(--color-gold);
+}
+
+/* Dropdown arrow indicator */
+.nav-links li.has-dropdown > a::after {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 6px;
+    vertical-align: middle;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid currentColor;
+    transition: transform var(--transition-fast);
+}
+
+.nav-links li.has-dropdown:hover > a::after {
+    transform: rotate(180deg);
+}
+
+/* Mobile dropdown */
+@media (max-width: 768px) {
+    .nav-dropdown {
+        position: static;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+        box-shadow: none;
+        border: none;
+        border-left: 2px solid var(--color-gold);
+        margin-left: var(--space-4);
+        margin-top: var(--space-2);
+        padding: 0;
+        background: transparent;
+    }
+
+    .nav-dropdown a {
+        padding: var(--space-2) var(--space-3);
+    }
+
+    .nav-links li.has-dropdown > a::after {
+        display: none;
+    }
+}
+
+/* Dark header variant dropdown */
+.book-header .nav-dropdown,
+.author-header.scrolled .nav-dropdown {
+    background: var(--color-midnight-light);
+    border-color: var(--color-gold-dark);
+}
+
+.book-header .nav-dropdown a,
+.author-header.scrolled .nav-dropdown a {
+    color: var(--color-blush);
+}
+
+.book-header .nav-dropdown a:hover,
+.author-header.scrolled .nav-dropdown a:hover {
+    background: var(--color-midnight);
+    color: var(--color-gold);
+}
+
+/* ============================================
    AUTHOR HERO
    ============================================ */
 
@@ -840,6 +948,153 @@
     font-size: var(--text-base);
     color: var(--color-text-light);
     margin: 0 0 var(--space-4) 0;
+}
+
+/* ============================================
+   BLOG PREVIEW SECTION (Book Page)
+   ============================================ */
+
+.blog-preview {
+    padding: var(--space-16) var(--container-padding);
+    background: var(--color-midnight);
+    position: relative;
+}
+
+.blog-preview::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('../images/textures/grain.png');
+    background-size: 200px 200px;
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+.blog-preview .section-title {
+    color: var(--color-cream);
+}
+
+.blog-preview .section-subtitle {
+    text-align: center;
+    font-family: var(--font-accent);
+    font-style: italic;
+    font-size: var(--text-lg);
+    color: var(--color-blush);
+    margin-top: calc(-1 * var(--space-6));
+    margin-bottom: var(--space-10);
+}
+
+.blog-preview-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+}
+
+@media (min-width: 640px) {
+    .blog-preview-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .blog-preview-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.blog-preview-card {
+    background: var(--color-midnight-light);
+    border: 1px solid var(--color-gold-dark);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    text-decoration: none;
+    transition: all var(--transition-base);
+}
+
+.blog-preview-card:hover {
+    border-color: var(--color-gold);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.blog-preview-card-image {
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    background: var(--color-midnight);
+}
+
+.blog-preview-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+}
+
+.blog-preview-card:hover .blog-preview-card-image img {
+    transform: scale(1.08);
+}
+
+.blog-preview-card-content {
+    padding: var(--space-5);
+}
+
+.blog-preview-card-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-2);
+}
+
+.blog-preview-card-category {
+    color: var(--color-gold);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wider);
+    font-weight: var(--font-medium);
+}
+
+.blog-preview-card h3 {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: var(--font-semibold);
+    color: var(--color-cream);
+    line-height: var(--leading-snug);
+    margin: 0;
+    transition: color var(--transition-fast);
+}
+
+.blog-preview-card:hover h3 {
+    color: var(--color-gold-light);
+}
+
+.blog-preview-cta {
+    text-align: center;
+    margin-top: var(--space-10);
+    position: relative;
+}
+
+.blog-preview-cta .text-link {
+    color: var(--color-gold);
+    font-weight: var(--font-medium);
+}
+
+.blog-preview-cta .text-link:hover {
+    color: var(--color-gold-light);
+}
+
+.blog-preview-empty {
+    text-align: center;
+    padding: var(--space-10);
+    color: var(--color-blush);
+}
+
+.blog-preview-empty p {
+    margin: 0;
+    font-style: italic;
 }
 
 /* ============================================

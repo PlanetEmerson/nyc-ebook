@@ -129,7 +129,13 @@
             <a href="/" class="nav-logo">F.B. Emerson</a>
             <ul class="nav-links">
                 <li><a href="/">Accueil</a></li>
-                <li><a href="/new-york/" class="active">New York</a></li>
+                <li class="has-dropdown">
+                    <a href="/new-york/" class="active">New York</a>
+                    <div class="nav-dropdown">
+                        <a href="/new-york/">Le Livre</a>
+                        <a href="/new-york/blog/">Le Blog</a>
+                    </div>
+                </li>
                 <li><a href="/a-propos/">À propos</a></li>
                 <li><a href="/newsletter/">Newsletter</a></li>
             </ul>
@@ -626,6 +632,20 @@
             </div>
         </section>
 
+        <!-- Blog Section -->
+        <section class="blog-preview" id="blog">
+            <div class="container">
+                <h2 class="section-title">Du Blog</h2>
+                <p class="section-subtitle">Ce que les guides ne racontent pas</p>
+                <div class="blog-preview-grid" id="blog-posts-preview">
+                    <!-- Dynamically loaded -->
+                </div>
+                <div class="blog-preview-cta">
+                    <a href="/new-york/blog/" class="text-link">Voir tous les articles →</a>
+                </div>
+            </div>
+        </section>
+
         <!-- Section 10: Final CTA -->
         <section class="final-cta" id="final-cta">
             <div class="final-cta-background">
@@ -664,6 +684,93 @@
             document.querySelector('.nav-links').classList.toggle('active');
             this.classList.toggle('active');
         });
+
+        // Load blog posts preview
+        async function loadBlogPreview() {
+            try {
+                const response = await fetch('/new-york/blog/posts.json');
+                const posts = await response.json();
+
+                const container = document.getElementById('blog-posts-preview');
+                if (!container) return;
+
+                container.textContent = '';
+
+                if (!posts || posts.length === 0) {
+                    const empty = document.createElement('div');
+                    empty.className = 'blog-preview-empty';
+                    const emptyText = document.createElement('p');
+                    emptyText.textContent = 'Bientôt des articles...';
+                    empty.appendChild(emptyText);
+                    container.appendChild(empty);
+                    return;
+                }
+
+                // Show up to 3 posts
+                const postsToShow = posts.slice(0, 3);
+
+                postsToShow.forEach(post => {
+                    const card = document.createElement('a');
+                    card.href = '/new-york/blog/' + post.slug + '/';
+                    card.className = 'blog-preview-card';
+
+                    const imageDiv = document.createElement('div');
+                    imageDiv.className = 'blog-preview-card-image';
+
+                    const img = document.createElement('img');
+                    img.src = '/new-york/blog/' + post.slug + '/featured.jpg';
+                    img.alt = post.title;
+                    img.loading = 'lazy';
+                    img.className = 'loaded';
+                    img.onerror = function() { this.src = '/images/textures/paper.png'; };
+
+                    imageDiv.appendChild(img);
+
+                    const content = document.createElement('div');
+                    content.className = 'blog-preview-card-content';
+
+                    const meta = document.createElement('div');
+                    meta.className = 'blog-preview-card-meta';
+
+                    const category = document.createElement('span');
+                    category.className = 'blog-preview-card-category';
+                    category.textContent = post.category;
+
+                    const separator = document.createElement('span');
+                    separator.textContent = ' • ';
+
+                    const date = document.createElement('span');
+                    date.textContent = post.date;
+
+                    meta.appendChild(category);
+                    meta.appendChild(separator);
+                    meta.appendChild(date);
+
+                    const title = document.createElement('h3');
+                    title.textContent = post.title;
+
+                    content.appendChild(meta);
+                    content.appendChild(title);
+
+                    card.appendChild(imageDiv);
+                    card.appendChild(content);
+
+                    container.appendChild(card);
+                });
+            } catch (e) {
+                const container = document.getElementById('blog-posts-preview');
+                if (container) {
+                    container.textContent = '';
+                    const empty = document.createElement('div');
+                    empty.className = 'blog-preview-empty';
+                    const emptyText = document.createElement('p');
+                    emptyText.textContent = 'Bientôt des articles...';
+                    empty.appendChild(emptyText);
+                    container.appendChild(empty);
+                }
+            }
+        }
+        loadBlogPreview();
     </script>
 </body>
 </html>
