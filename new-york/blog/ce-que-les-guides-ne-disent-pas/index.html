@@ -50,10 +50,13 @@
             min-height: 100vh;
         }
 
+        /* FIXED: Add 80px clearance for fixed header */
         .article-header {
-            padding: var(--space-12) var(--container-padding) var(--space-8);
+            padding: calc(80px + var(--space-12)) var(--container-padding) var(--space-8);
             max-width: 800px;
             margin: 0 auto;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
         }
 
         .article-meta {
@@ -96,12 +99,16 @@
             font-size: var(--text-xl);
             color: var(--color-blush);
             line-height: var(--leading-relaxed);
+            font-family: var(--font-accent);
+            font-style: italic;
         }
 
         .featured-image {
             max-width: 900px;
             margin: 0 auto var(--space-12);
             padding: 0 var(--container-padding);
+            opacity: 0;
+            animation: fadeInUp 0.8s ease 0.2s forwards;
         }
 
         .featured-image img {
@@ -109,12 +116,19 @@
             height: auto;
             border-radius: var(--radius-lg);
             border: 1px solid var(--color-gold-dark);
+            transition: transform var(--transition-slow);
+        }
+
+        .featured-image:hover img {
+            transform: scale(1.02);
         }
 
         .article-content {
             max-width: 700px;
             margin: 0 auto;
             padding: 0 var(--container-padding) var(--space-16);
+            opacity: 0;
+            animation: fadeIn 0.8s ease 0.4s forwards;
         }
 
         .article-content h2 {
@@ -125,6 +139,18 @@
             margin-top: var(--space-12);
             margin-bottom: var(--space-4);
             line-height: var(--leading-tight);
+            position: relative;
+            padding-bottom: var(--space-3);
+        }
+
+        .article-content h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background: var(--color-gold);
         }
 
         .article-content h3 {
@@ -144,6 +170,17 @@
             margin-bottom: var(--space-6);
         }
 
+        /* First paragraph drop cap */
+        .article-content > p:first-of-type::first-letter {
+            float: left;
+            font-family: var(--font-display);
+            font-size: 3.5em;
+            line-height: 0.8;
+            padding-right: 0.1em;
+            color: var(--color-gold);
+            font-weight: var(--font-bold);
+        }
+
         .article-content ul,
         .article-content ol {
             color: var(--color-blush);
@@ -154,10 +191,19 @@
         .article-content li {
             margin-bottom: var(--space-2);
             line-height: var(--leading-relaxed);
+            position: relative;
         }
 
         .article-content ul li {
-            list-style-type: disc;
+            list-style-type: none;
+            padding-left: var(--space-4);
+        }
+
+        .article-content ul li::before {
+            content: '—';
+            position: absolute;
+            left: 0;
+            color: var(--color-gold);
         }
 
         .article-content ol li {
@@ -181,6 +227,18 @@
             font-size: var(--text-xl);
             font-style: italic;
             color: var(--color-cream);
+            position: relative;
+        }
+
+        .article-content blockquote::before {
+            content: '"';
+            position: absolute;
+            left: var(--space-2);
+            top: -0.5em;
+            font-size: 3em;
+            color: var(--color-gold);
+            opacity: 0.3;
+            font-family: var(--font-display);
         }
 
         .article-content a {
@@ -194,7 +252,7 @@
             color: var(--color-gold-light);
         }
 
-        /* Author Box */
+        /* Author Box - FIXED: Proper centering with responsive padding */
         .author-box {
             max-width: 700px;
             margin: 0 auto var(--space-12);
@@ -202,6 +260,22 @@
             background: var(--color-midnight-light);
             border: 1px solid var(--color-gold-dark);
             border-radius: var(--radius-lg);
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
+            transition: border-color var(--transition-base), transform var(--transition-base);
+        }
+
+        /* Responsive horizontal margins */
+        @media (max-width: 768px) {
+            .author-box {
+                margin-left: var(--container-padding);
+                margin-right: var(--container-padding);
+            }
+        }
+
+        .author-box:hover {
+            border-color: var(--color-gold);
+            transform: translateY(-4px);
         }
 
         .author-box-inner {
@@ -226,6 +300,11 @@
             border-radius: var(--radius-full);
             border: 2px solid var(--color-gold-dark);
             flex-shrink: 0;
+            transition: border-color var(--transition-base);
+        }
+
+        .author-box:hover img {
+            border-color: var(--color-gold);
         }
 
         .author-box-label {
@@ -246,17 +325,63 @@
         .author-box-bio {
             font-size: var(--text-sm);
             color: var(--color-blush);
+            line-height: var(--leading-relaxed);
         }
 
-        /* CTA Box */
+        /* CTA Box - FIXED: Proper centering + background image */
         .cta-box {
+            position: relative;
             max-width: 700px;
             margin: 0 auto var(--space-16);
-            padding: var(--space-10);
-            background: linear-gradient(135deg, var(--color-burgundy), var(--color-midnight-light));
+            padding: var(--space-12);
             border: 1px solid var(--color-gold);
             border-radius: var(--radius-lg);
             text-align: center;
+            overflow: hidden;
+            opacity: 0;
+            animation: fadeInUp 0.6s ease 0.1s forwards;
+            transition: transform var(--transition-base), box-shadow var(--transition-base);
+        }
+
+        /* Responsive horizontal margins */
+        @media (max-width: 768px) {
+            .cta-box {
+                margin-left: var(--container-padding);
+                margin-right: var(--container-padding);
+            }
+        }
+
+        .cta-box::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: 
+                linear-gradient(180deg, rgba(13, 27, 42, 0.88), rgba(13, 27, 42, 0.75)),
+                url('../../../images/blog/cta-background.jpg');
+            background-size: cover;
+            background-position: center;
+            z-index: 0;
+        }
+
+        .cta-box::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('../../../images/textures/grain.png');
+            background-size: 200px 200px;
+            opacity: 0.15;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .cta-box:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .cta-box-content {
+            position: relative;
+            z-index: 2;
         }
 
         .cta-box h3 {
@@ -267,14 +392,28 @@
         }
 
         .cta-box p {
+            font-family: var(--font-accent);
+            font-style: italic;
             color: var(--color-blush);
             margin-bottom: var(--space-6);
+            font-size: var(--text-lg);
         }
 
         /* Related Posts */
         .related-posts {
             background: var(--color-midnight-light);
             padding: var(--space-16) var(--container-padding);
+            position: relative;
+        }
+
+        .related-posts::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('../../../images/textures/grain.png');
+            background-size: 200px 200px;
+            opacity: 0.1;
+            pointer-events: none;
         }
 
         .related-posts h2 {
@@ -283,6 +422,7 @@
             color: var(--color-cream);
             text-align: center;
             margin-bottom: var(--space-10);
+            position: relative;
         }
 
         .related-grid {
@@ -291,6 +431,7 @@
             gap: var(--space-6);
             max-width: 1000px;
             margin: 0 auto var(--space-8);
+            position: relative;
         }
 
         @media (min-width: 768px) {
@@ -305,18 +446,30 @@
             border-radius: var(--radius-lg);
             overflow: hidden;
             text-decoration: none;
-            transition: border-color var(--transition-fast), transform var(--transition-fast);
+            transition: border-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
         }
+
+        .related-card:nth-child(1) { animation-delay: 0.1s; }
+        .related-card:nth-child(2) { animation-delay: 0.2s; }
+        .related-card:nth-child(3) { animation-delay: 0.3s; }
 
         .related-card:hover {
             border-color: var(--color-gold);
-            transform: translateY(-4px);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
         }
 
         .related-card img {
             width: 100%;
             aspect-ratio: 16/9;
             object-fit: cover;
+            transition: transform var(--transition-slow);
+        }
+
+        .related-card:hover img {
+            transform: scale(1.08);
         }
 
         .related-card-content {
@@ -328,20 +481,44 @@
             font-size: var(--text-base);
             color: var(--color-cream);
             line-height: var(--leading-snug);
+            transition: color var(--transition-fast);
+        }
+
+        .related-card:hover h3 {
+            color: var(--color-gold-light);
         }
 
         .related-more {
             text-align: center;
+            position: relative;
         }
 
         .related-more a {
             color: var(--color-gold);
             text-decoration: none;
             transition: color var(--transition-fast);
+            font-weight: var(--font-medium);
         }
 
         .related-more a:hover {
             color: var(--color-gold-light);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
     </style>
 
@@ -471,8 +648,8 @@
 <p>Et peut-être que ce livre est pour vous.</p>
         </div>
 
-        <!-- Author Box -->
-        <aside class="author-box" style="margin-left: var(--container-padding); margin-right: var(--container-padding);">
+        <!-- Author Box - FIXED: Removed inline styles that broke centering -->
+        <aside class="author-box">
             <div class="author-box-inner">
                 <img src="/images/sections/author-desk.png" alt="F.B. Emerson" width="80" height="80">
                 <div>
@@ -483,11 +660,13 @@
             </div>
         </aside>
 
-        <!-- CTA Box -->
-        <aside class="cta-box" style="margin-left: var(--container-padding); margin-right: var(--container-padding);">
-            <h3>Envie d'aller plus loin?</h3>
-            <p>Cet article n'est qu'un aperçu. L'histoire complète est dans le livre.</p>
-            <a href="/new-york/" class="cta-button primary">Découvrir le livre</a>
+        <!-- CTA Box - FIXED: Removed inline styles + added background image -->
+        <aside class="cta-box">
+            <div class="cta-box-content">
+                <h3>Envie d'aller plus loin?</h3>
+                <p>Cet article n'est qu'un aperçu. L'histoire complète est dans le livre.</p>
+                <a href="/new-york/" class="cta-button primary">Découvrir le livre</a>
+            </div>
         </aside>
     </article>
 
@@ -537,10 +716,11 @@
                 const container = document.getElementById('related-posts');
                 container.textContent = '';
                 
-                related.forEach(post => {
+                related.forEach((post, index) => {
                     const card = document.createElement('a');
                     card.href = '/new-york/blog/' + post.slug + '/';
                     card.className = 'related-card';
+                    card.style.animationDelay = (0.1 + index * 0.1) + 's';
                     
                     const img = document.createElement('img');
                     img.src = '/new-york/blog/' + post.slug + '/featured.jpg';
