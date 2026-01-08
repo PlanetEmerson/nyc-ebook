@@ -141,11 +141,13 @@
     justify-content: center;
     text-align: center;
     padding: var(--space-32) var(--container-padding);
-    background: linear-gradient(
-        to bottom,
-        var(--color-cream) 0%,
-        var(--color-cream-light) 100%
-    );
+    background:
+        url('../images/textures/grain.png'),
+        url('../images/textures/hero-texture.png');
+    background-size: 200px 200px, cover;
+    background-position: center, center;
+    background-blend-mode: overlay, normal;
+    position: relative;
 }
 
 .author-hero-content {
@@ -364,13 +366,16 @@
 
 .newsletter-form {
     margin-bottom: var(--space-4);
+    display: flex;
+    justify-content: center;
 }
 
 .newsletter-form .form-group {
     display: flex;
     gap: var(--space-3);
-    max-width: 450px;
-    margin: 0 auto;
+    width: 100%;
+    max-width: 420px;
+    justify-content: center;
 }
 
 .newsletter-form input[type="email"] {
@@ -677,25 +682,36 @@
    BOOK PAGE SPECIFIC STYLES
    ============================================ */
 
+.book-page {
+    background: var(--color-midnight);
+}
+
 .book-page .author-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
     background: transparent;
     border-bottom: none;
-    position: absolute;
+    z-index: var(--z-sticky);
 }
 
 .book-page .author-header .nav-logo,
 .book-page .author-header .nav-links a {
     color: var(--color-cream);
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.book-page .author-header .nav-links a:hover {
+.book-page .author-header .nav-links a:hover,
+.book-page .author-header .nav-links a.active {
     color: var(--color-gold);
 }
 
 .book-page .author-header .nav-cta {
     padding: var(--space-2) var(--space-5);
     font-size: var(--text-sm);
+    background: var(--color-gold);
+    color: var(--color-midnight);
 }
 
 .book-page .mobile-menu-toggle span {
@@ -704,7 +720,8 @@
 
 @media (max-width: 768px) {
     .book-page .author-header .nav-links {
-        background: var(--color-midnight);
+        background: rgba(13, 27, 42, 0.95);
+        backdrop-filter: blur(10px);
     }
 
     .book-page .author-header .nav-links a {
@@ -827,4 +844,143 @@
 
 .nav-links a.active {
     color: var(--color-gold);
+}
+
+/* ============================================
+   ABOUT PAGE HERO
+   ============================================ */
+
+.about-hero {
+    min-height: 60vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    position: relative;
+    overflow: hidden;
+    background: var(--color-cream);
+}
+
+@media (min-width: 768px) {
+    .about-hero {
+        grid-template-columns: 1fr 1fr;
+        min-height: 70vh;
+    }
+}
+
+.about-hero-image {
+    position: relative;
+    overflow: hidden;
+    min-height: 300px;
+}
+
+.about-hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.about-hero-image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to right,
+        transparent 60%,
+        var(--color-cream) 100%
+    );
+}
+
+@media (max-width: 767px) {
+    .about-hero-image::after {
+        background: linear-gradient(
+            to bottom,
+            transparent 60%,
+            var(--color-cream) 100%
+        );
+    }
+}
+
+.about-hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--space-12) var(--container-padding);
+    background: var(--color-cream);
+}
+
+@media (min-width: 768px) {
+    .about-hero-content {
+        padding: var(--space-16) var(--space-12);
+    }
+}
+
+.about-hero h1 {
+    font-family: var(--font-display);
+    font-size: var(--text-4xl);
+    font-weight: var(--font-medium);
+    color: var(--color-text);
+    margin: 0 0 var(--space-4) 0;
+    letter-spacing: var(--tracking-tight);
+}
+
+.about-hero-tagline {
+    font-family: var(--font-accent);
+    font-size: var(--text-xl);
+    font-style: italic;
+    color: var(--color-text-light);
+    margin: 0;
+    line-height: var(--leading-relaxed);
+}
+
+/* ============================================
+   ENHANCED TEXTURES & DEPTH
+   ============================================ */
+
+/* Paper texture for content sections */
+.content-body {
+    background:
+        url('../images/textures/paper.png'),
+        var(--color-cream);
+    background-size: 400px 400px, auto;
+    background-blend-mode: soft-light, normal;
+}
+
+/* Featured work section texture */
+.featured-work {
+    background:
+        url('../images/textures/paper.png'),
+        var(--color-cream-light);
+    background-size: 400px 400px, auto;
+    background-blend-mode: soft-light, normal;
+}
+
+/* About teaser section */
+.about-teaser {
+    background:
+        url('../images/textures/grain.png'),
+        var(--color-cream);
+    background-size: 200px 200px, auto;
+    background-blend-mode: overlay, normal;
+}
+
+/* Content hero with subtle texture */
+.content-hero {
+    background:
+        url('../images/textures/hero-texture.png');
+    background-size: cover;
+    background-position: center;
+}
+
+/* About page specific - header handling */
+.about-page {
+    padding-top: 0;
+}
+
+.about-page .about-hero {
+    padding-top: 80px; /* Account for fixed header */
+}
+
+.about-page .about-hero-image {
+    margin-top: -80px;
+    padding-top: 80px;
 }
