@@ -647,6 +647,10 @@
     height: auto;
     border-radius: var(--radius-sm);
     box-shadow: var(--shadow-sm);
+    flex-shrink: 0;
+    object-fit: contain;
+    align-self: flex-start;
+    opacity: 1 !important;
 }
 
 .project-card-info h3 {
