@@ -220,23 +220,7 @@
     }
 }
 
-/* Dark header variant dropdown */
-.book-header .nav-dropdown,
-.author-header.scrolled .nav-dropdown {
-    background: var(--color-midnight-light);
-    border-color: var(--color-gold-dark);
-}
-
-.book-header .nav-dropdown a,
-.author-header.scrolled .nav-dropdown a {
-    color: var(--color-blush);
-}
-
-.book-header .nav-dropdown a:hover,
-.author-header.scrolled .nav-dropdown a:hover {
-    background: var(--color-midnight);
-    color: var(--color-gold);
-}
+/* Dropdown styling is consistent across all pages */
 
 /* ============================================
    AUTHOR HERO
@@ -798,27 +782,7 @@
     background: var(--color-midnight);
 }
 
-.book-page .author-header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    background: transparent;
-    border-bottom: none;
-    z-index: var(--z-sticky);
-}
-
-.book-page .author-header .nav-logo,
-.book-page .author-header .nav-links a {
-    color: var(--color-cream);
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.book-page .author-header .nav-links a:hover,
-.book-page .author-header .nav-links a.active {
-    color: var(--color-gold);
-}
-
+/* Book page header now matches site-wide styling for consistency */
 .book-page .author-header .nav-cta {
     padding: var(--space-2) var(--space-5);
     font-size: var(--text-sm);
@@ -826,21 +790,7 @@
     color: var(--color-midnight);
 }
 
-.book-page .mobile-menu-toggle span {
-    background: var(--color-cream);
-}
-
 @media (max-width: 768px) {
-    .book-page .author-header .nav-links {
-        background: rgba(13, 27, 42, 0.95);
-        backdrop-filter: blur(10px);
-    }
-
-    .book-page .author-header .nav-links a {
-        color: var(--color-cream);
-        text-shadow: none;
-    }
-
     .book-page .nav-cta {
         display: none;
     }
