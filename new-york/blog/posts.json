@@ -1,5 +1,19 @@
 [
     {
+        "title": "Comment Greenwich Village m'a appris à ralentir",
+        "description": "Dans une ville qui court, ce quartier de New York m'a offert la permission de m'arrêter. Une leçon inattendue.",
+        "slug": "greenwich-village-ralentir",
+        "date": "9 janvier 2026",
+        "category": "Quartiers",
+        "tags": [
+            "greenwich village",
+            "new york",
+            "quartier",
+            "transformation",
+            "voyage"
+        ]
+    },
+    {
         "title": "Ce que les guides de New York ne vous disent pas",
         "description": "Il y a le New York des guides touristiques. Et puis il y a l'autre - celui qui vous attrape par surprise et ne vous lâche plus.",
         "slug": "ce-que-les-guides-ne-disent-pas",

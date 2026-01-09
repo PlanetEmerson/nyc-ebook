@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Comment Greenwich Village m'a appris à ralentir | Blog New York | F.B. Emerson</title>
+    <meta name="description" content="Dans une ville qui court, ce quartier de New York m'a offert la permission de m'arrêter. Une leçon inattendue.">
+    <meta name="keywords" content="Greenwich Village, new york, voyage, quartier, F.B. Emerson, New York, Mon Éveil">
+    <meta name="author" content="F.B. Emerson">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://fbemerson.com/new-york/blog/greenwich-village-ralentir/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://fbemerson.com/new-york/blog/greenwich-village-ralentir/">
+    <meta property="og:title" content="Comment Greenwich Village m'a appris à ralentir">
+    <meta property="og:description" content="Dans une ville qui court, ce quartier de New York m'a offert la permission de m'arrêter. Une leçon inattendue.">
+    <meta property="og:image" content="https://fbemerson.com/new-york/blog/greenwich-village-ralentir/featured.jpg">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="F.B. Emerson">
+    <meta property="article:published_time" content="2026-01-09">
+    <meta property="article:author" content="F.B. Emerson">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Comment Greenwich Village m'a appris à ralentir">
+    <meta name="twitter:description" content="Dans une ville qui court, ce quartier de New York m'a offert la permission de m'arrêter. Une leçon inattendue.">
+    <meta name="twitter:image" content="https://fbemerson.com/new-york/blog/greenwich-village-ralentir/featured.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗽</text></svg>">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;1,8..60,400;1,8..60,500&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../../css/variables.css">
+    <link rel="stylesheet" href="../../../css/styles.css">
+    <link rel="stylesheet" href="../../../css/animations.css">
+    <link rel="stylesheet" href="../../../css/author.css">
+
+    <!-- Blog-specific styles -->
+    <style>
+        .blog-article {
+            background: var(--color-midnight);
+            min-height: 100vh;
+        }
+
+        .article-header {
+            padding: calc(80px + var(--space-12)) var(--container-padding) var(--space-8);
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .article-meta {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: var(--space-3);
+            font-size: var(--text-sm);
+            color: var(--color-text-muted);
+            margin-bottom: var(--space-6);
+        }
+
+        .article-meta a {
+            color: var(--color-gold);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
+
+        .article-meta a:hover {
+            color: var(--color-gold-light);
+        }
+
+        .article-category {
+            color: var(--color-gold);
+            text-transform: uppercase;
+            letter-spacing: var(--tracking-wider);
+            font-weight: var(--font-medium);
+        }
+
+        .article-title {
+            font-family: var(--font-display);
+            font-size: var(--text-4xl);
+            font-weight: var(--font-bold);
+            color: var(--color-cream);
+            line-height: var(--leading-tight);
+            margin-bottom: var(--space-6);
+        }
+
+        .article-excerpt {
+            font-size: var(--text-xl);
+            color: var(--color-blush);
+            line-height: var(--leading-relaxed);
+            font-family: var(--font-accent);
+            font-style: italic;
+        }
+
+        .featured-image {
+            max-width: 900px;
+            margin: 0 auto var(--space-12);
+            padding: 0 var(--container-padding);
+            opacity: 0;
+            animation: fadeInUp 0.8s ease 0.2s forwards;
+        }
+
+        .featured-image img {
+            width: 100%;
+            height: auto;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--color-gold-dark);
+            transition: transform var(--transition-slow);
+        }
+
+        .featured-image:hover img {
+            transform: scale(1.02);
+        }
+
+        .article-content {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 0 var(--container-padding) var(--space-16);
+            opacity: 0;
+            animation: fadeIn 0.8s ease 0.4s forwards;
+        }
+
+        .article-content h2 {
+            font-family: var(--font-display);
+            font-size: var(--text-2xl);
+            font-weight: var(--font-bold);
+            color: var(--color-cream);
+            margin-top: var(--space-12);
+            margin-bottom: var(--space-4);
+            line-height: var(--leading-tight);
+            position: relative;
+            padding-bottom: var(--space-3);
+        }
+
+        .article-content h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background: var(--color-gold);
+        }
+
+        .article-content h3 {
+            font-family: var(--font-display);
+            font-size: var(--text-xl);
+            font-weight: var(--font-semibold);
+            color: var(--color-gold);
+            margin-top: var(--space-8);
+            margin-bottom: var(--space-3);
+        }
+
+        .article-content p {
+            font-family: var(--font-body);
+            font-size: var(--text-lg);
+            color: var(--color-blush);
+            line-height: var(--leading-loose);
+            margin-bottom: var(--space-6);
+        }
+
+        .article-content > p:first-of-type::first-letter {
+            float: left;
+            font-family: var(--font-display);
+            font-size: 3.5em;
+            line-height: 0.8;
+            padding-right: 0.1em;
+            color: var(--color-gold);
+            font-weight: var(--font-bold);
+        }
+
+        .article-content ul,
+        .article-content ol {
+            color: var(--color-blush);
+            margin-left: var(--space-6);
+            margin-bottom: var(--space-6);
+        }
+
+        .article-content li {
+            margin-bottom: var(--space-2);
+            line-height: var(--leading-relaxed);
+            position: relative;
+        }
+
+        .article-content ul li {
+            list-style-type: none;
+            padding-left: var(--space-4);
+        }
+
+        .article-content ul li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--color-gold);
+        }
+
+        .article-content ol li {
+            list-style-type: decimal;
+        }
+
+        .article-content strong {
+            color: var(--color-cream);
+            font-weight: var(--font-semibold);
+        }
+
+        .article-content em {
+            font-style: italic;
+        }
+
+        .article-content blockquote {
+            border-left: 4px solid var(--color-gold);
+            padding-left: var(--space-6);
+            margin: var(--space-8) 0;
+            font-family: var(--font-accent);
+            font-size: var(--text-xl);
+            font-style: italic;
+            color: var(--color-cream);
+            position: relative;
+        }
+
+        .article-content blockquote::before {
+            content: '"';
+            position: absolute;
+            left: var(--space-2);
+            top: -0.5em;
+            font-size: 3em;
+            color: var(--color-gold);
+            opacity: 0.3;
+            font-family: var(--font-display);
+        }
+
+        .article-content a {
+            color: var(--color-gold);
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            transition: color var(--transition-fast);
+        }
+
+        .article-content a:hover {
+            color: var(--color-gold-light);
+        }
+
+        .author-box {
+            max-width: 700px;
+            margin: 0 auto var(--space-12);
+            padding: var(--space-8);
+            background: var(--color-midnight-light);
+            border: 1px solid var(--color-gold-dark);
+            border-radius: var(--radius-lg);
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
+            transition: border-color var(--transition-base), transform var(--transition-base);
+        }
+
+        @media (max-width: 768px) {
+            .author-box {
+                margin-left: var(--container-padding);
+                margin-right: var(--container-padding);
+            }
+        }
+
+        .author-box:hover {
+            border-color: var(--color-gold);
+            transform: translateY(-4px);
+        }
+
+        .author-box-inner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: var(--space-4);
+        }
+
+        @media (min-width: 640px) {
+            .author-box-inner {
+                flex-direction: row;
+                text-align: left;
+                gap: var(--space-6);
+            }
+        }
+
+        .author-box img {
+            width: 80px;
+            height: 80px;
+            border-radius: var(--radius-full);
+            border: 2px solid var(--color-gold-dark);
+            flex-shrink: 0;
+            transition: border-color var(--transition-base);
+        }
+
+        .author-box:hover img {
+            border-color: var(--color-gold);
+        }
+
+        .author-box-label {
+            color: var(--color-gold);
+            font-size: var(--text-sm);
+            text-transform: uppercase;
+            letter-spacing: var(--tracking-wider);
+            margin-bottom: var(--space-1);
+        }
+
+        .author-box-name {
+            font-family: var(--font-display);
+            font-size: var(--text-xl);
+            color: var(--color-cream);
+            margin-bottom: var(--space-2);
+        }
+
+        .author-box-bio {
+            font-size: var(--text-sm);
+            color: var(--color-blush);
+            line-height: var(--leading-relaxed);
+        }
+
+        .cta-box {
+            position: relative;
+            max-width: 700px;
+            margin: 0 auto var(--space-16);
+            padding: var(--space-12);
+            border: 1px solid var(--color-gold);
+            border-radius: var(--radius-lg);
+            text-align: center;
+            overflow: hidden;
+            opacity: 0;
+            animation: fadeInUp 0.6s ease 0.1s forwards;
+            transition: transform var(--transition-base), box-shadow var(--transition-base);
+        }
+
+        @media (max-width: 768px) {
+            .cta-box {
+                margin-left: var(--container-padding);
+                margin-right: var(--container-padding);
+            }
+        }
+
+        .cta-box::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: 
+                linear-gradient(180deg, rgba(13, 27, 42, 0.88), rgba(13, 27, 42, 0.75)),
+                url('../../../images/blog/cta-background.jpg');
+            background-size: cover;
+            background-position: center;
+            z-index: 0;
+        }
+
+        .cta-box::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('../../../images/textures/grain.png');
+            background-size: 200px 200px;
+            opacity: 0.15;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .cta-box:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .cta-box-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-box h3 {
+            font-family: var(--font-display);
+            font-size: var(--text-2xl);
+            color: var(--color-cream);
+            margin-bottom: var(--space-4);
+        }
+
+        .cta-box p {
+            font-family: var(--font-accent);
+            font-style: italic;
+            color: var(--color-blush);
+            margin-bottom: var(--space-6);
+            font-size: var(--text-lg);
+        }
+
+        .related-posts {
+            background: var(--color-midnight-light);
+            padding: var(--space-16) var(--container-padding);
+            position: relative;
+        }
+
+        .related-posts::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('../../../images/textures/grain.png');
+            background-size: 200px 200px;
+            opacity: 0.1;
+            pointer-events: none;
+        }
+
+        .related-posts h2 {
+            font-family: var(--font-display);
+            font-size: var(--text-2xl);
+            color: var(--color-cream);
+            text-align: center;
+            margin-bottom: var(--space-10);
+            position: relative;
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-6);
+            max-width: 1000px;
+            margin: 0 auto var(--space-8);
+            position: relative;
+        }
+
+        @media (min-width: 768px) {
+            .related-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .related-card {
+            background: var(--color-midnight);
+            border: 1px solid var(--color-gold-dark);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            text-decoration: none;
+            transition: border-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .related-card:nth-child(1) { animation-delay: 0.1s; }
+        .related-card:nth-child(2) { animation-delay: 0.2s; }
+        .related-card:nth-child(3) { animation-delay: 0.3s; }
+
+        .related-card:hover {
+            border-color: var(--color-gold);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .related-card img {
+            width: 100%;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+            transition: transform var(--transition-slow);
+        }
+
+        .related-card:hover img {
+            transform: scale(1.08);
+        }
+
+        .related-card-content {
+            padding: var(--space-4);
+        }
+
+        .related-card h3 {
+            font-family: var(--font-display);
+            font-size: var(--text-base);
+            color: var(--color-cream);
+            line-height: var(--leading-snug);
+            transition: color var(--transition-fast);
+        }
+
+        .related-card:hover h3 {
+            color: var(--color-gold-light);
+        }
+
+        .related-more {
+            text-align: center;
+            position: relative;
+        }
+
+        .related-more a {
+            color: var(--color-gold);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+            font-weight: var(--font-medium);
+        }
+
+        .related-more a:hover {
+            color: var(--color-gold-light);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Comment Greenwich Village m'a appris à ralentir",
+        "description": "Dans une ville qui court, ce quartier de New York m'a offert la permission de m'arrêter. Une leçon inattendue.",
+        "image": "https://fbemerson.com/new-york/blog/greenwich-village-ralentir/featured.jpg",
+        "author": {
+            "@type": "Person",
+            "name": "F.B. Emerson",
+            "url": "https://fbemerson.com/a-propos/"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "F.B. Emerson",
+            "url": "https://fbemerson.com"
+        },
+        "datePublished": "2026-01-09",
+        "dateModified": "2026-01-09",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://fbemerson.com/new-york/blog/greenwich-village-ralentir/"
+        },
+        "inLanguage": "fr-FR"
+    }
+    </script>
+</head>
+
+<body class="author-page blog-article">
+
+    <!-- Header -->
+    <header class="author-header">
+        <nav class="author-nav container">
+            <a href="/" class="nav-logo">F.B. Emerson</a>
+            <ul class="nav-links">
+                <li><a href="/">Accueil</a></li>
+                <li class="has-dropdown">
+                    <a href="/new-york/" class="active">New York</a>
+                    <div class="nav-dropdown">
+                        <a href="/new-york/">Le Livre</a>
+                        <a href="/new-york/blog/">Le Blog</a>
+                    </div>
+                </li>
+                <li><a href="/a-propos/">À propos</a></li>
+                <li><a href="/newsletter/">Newsletter</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Article -->
+    <article>
+        <!-- Article Header -->
+        <header class="article-header">
+            <div class="article-meta">
+                <a href="/new-york/blog/">← Retour au blog</a>
+                <span>•</span>
+                <span class="article-category">Quartiers</span>
+                <span>•</span>
+                <time datetime="2026-01-09">9 janvier 2026</time>
+            </div>
+
+            <h1 class="article-title">Comment Greenwich Village m'a appris à ralentir</h1>
+
+            <p class="article-excerpt">Dans une ville qui court, ce quartier de New York m'a offert la permission de m'arrêter. Une leçon inattendue.</p>
+        </header>
+
+        <!-- Featured Image -->
+        <div class="featured-image">
+            <img src="featured.jpg" alt="Comment Greenwich Village m'a appris à ralentir" loading="eager" width="900" height="506">
+        </div>
+
+        <!-- Article Content -->
+        <div class="article-content">
+            <p>Je marchais vite. C'est ce qu'on fait à New York, n'est-ce pas? On marche vite, on regarde droit devant, on évite les regards. J'avais appris les règles en quelques jours. Je me croyais presque locale.</p>
+
+<p>Et puis je me suis perdue dans Greenwich Village.</p>
+
+<p>Pas vraiment perdue, bien sûr. Mon téléphone savait exactement où j'étais. Mais les rues ici ne suivent pas la logique implacable du reste de Manhattan. Elles serpentent, se croisent à des angles impossibles, changent de nom sans prévenir. Pour la première fois depuis mon arrivée, j'ai dû lever les yeux de mon écran.</p>
+
+<h2 id="quand-la-grille-disparait">Quand la grille disparaît</h2>
+
+<p>Manhattan est une promesse de contrôle. Ses avenues numérotées, ses rues perpendiculaires, tout est fait pour vous rassurer: vous savez toujours où vous êtes, où vous allez, combien de blocs il reste.</p>
+
+<p>Greenwich Village se moque de cette promesse.</p>
+
+<p>Ici, West 4th Street croise West 10th. Les rues portent des noms au lieu de numéros. Les buildings n'écrasent pas le ciel. Et quelque chose d'étrange se produit quand on perd ses repères habituels: on commence à regarder autrement.</p>
+
+<p>J'ai remarqué les glycines sur les façades en brique rouge. Les escaliers de secours transformés en jardins suspendus. Une fenêtre ouverte d'où s'échappait du jazz, pas une playlist Spotify mais quelqu'un qui jouait vraiment, avec des erreurs et des reprises.</p>
+
+<h2 id="le-cafe-ou-personne-ne-travaillait">Le café où personne ne travaillait</h2>
+
+<p>Je suis entrée dans un café sur MacDougal Street. Pas un de ces cafés où tout le monde tape sur son laptop en commandant des flat whites. Un vrai café, avec des tables en bois rayé et une machine à espresso qui avait connu d'autres décennies.</p>
+
+<p>La chose qui m'a frappée: les gens se parlaient.</p>
+
+<p>Pas au téléphone. Entre eux. Un homme lisait un livre de poche, un vrai livre, avec des pages cornées. Une femme écrivait dans un carnet. Deux étudiants discutaient de quelque chose qui les faisait rire et s'énerver à la fois.</p>
+
+<blockquote>J'ai commandé un café. Je me suis assise. Et pendant une heure, je n'ai rien fait d'autre que regarder le monde passer derrière la vitre.</blockquote>
+
+<p>Ça faisait combien de temps que je ne m'étais pas accordé ce luxe?</p>
+
+<h2 id="les-fantomes-du-village">Les fantômes du Village</h2>
+
+<p>Greenwich Village est hanté, mais pas de façon sinistre. Hanté par tous ceux qui y ont cherché quelque chose qu'ils ne trouvaient pas ailleurs.</p>
+
+<p>Bob Dylan a chanté dans ces cafés avant que quiconque connaisse son nom. Edna St. Vincent Millay a brûlé sa chandelle par les deux bouts dans un appartement de Bedford Street. Les poètes de la Beat Generation ont réinventé la littérature dans des sous-sols enfumés. Les premières revendications pour les droits LGBT sont nées ici, une nuit de juin 1969, devant le Stonewall Inn.</p>
+
+<p>Ce n'est pas de l'histoire morte. C'est une présence, une permission tacite. Ce quartier dit: tu peux être différent ici. Tu peux chercher. Tu peux ralentir.</p>
+
+<h2 id="washington-square-un-samedi-matin">Washington Square, un samedi matin</h2>
+
+<p>Le lendemain, je suis retournée au Village. Cette fois, avec intention.</p>
+
+<p>Washington Square Park au printemps ressemble à une scène de film français transportée à Manhattan. L'arche blanche au nord, les étudiants de NYU éparpillés sur l'herbe, un pianiste qui a installé son instrument près de la fontaine et joue du Chopin pour les pigeons et les passants.</p>
+
+<p>Je me suis assise sur un banc. J'ai regardé.</p>
+
+<p>Un père apprenait à sa fille à faire du vélo. Des joueurs d'échecs s'affrontaient aux tables de pierre avec un sérieux de généraux en guerre. Un groupe de chanteurs a cappella répétait dans un coin. Une vieille dame nourrissait les écureuils en leur parlant comme à des amis de longue date.</p>
+
+<p>À Paris, j'aurais trouvé ça normal. Mais ici, au cœur de la ville la plus pressée du monde, cette lenteur avait quelque chose de révolutionnaire.</p>
+
+<h2 id="ce-que-le-village-enseigne">Ce que le Village enseigne</h2>
+
+<p>Je suis revenue plusieurs fois dans ce quartier pendant mon séjour. Pas pour cocher des attractions sur une liste, mais pour retrouver cette sensation particulière de temps suspendu.</p>
+
+<p>J'ai appris à m'asseoir dans les cafés sans ouvrir mon ordinateur. À marcher sans destination. À accepter de me perdre dans les ruelles qui ne mènent nulle part, parce que c'est souvent là qu'on trouve quelque chose.</p>
+
+<p>New York m'a changée de plusieurs façons. Mais la leçon de Greenwich Village est peut-être la plus précieuse: même dans une ville qui court, on peut choisir de s'arrêter.</p>
+
+<p>Ce n'est pas de la résistance. C'est de la sagesse.</p>
+
+<h2 id="une-invitation">Une invitation</h2>
+
+<p>Si vous allez à New York, vous ferez probablement Times Square, l'Empire State Building, la Statue de la Liberté. C'est normal. C'est le parcours initiatique.</p>
+
+<p>Mais accordez-vous aussi une demi-journée sans plan dans Greenwich Village. Perdez-vous dans ses rues qui n'obéissent à aucune logique. Entrez dans le premier café qui vous attire. Asseyez-vous à Washington Square et laissez le temps passer.</p>
+
+<p>Vous ne verrez peut-être rien de spectaculaire. Pas de skyline à photographier, pas de monument à cocher.</p>
+
+<p>Vous verrez autre chose. Vous verrez comment cette ville, sous sa surface frénétique, garde des poches de douceur. Des endroits où il est encore permis de rêver, de créer, de simplement être.</p>
+
+<p>Et peut-être, comme moi, vous reviendrez changé. Non pas par ce que vous aurez vu, mais par ce que vous aurez cessé de chercher.</p>
+        </div>
+
+        <!-- Author Box -->
+        <aside class="author-box">
+            <div class="author-box-inner">
+                <img src="/images/sections/author-desk.png" alt="F.B. Emerson" width="80" height="80">
+                <div>
+                    <p class="author-box-label">Écrit par</p>
+                    <p class="author-box-name">F.B. Emerson</p>
+                    <p class="author-box-bio">Auteure de « New York, Mon Éveil ». Je suis allée visiter une ville. Je suis revenue éveillée.</p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- CTA Box -->
+        <aside class="cta-box">
+            <div class="cta-box-content">
+                <h3>Envie d'aller plus loin?</h3>
+                <p>Greenwich Village n'est qu'un chapitre. L'histoire complète de ma transformation new-yorkaise est dans le livre.</p>
+                <a href="/new-york/" class="cta-button primary">Découvrir le livre</a>
+            </div>
+        </aside>
+    </article>
+
+    <!-- Related Posts -->
+    <section class="related-posts">
+        <h2>Autres articles</h2>
+        <div class="related-grid" id="related-posts">
+            <!-- Dynamically loaded -->
+        </div>
+        <div class="related-more">
+            <a href="/new-york/blog/">Voir tous les articles →</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="author-footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-copyright">© 2026 F.B. Emerson</p>
+                <nav class="footer-nav">
+                    <a href="/new-york/contact/">Contact</a>
+                    <a href="/mentions-legales/">Mentions légales</a>
+                    <a href="/newsletter/">Newsletter</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+    <script>
+        // Mobile menu
+        document.querySelector('.mobile-menu-toggle')?.addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+            this.classList.toggle('active');
+        });
+
+        // Load related posts
+        async function loadRelated() {
+            try {
+                const response = await fetch('/new-york/blog/posts.json');
+                const posts = await response.json();
+                const currentSlug = 'greenwich-village-ralentir';
+                const related = posts.filter(p => p.slug !== currentSlug).slice(0, 3);
+
+                if (related.length === 0) return;
+
+                const container = document.getElementById('related-posts');
+                container.textContent = '';
+                
+                related.forEach((post, index) => {
+                    const card = document.createElement('a');
+                    card.href = '/new-york/blog/' + post.slug + '/';
+                    card.className = 'related-card';
+                    card.style.animationDelay = (0.1 + index * 0.1) + 's';
+                    
+                    const img = document.createElement('img');
+                    img.src = '/new-york/blog/' + post.slug + '/featured.jpg';
+                    img.alt = post.title;
+                    img.width = 320;
+                    img.height = 180;
+                    img.loading = 'lazy';
+                    img.onerror = function() { this.src = '/images/textures/paper.png'; };
+                    
+                    const content = document.createElement('div');
+                    content.className = 'related-card-content';
+                    
+                    const title = document.createElement('h3');
+                    title.textContent = post.title;
+                    
+                    content.appendChild(title);
+                    card.appendChild(img);
+                    card.appendChild(content);
+                    container.appendChild(card);
+                });
+            } catch (e) {
+                console.log('No related posts found');
+            }
+        }
+        loadRelated();
+    </script>
+</body>
+</html>

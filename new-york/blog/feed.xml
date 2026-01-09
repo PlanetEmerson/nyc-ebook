@@ -3,10 +3,18 @@
   <channel>
     <title>Blog New York — F.B. Emerson</title>
     <link>https://fbemerson.com/new-york/blog/</link>
-    <description>Découvrez New York autrement. Secrets de quartiers, réflexions de voyage, et les coulisses du livre New York, Mon Éveil.</description>
+    <description>Découvrez New York autrement. Secrets de quartiers, réflexions de voyage, et les coulisses du livre Ce Que New York M'a Fait.</description>
     <language>fr-fr</language>
-    <lastBuildDate>Thu, 08 Jan 2026 14:30:22 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 09 Jan 2026 08:06:43 GMT</lastBuildDate>
     <atom:link href="https://fbemerson.com/new-york/blog/feed.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>Comment Greenwich Village m'a appris à ralentir</title>
+      <link>https://fbemerson.com/new-york/blog/greenwich-village-ralentir/</link>
+      <description>Dans une ville qui court, ce quartier de New York m'a offert la permission de m'arrêter. Une leçon inattendue.</description>
+      <pubDate>Thu, 08 Jan 2026 23:00:00 GMT</pubDate>
+      <guid>https://fbemerson.com/new-york/blog/greenwich-village-ralentir/</guid>
+    </item>
 
     <item>
       <title>Ce que les guides de New York ne vous disent pas</title>
