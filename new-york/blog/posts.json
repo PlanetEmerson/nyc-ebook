@@ -1,5 +1,20 @@
 [
     {
+        "title": "Les secrets de Brooklyn que seuls les locaux connaissent",
+        "description": "Au-delà de Williamsburg et DUMBO, il existe un Brooklyn que les guides ignorent. Celui des terrasses cachées, des rituels de quartier, des silences improbables.",
+        "slug": "secrets-brooklyn-locaux",
+        "date": "14 janvier 2026",
+        "category": "Secrets",
+        "tags": [
+            "brooklyn",
+            "secrets",
+            "locaux",
+            "new york",
+            "quartier",
+            "transformation"
+        ]
+    },
+    {
         "title": "Avant votre premier New York: ce qu'il faut vraiment comprendre",
         "description": "Ce que j'aurais aimé qu'on me dise avant de partir. Pas les conseils pratiques, mais les vérités qui changent tout.",
         "slug": "avant-votre-premier-new-york",
