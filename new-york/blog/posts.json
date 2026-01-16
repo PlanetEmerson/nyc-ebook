@@ -1,5 +1,20 @@
 [
     {
+        "title": "Pourquoi j'ai mis trois ans à écrire ce livre",
+        "description": "Il y a eu des faux départs, des carnets abandonnés, des nuits à douter. Et puis un matin, les mots sont venus. Voici l'histoire derrière l'histoire.",
+        "slug": "pourquoi-trois-ans-ecrire-livre",
+        "date": "16 janvier 2026",
+        "category": "Coulisses",
+        "tags": [
+            "écriture",
+            "processus créatif",
+            "coulisses",
+            "new york",
+            "transformation",
+            "livre"
+        ]
+    },
+    {
         "title": "Les secrets de Brooklyn que seuls les locaux connaissent",
         "description": "Au-delà de Williamsburg et DUMBO, il existe un Brooklyn que les guides ignorent. Celui des terrasses cachées, des rituels de quartier, des silences improbables.",
         "slug": "secrets-brooklyn-locaux",

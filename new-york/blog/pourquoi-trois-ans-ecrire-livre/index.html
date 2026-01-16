@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Pourquoi j'ai mis trois ans à écrire ce livre | Blog New York | F.B. Emerson</title>
+    <meta name="description" content="Il y a eu des faux départs, des carnets abandonnés, des nuits à douter. Et puis un matin, les mots sont venus. Voici l'histoire derrière l'histoire.">
+    <meta name="keywords" content="écriture, processus créatif, new york, voyage, F.B. Emerson, New York, Mon Éveil, coulisses">
+    <meta name="author" content="F.B. Emerson">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://fbemerson.com/new-york/blog/pourquoi-trois-ans-ecrire-livre/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://fbemerson.com/new-york/blog/pourquoi-trois-ans-ecrire-livre/">
+    <meta property="og:title" content="Pourquoi j'ai mis trois ans à écrire ce livre">
+    <meta property="og:description" content="Il y a eu des faux départs, des carnets abandonnés, des nuits à douter. Et puis un matin, les mots sont venus. Voici l'histoire derrière l'histoire.">
+    <meta property="og:image" content="https://fbemerson.com/new-york/blog/pourquoi-trois-ans-ecrire-livre/featured.jpg">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="F.B. Emerson">
+    <meta property="article:published_time" content="2026-01-16">
+    <meta property="article:author" content="F.B. Emerson">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Pourquoi j'ai mis trois ans à écrire ce livre">
+    <meta name="twitter:description" content="Il y a eu des faux départs, des carnets abandonnés, des nuits à douter. Et puis un matin, les mots sont venus. Voici l'histoire derrière l'histoire.">
+    <meta name="twitter:image" content="https://fbemerson.com/new-york/blog/pourquoi-trois-ans-ecrire-livre/featured.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗽</text></svg>">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;1,8..60,400;1,8..60,500&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../../css/variables.css">
+    <link rel="stylesheet" href="../../../css/styles.css">
+    <link rel="stylesheet" href="../../../css/animations.css">
+    <link rel="stylesheet" href="../../../css/author.css">
+
+    <!-- Blog-specific styles -->
+    <style>
+        .blog-article {
+            background: var(--color-midnight);
+            min-height: 100vh;
+        }
+
+        .article-header {
+            padding: calc(80px + var(--space-12)) var(--container-padding) var(--space-8);
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .article-meta {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: var(--space-3);
+            font-size: var(--text-sm);
+            color: var(--color-text-muted);
+            margin-bottom: var(--space-6);
+        }
+
+        .article-meta a {
+            color: var(--color-gold);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
+
+        .article-meta a:hover {
+            color: var(--color-gold-light);
+        }
+
+        .article-category {
+            color: var(--color-gold);
+            text-transform: uppercase;
+            letter-spacing: var(--tracking-wider);
+            font-weight: var(--font-medium);
+        }
+
+        .article-title {
+            font-family: var(--font-display);
+            font-size: var(--text-4xl);
+            font-weight: var(--font-bold);
+            color: var(--color-cream);
+            line-height: var(--leading-tight);
+            margin-bottom: var(--space-6);
+        }
+
+        .article-excerpt {
+            font-size: var(--text-xl);
+            color: var(--color-blush);
+            line-height: var(--leading-relaxed);
+            font-family: var(--font-accent);
+            font-style: italic;
+        }
+
+        .featured-image {
+            max-width: 900px;
+            margin: 0 auto var(--space-12);
+            padding: 0 var(--container-padding);
+            opacity: 0;
+            animation: fadeInUp 0.8s ease 0.2s forwards;
+        }
+
+        .featured-image img {
+            width: 100%;
+            height: auto;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--color-gold-dark);
+            transition: transform var(--transition-slow);
+        }
+
+        .featured-image:hover img {
+            transform: scale(1.02);
+        }
+
+        .article-content {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 0 var(--container-padding) var(--space-16);
+            opacity: 0;
+            animation: fadeIn 0.8s ease 0.4s forwards;
+        }
+
+        .article-content h2 {
+            font-family: var(--font-display);
+            font-size: var(--text-2xl);
+            font-weight: var(--font-bold);
+            color: var(--color-cream);
+            margin-top: var(--space-12);
+            margin-bottom: var(--space-4);
+            line-height: var(--leading-tight);
+            position: relative;
+            padding-bottom: var(--space-3);
+        }
+
+        .article-content h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background: var(--color-gold);
+        }
+
+        .article-content h3 {
+            font-family: var(--font-display);
+            font-size: var(--text-xl);
+            font-weight: var(--font-semibold);
+            color: var(--color-gold);
+            margin-top: var(--space-8);
+            margin-bottom: var(--space-3);
+        }
+
+        .article-content p {
+            font-family: var(--font-body);
+            font-size: var(--text-lg);
+            color: var(--color-blush);
+            line-height: var(--leading-loose);
+            margin-bottom: var(--space-6);
+        }
+
+        .article-content > p:first-of-type::first-letter {
+            float: left;
+            font-family: var(--font-display);
+            font-size: 3.5em;
+            line-height: 0.8;
+            padding-right: 0.1em;
+            color: var(--color-gold);
+            font-weight: var(--font-bold);
+        }
+
+        .article-content ul,
+        .article-content ol {
+            color: var(--color-blush);
+            margin-left: var(--space-6);
+            margin-bottom: var(--space-6);
+        }
+
+        .article-content li {
+            margin-bottom: var(--space-2);
+            line-height: var(--leading-relaxed);
+            position: relative;
+        }
+
+        .article-content ul li {
+            list-style-type: none;
+            padding-left: var(--space-4);
+        }
+
+        .article-content ul li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--color-gold);
+        }
+
+        .article-content ol li {
+            list-style-type: decimal;
+        }
+
+        .article-content strong {
+            color: var(--color-cream);
+            font-weight: var(--font-semibold);
+        }
+
+        .article-content em {
+            font-style: italic;
+        }
+
+        .article-content blockquote {
+            border-left: 4px solid var(--color-gold);
+            padding-left: var(--space-6);
+            margin: var(--space-8) 0;
+            font-family: var(--font-accent);
+            font-size: var(--text-xl);
+            font-style: italic;
+            color: var(--color-cream);
+            position: relative;
+        }
+
+        .article-content blockquote::before {
+            content: '"';
+            position: absolute;
+            left: var(--space-2);
+            top: -0.5em;
+            font-size: 3em;
+            color: var(--color-gold);
+            opacity: 0.3;
+            font-family: var(--font-display);
+        }
+
+        .article-content a {
+            color: var(--color-gold);
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            transition: color var(--transition-fast);
+        }
+
+        .article-content a:hover {
+            color: var(--color-gold-light);
+        }
+
+        .author-box {
+            max-width: 700px;
+            margin: 0 auto var(--space-12);
+            padding: var(--space-8);
+            background: var(--color-midnight-light);
+            border: 1px solid var(--color-gold-dark);
+            border-radius: var(--radius-lg);
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
+            transition: border-color var(--transition-base), transform var(--transition-base);
+        }
+
+        @media (max-width: 768px) {
+            .author-box {
+                margin-left: var(--container-padding);
+                margin-right: var(--container-padding);
+            }
+        }
+
+        .author-box:hover {
+            border-color: var(--color-gold);
+            transform: translateY(-4px);
+        }
+
+        .author-box-inner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: var(--space-4);
+        }
+
+        @media (min-width: 640px) {
+            .author-box-inner {
+                flex-direction: row;
+                text-align: left;
+                gap: var(--space-6);
+            }
+        }
+
+        .author-box img {
+            width: 80px;
+            height: 80px;
+            border-radius: var(--radius-full);
+            border: 2px solid var(--color-gold-dark);
+            flex-shrink: 0;
+            transition: border-color var(--transition-base);
+        }
+
+        .author-box:hover img {
+            border-color: var(--color-gold);
+        }
+
+        .author-box-label {
+            color: var(--color-gold);
+            font-size: var(--text-sm);
+            text-transform: uppercase;
+            letter-spacing: var(--tracking-wider);
+            margin-bottom: var(--space-1);
+        }
+
+        .author-box-name {
+            font-family: var(--font-display);
+            font-size: var(--text-xl);
+            color: var(--color-cream);
+            margin-bottom: var(--space-2);
+        }
+
+        .author-box-bio {
+            font-size: var(--text-sm);
+            color: var(--color-blush);
+            line-height: var(--leading-relaxed);
+        }
+
+        .cta-box {
+            position: relative;
+            max-width: 700px;
+            margin: 0 auto var(--space-16);
+            padding: var(--space-12);
+            border: 1px solid var(--color-gold);
+            border-radius: var(--radius-lg);
+            text-align: center;
+            overflow: hidden;
+            opacity: 0;
+            animation: fadeInUp 0.6s ease 0.1s forwards;
+            transition: transform var(--transition-base), box-shadow var(--transition-base);
+        }
+
+        @media (max-width: 768px) {
+            .cta-box {
+                margin-left: var(--container-padding);
+                margin-right: var(--container-padding);
+            }
+        }
+
+        .cta-box::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: 
+                linear-gradient(180deg, rgba(13, 27, 42, 0.88), rgba(13, 27, 42, 0.75)),
+                url('../../../images/blog/cta-background.jpg');
+            background-size: cover;
+            background-position: center;
+            z-index: 0;
+        }
+
+        .cta-box::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('../../../images/textures/grain.png');
+            background-size: 200px 200px;
+            opacity: 0.15;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .cta-box:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .cta-box-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-box h3 {
+            font-family: var(--font-display);
+            font-size: var(--text-2xl);
+            color: var(--color-cream);
+            margin-bottom: var(--space-4);
+        }
+
+        .cta-box p {
+            font-family: var(--font-accent);
+            font-style: italic;
+            color: var(--color-blush);
+            margin-bottom: var(--space-6);
+            font-size: var(--text-lg);
+        }
+
+        .related-posts {
+            background: var(--color-midnight-light);
+            padding: var(--space-16) var(--container-padding);
+            position: relative;
+        }
+
+        .related-posts::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('../../../images/textures/grain.png');
+            background-size: 200px 200px;
+            opacity: 0.1;
+            pointer-events: none;
+        }
+
+        .related-posts h2 {
+            font-family: var(--font-display);
+            font-size: var(--text-2xl);
+            color: var(--color-cream);
+            text-align: center;
+            margin-bottom: var(--space-10);
+            position: relative;
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-6);
+            max-width: 1000px;
+            margin: 0 auto var(--space-8);
+            position: relative;
+        }
+
+        @media (min-width: 768px) {
+            .related-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .related-card {
+            background: var(--color-midnight);
+            border: 1px solid var(--color-gold-dark);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            text-decoration: none;
+            transition: border-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .related-card:nth-child(1) { animation-delay: 0.1s; }
+        .related-card:nth-child(2) { animation-delay: 0.2s; }
+        .related-card:nth-child(3) { animation-delay: 0.3s; }
+
+        .related-card:hover {
+            border-color: var(--color-gold);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .related-card img {
+            width: 100%;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+            transition: transform var(--transition-slow);
+            opacity: 1 !important;
+        }
+
+        .related-card:hover img {
+            transform: scale(1.08);
+        }
+
+        .related-card-content {
+            padding: var(--space-4);
+        }
+
+        .related-card h3 {
+            font-family: var(--font-display);
+            font-size: var(--text-base);
+            color: var(--color-cream);
+            line-height: var(--leading-snug);
+            transition: color var(--transition-fast);
+        }
+
+        .related-card:hover h3 {
+            color: var(--color-gold-light);
+        }
+
+        .related-more {
+            text-align: center;
+            position: relative;
+        }
+
+        .related-more a {
+            color: var(--color-gold);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+            font-weight: var(--font-medium);
+        }
+
+        .related-more a:hover {
+            color: var(--color-gold-light);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Pourquoi j'ai mis trois ans à écrire ce livre",
+        "description": "Il y a eu des faux départs, des carnets abandonnés, des nuits à douter. Et puis un matin, les mots sont venus. Voici l'histoire derrière l'histoire.",
+        "image": "https://fbemerson.com/new-york/blog/pourquoi-trois-ans-ecrire-livre/featured.jpg",
+        "author": {
+            "@type": "Person",
+            "name": "F.B. Emerson",
+            "url": "https://fbemerson.com/a-propos/"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "F.B. Emerson",
+            "url": "https://fbemerson.com"
+        },
+        "datePublished": "2026-01-16",
+        "dateModified": "2026-01-16",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://fbemerson.com/new-york/blog/pourquoi-trois-ans-ecrire-livre/"
+        },
+        "inLanguage": "fr-FR"
+    }
+    </script>
+</head>
+
+<body class="author-page blog-article">
+
+    <!-- Header -->
+    <header class="author-header">
+        <nav class="author-nav container">
+            <a href="/" class="nav-logo">F.B. Emerson</a>
+            <ul class="nav-links">
+                <li><a href="/">Accueil</a></li>
+                <li class="has-dropdown">
+                    <a href="/new-york/" class="active">New York</a>
+                    <div class="nav-dropdown">
+                        <a href="/new-york/">Le Livre</a>
+                        <a href="/new-york/blog/">Le Blog</a>
+                    </div>
+                </li>
+                <li><a href="/a-propos/">À propos</a></li>
+                <li><a href="/newsletter/">Newsletter</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Article -->
+    <article>
+        <!-- Article Header -->
+        <header class="article-header">
+            <div class="article-meta">
+                <a href="/new-york/blog/">← Retour au blog</a>
+                <span>•</span>
+                <span class="article-category">Coulisses</span>
+                <span>•</span>
+                <time datetime="2026-01-16">16 janvier 2026</time>
+            </div>
+
+            <h1 class="article-title">Pourquoi j'ai mis trois ans à écrire ce livre</h1>
+
+            <p class="article-excerpt">Il y a eu des faux départs, des carnets abandonnés, des nuits à douter. Et puis un matin, les mots sont venus. Voici l'histoire derrière l'histoire.</p>
+        </header>
+
+        <!-- Featured Image -->
+        <div class="featured-image">
+            <img src="featured.jpg" alt="Pourquoi j'ai mis trois ans à écrire ce livre" loading="eager" width="900" height="506">
+        </div>
+
+        <!-- Article Content -->
+        <div class="article-content">
+            <p>Le premier carnet, je l'ai acheté à la librairie Strand sur Broadway. Un Moleskine noir, classique. Sur la première page, j'ai écrit la date et ces mots : « Ce que New York m'a fait. » Puis plus rien pendant six mois.</p>
+
+<p>Je ne savais pas encore que j'allais remplir sept carnets avant de trouver la bonne voix. Que j'allais écrire trois versions complètes du premier chapitre, chacune ratée d'une façon différente. Que le livre qui existe aujourd'hui n'a presque rien à voir avec celui que je croyais vouloir écrire.</p>
+
+<h2>Le piège du guide de voyage déguisé</h2>
+
+<p>Ma première tentative ressemblait à ce que j'avais lu cent fois. Des conseils sur les meilleurs quartiers, les restaurants secrets, les heures idéales pour visiter tel ou tel monument. J'accumulais les anecdotes, les adresses, les « petits trucs que personne ne vous dit ».</p>
+
+<p>C'était honnête. C'était utile. C'était profondément ennuyeux.</p>
+
+<p>Je relisais mes pages et je ne me reconnaissais pas. Où était la fille qui avait pleuré dans le métro à 3h du matin, submergée par quelque chose qu'elle n'arrivait pas à nommer ? Où était la confusion, le vertige, la peur de ne jamais retrouver celle qu'elle était avant ?</p>
+
+<p>J'écrivais sur New York comme si la ville était un décor. Alors qu'elle avait été un séisme.</p>
+
+<h2>La deuxième impasse</h2>
+
+<p>La version suivante était l'inverse exact. Trop intime, trop cryptique. Des pages entières de métaphores sur la lumière de novembre, sur le bruit blanc de la ville, sur l'étrangeté de se sentir chez soi dans un endroit qui n'était pas le sien.</p>
+
+<p>Ma meilleure amie a lu cinquante pages et m'a dit, avec toute la tendresse dont elle était capable : « Je ne comprends rien. De quoi tu parles, exactement ? »</p>
+
+<p>Je parlais de tout et de rien. De moi sans contexte. De sensations sans ancrage. J'avais tellement peur d'écrire un guide touristique que j'étais tombée dans l'excès contraire : un journal intime que personne d'autre ne pouvait comprendre.</p>
+
+<h2>Ce qui a changé</h2>
+
+<p>Un matin d'avril, j'ai reçu un message d'une lectrice de mon blog. Elle me demandait comment j'avais fait pour « oser partir ». Pas les détails pratiques, le visa, l'appartement, le travail. L'autre chose. Le courage, ou la folie, ou peu importe comment on l'appelle.</p>
+
+<p>J'ai commencé à lui répondre. Et la réponse est devenue le premier vrai chapitre.</p>
+
+<p>Parce que j'ai compris, enfin, ce que je voulais écrire. Pas un guide. Pas un journal. Une conversation. Celle que j'aurais aimé avoir avec quelqu'un avant de partir. Quelqu'un qui m'aurait dit : voilà ce qui risque de t'arriver. Voilà ce que tu risques de perdre. Et voilà pourquoi ça vaut quand même le coup.</p>
+
+<h2>Les carnets dans le tiroir</h2>
+
+<p>J'ai gardé tous les faux départs. Sept carnets, plus de trois cents pages de tentatives ratées. Parfois je les relis. Non pas pour me flageller, mais pour me rappeler que le chemin vers un livre n'est jamais droit.</p>
+
+<p>Il y a une phrase de Hemingway que je garde sur mon bureau : « Tout ce que vous avez à faire, c'est d'écrire une phrase vraie. Écrivez la phrase la plus vraie que vous connaissez. »</p>
+
+<p>Pendant trois ans, j'ai cherché cette phrase. Je croyais qu'elle serait belle, poétique, parfaitement ciselée. Elle ne l'était pas. Elle était simple, presque banale : « Je ne suis pas partie à New York pour me trouver. Je suis partie parce que je ne supportais plus celle que j'étais devenue. »</p>
+
+<p>Tout le reste a découlé de là.</p>
+
+<h2>Ce que j'ai appris</h2>
+
+<p>Un livre ne s'écrit pas. Il se découvre. On croit savoir ce qu'on veut dire, et puis on écrit, et l'écriture révèle autre chose. Quelque chose de plus vrai, de plus inconfortable, de plus nécessaire.</p>
+
+<p>Les trois années n'ont pas été perdues. Elles étaient le prix à payer pour comprendre ce que j'avais vraiment vécu. New York m'avait transformée, mais je n'avais pas encore les mots pour le dire. Il fallait que ces mots viennent à leur rythme. Il fallait que je sois prête à les entendre.</p>
+
+<p>Et puis un matin, ils étaient là. Sur la page, comme s'ils m'avaient attendue.</p>
+
+<blockquote>
+La transformation que je décris dans ces pages, comment une ville peut vous forcer à vous réinventer, c'est le cœur de <em>New York, Mon Éveil</em>. Si ces réflexions résonnent en vous, <a href="/new-york/">le livre vous attend</a>.
+</blockquote>
+
+<h2>Pour ceux qui veulent écrire</h2>
+
+<p>Si vous avez un livre en vous, voici ce que je dirais. Ne cherchez pas la perfection du premier coup. Cherchez la vérité. La vérité de ce que vous avez vécu, ressenti, compris. Écrivez mal, écrivez faux, écrivez ce qui vous fait honte. Et puis relisez, et trouvez la phrase vraie cachée sous toutes les autres.</p>
+
+<p>Elle est là. Elle attend.</p>
+
+<p>Parfois elle met trois ans à sortir. C'est normal. C'est le prix.</p>
+
+<p>New York m'a appris beaucoup de choses, mais celle-ci plus que les autres : ce qui compte vraiment prend du temps. Le raccourci n'existe pas. La ville vous le rappelle à chaque coin de rue, à chaque rêve qui met des années à se réaliser, à chaque artiste qui travaille dans l'ombre avant d'éclater au grand jour.</p>
+
+<p>Mon livre a mis trois ans. Et chaque jour de doute, chaque page jetée, chaque nuit à me demander si j'avais quelque chose à dire, tout cela fait partie de l'histoire autant que les mots imprimés.</p>
+
+<p>C'est peut-être ça, le vrai sujet. Pas New York. Pas le voyage. La patience d'attendre que la vérité veuille bien se montrer.</p>
+        </div>
+
+        <!-- Author Box -->
+        <aside class="author-box">
+            <div class="author-box-inner">
+                <img src="/images/sections/author-desk.png" alt="F.B. Emerson" width="80" height="80">
+                <div>
+                    <p class="author-box-label">Écrit par</p>
+                    <p class="author-box-name">F.B. Emerson</p>
+                    <p class="author-box-bio">Auteure de « New York, Mon Éveil ». Je suis allée visiter une ville. Je suis revenue éveillée.</p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- CTA Box -->
+        <aside class="cta-box">
+            <div class="cta-box-content">
+                <h3>Envie d'aller plus loin?</h3>
+                <p>Cet article n'est qu'un aperçu. L'histoire complète est dans le livre.</p>
+                <a href="/new-york/" class="cta-button primary">Découvrir le livre</a>
+            </div>
+        </aside>
+    </article>
+
+    <!-- Related Posts -->
+    <section class="related-posts">
+        <h2>Autres articles</h2>
+        <div class="related-grid" id="related-posts">
+            <!-- Dynamically loaded -->
+        </div>
+        <div class="related-more">
+            <a href="/new-york/blog/">Voir tous les articles →</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="author-footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-copyright">© 2026 F.B. Emerson</p>
+                <nav class="footer-nav">
+                    <a href="/new-york/contact/">Contact</a>
+                    <a href="/mentions-legales/">Mentions légales</a>
+                    <a href="/newsletter/">Newsletter</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+    <script>
+        // Mobile menu
+        document.querySelector('.mobile-menu-toggle')?.addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+            this.classList.toggle('active');
+        });
+
+        // Load related posts
+        async function loadRelated() {
+            try {
+                const response = await fetch('/new-york/blog/posts.json');
+                const posts = await response.json();
+                const currentSlug = 'pourquoi-trois-ans-ecrire-livre';
+                const related = posts.filter(p => p.slug !== currentSlug).slice(0, 3);
+
+                if (related.length === 0) return;
+
+                const container = document.getElementById('related-posts');
+                container.textContent = '';
+                
+                related.forEach((post, index) => {
+                    const card = document.createElement('a');
+                    card.href = '/new-york/blog/' + post.slug + '/';
+                    card.className = 'related-card';
+                    card.style.animationDelay = (0.1 + index * 0.1) + 's';
+                    
+                    const img = document.createElement('img');
+                    img.src = '/new-york/blog/' + post.slug + '/featured.jpg';
+                    img.alt = post.title;
+                    img.width = 320;
+                    img.height = 180;
+                    img.loading = 'lazy';
+                    img.onerror = function() { this.src = '/images/textures/paper.png'; };
+                    
+                    const content = document.createElement('div');
+                    content.className = 'related-card-content';
+                    
+                    const title = document.createElement('h3');
+                    title.textContent = post.title;
+                    
+                    content.appendChild(title);
+                    card.appendChild(img);
+                    card.appendChild(content);
+                    container.appendChild(card);
+                });
+            } catch (e) {
+                console.log('No related posts found');
+            }
+        }
+        loadRelated();
+    </script>
+</body>
+</html>
