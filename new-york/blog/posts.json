@@ -1,5 +1,21 @@
 [
     {
+        "title": "Le Lower East Side, mémoire vivante de New York",
+        "description": "Dans ce quartier de Manhattan, les couches du temps se superposent comme des palimpsestes. Ici, les murs racontent l'histoire de ceux qui ont tout quitté pour tout recommencer.",
+        "slug": "lower-east-side-memoire-vivante",
+        "date": "19 janvier 2026",
+        "category": "Quartiers",
+        "tags": [
+            "lower east side",
+            "manhattan",
+            "quartier",
+            "histoire",
+            "immigration",
+            "new york",
+            "transformation"
+        ]
+    },
+    {
         "title": "Pourquoi j'ai mis trois ans à écrire ce livre",
         "description": "Il y a eu des faux départs, des carnets abandonnés, des nuits à douter. Et puis un matin, les mots sont venus. Voici l'histoire derrière l'histoire.",
         "slug": "pourquoi-trois-ans-ecrire-livre",

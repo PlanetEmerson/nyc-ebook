@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Le Lower East Side, mémoire vivante de New York | Blog New York | F.B. Emerson</title>
+    <meta name="description" content="Dans ce quartier de Manhattan, les couches du temps se superposent comme des palimpsestes. Ici, les murs racontent l'histoire de ceux qui ont tout quitté pour tout recommencer.">
+    <meta name="keywords" content="lower east side, new york, quartier, histoire, immigration, transformation, voyage, F.B. Emerson, New York, Mon Éveil">
+    <meta name="author" content="F.B. Emerson">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://fbemerson.com/new-york/blog/lower-east-side-memoire-vivante/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://fbemerson.com/new-york/blog/lower-east-side-memoire-vivante/">
+    <meta property="og:title" content="Le Lower East Side, mémoire vivante de New York">
+    <meta property="og:description" content="Dans ce quartier de Manhattan, les couches du temps se superposent comme des palimpsestes. Ici, les murs racontent l'histoire de ceux qui ont tout quitté pour tout recommencer.">
+    <meta property="og:image" content="https://fbemerson.com/new-york/blog/lower-east-side-memoire-vivante/featured.jpg">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="F.B. Emerson">
+    <meta property="article:published_time" content="2026-01-19">
+    <meta property="article:author" content="F.B. Emerson">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Le Lower East Side, mémoire vivante de New York">
+    <meta name="twitter:description" content="Dans ce quartier de Manhattan, les couches du temps se superposent comme des palimpsestes. Ici, les murs racontent l'histoire de ceux qui ont tout quitté pour tout recommencer.">
+    <meta name="twitter:image" content="https://fbemerson.com/new-york/blog/lower-east-side-memoire-vivante/featured.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗽</text></svg>">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;1,8..60,400;1,8..60,500&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../../css/variables.css">
+    <link rel="stylesheet" href="../../../css/styles.css">
+    <link rel="stylesheet" href="../../../css/animations.css">
+    <link rel="stylesheet" href="../../../css/author.css">
+
+    <!-- Blog-specific styles -->
+    <style>
+        .blog-article {
+            background: var(--color-midnight);
+            min-height: 100vh;
+        }
+
+        /* FIXED: Add 80px clearance for fixed header */
+        .article-header {
+            padding: calc(80px + var(--space-12)) var(--container-padding) var(--space-8);
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .article-meta {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: var(--space-3);
+            font-size: var(--text-sm);
+            color: var(--color-text-muted);
+            margin-bottom: var(--space-6);
+        }
+
+        .article-meta a {
+            color: var(--color-gold);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
+
+        .article-meta a:hover {
+            color: var(--color-gold-light);
+        }
+
+        .article-category {
+            color: var(--color-gold);
+            text-transform: uppercase;
+            letter-spacing: var(--tracking-wider);
+            font-weight: var(--font-medium);
+        }
+
+        .article-title {
+            font-family: var(--font-display);
+            font-size: var(--text-4xl);
+            font-weight: var(--font-bold);
+            color: var(--color-cream);
+            line-height: var(--leading-tight);
+            margin-bottom: var(--space-6);
+        }
+
+        .article-excerpt {
+            font-size: var(--text-xl);
+            color: var(--color-blush);
+            line-height: var(--leading-relaxed);
+            font-family: var(--font-accent);
+            font-style: italic;
+        }
+
+        .featured-image {
+            max-width: 900px;
+            margin: 0 auto var(--space-12);
+            padding: 0 var(--container-padding);
+            opacity: 0;
+            animation: fadeInUp 0.8s ease 0.2s forwards;
+        }
+
+        .featured-image img {
+            width: 100%;
+            height: auto;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--color-gold-dark);
+            transition: transform var(--transition-slow);
+        }
+
+        .featured-image:hover img {
+            transform: scale(1.02);
+        }
+
+        .article-content {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 0 var(--container-padding) var(--space-16);
+            opacity: 0;
+            animation: fadeIn 0.8s ease 0.4s forwards;
+        }
+
+        .article-content h2 {
+            font-family: var(--font-display);
+            font-size: var(--text-2xl);
+            font-weight: var(--font-bold);
+            color: var(--color-cream);
+            margin-top: var(--space-12);
+            margin-bottom: var(--space-4);
+            line-height: var(--leading-tight);
+            position: relative;
+            padding-bottom: var(--space-3);
+        }
+
+        .article-content h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background: var(--color-gold);
+        }
+
+        .article-content h3 {
+            font-family: var(--font-display);
+            font-size: var(--text-xl);
+            font-weight: var(--font-semibold);
+            color: var(--color-gold);
+            margin-top: var(--space-8);
+            margin-bottom: var(--space-3);
+        }
+
+        .article-content p {
+            font-family: var(--font-body);
+            font-size: var(--text-lg);
+            color: var(--color-blush);
+            line-height: var(--leading-loose);
+            margin-bottom: var(--space-6);
+        }
+
+        /* First paragraph drop cap */
+        .article-content > p:first-of-type::first-letter {
+            float: left;
+            font-family: var(--font-display);
+            font-size: 3.5em;
+            line-height: 0.8;
+            padding-right: 0.1em;
+            color: var(--color-gold);
+            font-weight: var(--font-bold);
+        }
+
+        .article-content ul,
+        .article-content ol {
+            color: var(--color-blush);
+            margin-left: var(--space-6);
+            margin-bottom: var(--space-6);
+        }
+
+        .article-content li {
+            margin-bottom: var(--space-2);
+            line-height: var(--leading-relaxed);
+            position: relative;
+        }
+
+        .article-content ul li {
+            list-style-type: none;
+            padding-left: var(--space-4);
+        }
+
+        .article-content ul li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--color-gold);
+        }
+
+        .article-content ol li {
+            list-style-type: decimal;
+        }
+
+        .article-content strong {
+            color: var(--color-cream);
+            font-weight: var(--font-semibold);
+        }
+
+        .article-content em {
+            font-style: italic;
+        }
+
+        .article-content blockquote {
+            border-left: 4px solid var(--color-gold);
+            padding-left: var(--space-6);
+            margin: var(--space-8) 0;
+            font-family: var(--font-accent);
+            font-size: var(--text-xl);
+            font-style: italic;
+            color: var(--color-cream);
+            position: relative;
+        }
+
+        .article-content blockquote::before {
+            content: '"';
+            position: absolute;
+            left: var(--space-2);
+            top: -0.5em;
+            font-size: 3em;
+            color: var(--color-gold);
+            opacity: 0.3;
+            font-family: var(--font-display);
+        }
+
+        .article-content a {
+            color: var(--color-gold);
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            transition: color var(--transition-fast);
+        }
+
+        .article-content a:hover {
+            color: var(--color-gold-light);
+        }
+
+        /* Author Box - FIXED: Proper centering with responsive padding */
+        .author-box {
+            max-width: 700px;
+            margin: 0 auto var(--space-12);
+            padding: var(--space-8);
+            background: var(--color-midnight-light);
+            border: 1px solid var(--color-gold-dark);
+            border-radius: var(--radius-lg);
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
+            transition: border-color var(--transition-base), transform var(--transition-base);
+        }
+
+        /* Responsive horizontal margins */
+        @media (max-width: 768px) {
+            .author-box {
+                margin-left: var(--container-padding);
+                margin-right: var(--container-padding);
+            }
+        }
+
+        .author-box:hover {
+            border-color: var(--color-gold);
+            transform: translateY(-4px);
+        }
+
+        .author-box-inner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: var(--space-4);
+        }
+
+        @media (min-width: 640px) {
+            .author-box-inner {
+                flex-direction: row;
+                text-align: left;
+                gap: var(--space-6);
+            }
+        }
+
+        .author-box img {
+            width: 80px;
+            height: 80px;
+            border-radius: var(--radius-full);
+            border: 2px solid var(--color-gold-dark);
+            flex-shrink: 0;
+            transition: border-color var(--transition-base);
+        }
+
+        .author-box:hover img {
+            border-color: var(--color-gold);
+        }
+
+        .author-box-label {
+            color: var(--color-gold);
+            font-size: var(--text-sm);
+            text-transform: uppercase;
+            letter-spacing: var(--tracking-wider);
+            margin-bottom: var(--space-1);
+        }
+
+        .author-box-name {
+            font-family: var(--font-display);
+            font-size: var(--text-xl);
+            color: var(--color-cream);
+            margin-bottom: var(--space-2);
+        }
+
+        .author-box-bio {
+            font-size: var(--text-sm);
+            color: var(--color-blush);
+            line-height: var(--leading-relaxed);
+        }
+
+        /* CTA Box - FIXED: Proper centering + background image */
+        .cta-box {
+            position: relative;
+            max-width: 700px;
+            margin: 0 auto var(--space-16);
+            padding: var(--space-12);
+            border: 1px solid var(--color-gold);
+            border-radius: var(--radius-lg);
+            text-align: center;
+            overflow: hidden;
+            opacity: 0;
+            animation: fadeInUp 0.6s ease 0.1s forwards;
+            transition: transform var(--transition-base), box-shadow var(--transition-base);
+        }
+
+        /* Responsive horizontal margins */
+        @media (max-width: 768px) {
+            .cta-box {
+                margin-left: var(--container-padding);
+                margin-right: var(--container-padding);
+            }
+        }
+
+        .cta-box::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: 
+                linear-gradient(180deg, rgba(13, 27, 42, 0.88), rgba(13, 27, 42, 0.75)),
+                url('../../../images/blog/cta-background.jpg');
+            background-size: cover;
+            background-position: center;
+            z-index: 0;
+        }
+
+        .cta-box::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('../../../images/textures/grain.png');
+            background-size: 200px 200px;
+            opacity: 0.15;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .cta-box:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .cta-box-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-box h3 {
+            font-family: var(--font-display);
+            font-size: var(--text-2xl);
+            color: var(--color-cream);
+            margin-bottom: var(--space-4);
+        }
+
+        .cta-box p {
+            font-family: var(--font-accent);
+            font-style: italic;
+            color: var(--color-blush);
+            margin-bottom: var(--space-6);
+            font-size: var(--text-lg);
+        }
+
+        /* Related Posts */
+        .related-posts {
+            background: var(--color-midnight-light);
+            padding: var(--space-16) var(--container-padding);
+            position: relative;
+        }
+
+        .related-posts::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('../../../images/textures/grain.png');
+            background-size: 200px 200px;
+            opacity: 0.1;
+            pointer-events: none;
+        }
+
+        .related-posts h2 {
+            font-family: var(--font-display);
+            font-size: var(--text-2xl);
+            color: var(--color-cream);
+            text-align: center;
+            margin-bottom: var(--space-10);
+            position: relative;
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-6);
+            max-width: 1000px;
+            margin: 0 auto var(--space-8);
+            position: relative;
+        }
+
+        @media (min-width: 768px) {
+            .related-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .related-card {
+            background: var(--color-midnight);
+            border: 1px solid var(--color-gold-dark);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            text-decoration: none;
+            transition: border-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .related-card:nth-child(1) { animation-delay: 0.1s; }
+        .related-card:nth-child(2) { animation-delay: 0.2s; }
+        .related-card:nth-child(3) { animation-delay: 0.3s; }
+
+        .related-card:hover {
+            border-color: var(--color-gold);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .related-card img {
+            width: 100%;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+            transition: transform var(--transition-slow);
+            opacity: 1 !important;
+        }
+
+        .related-card:hover img {
+            transform: scale(1.08);
+        }
+
+        .related-card-content {
+            padding: var(--space-4);
+        }
+
+        .related-card h3 {
+            font-family: var(--font-display);
+            font-size: var(--text-base);
+            color: var(--color-cream);
+            line-height: var(--leading-snug);
+            transition: color var(--transition-fast);
+        }
+
+        .related-card:hover h3 {
+            color: var(--color-gold-light);
+        }
+
+        .related-more {
+            text-align: center;
+            position: relative;
+        }
+
+        .related-more a {
+            color: var(--color-gold);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+            font-weight: var(--font-medium);
+        }
+
+        .related-more a:hover {
+            color: var(--color-gold-light);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Le Lower East Side, mémoire vivante de New York",
+        "description": "Dans ce quartier de Manhattan, les couches du temps se superposent comme des palimpsestes. Ici, les murs racontent l'histoire de ceux qui ont tout quitté pour tout recommencer.",
+        "image": "https://fbemerson.com/new-york/blog/lower-east-side-memoire-vivante/featured.jpg",
+        "author": {
+            "@type": "Person",
+            "name": "F.B. Emerson",
+            "url": "https://fbemerson.com/a-propos/"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "F.B. Emerson",
+            "url": "https://fbemerson.com"
+        },
+        "datePublished": "2026-01-19",
+        "dateModified": "2026-01-19",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://fbemerson.com/new-york/blog/lower-east-side-memoire-vivante/"
+        },
+        "inLanguage": "fr-FR"
+    }
+    </script>
+</head>
+
+<body class="author-page blog-article">
+
+    <!-- Header -->
+    <header class="author-header">
+        <nav class="author-nav container">
+            <a href="/" class="nav-logo">F.B. Emerson</a>
+            <ul class="nav-links">
+                <li><a href="/">Accueil</a></li>
+                <li class="has-dropdown">
+                    <a href="/new-york/" class="active">New York</a>
+                    <div class="nav-dropdown">
+                        <a href="/new-york/">Le Livre</a>
+                        <a href="/new-york/blog/">Le Blog</a>
+                    </div>
+                </li>
+                <li><a href="/a-propos/">À propos</a></li>
+                <li><a href="/newsletter/">Newsletter</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Article -->
+    <article>
+        <!-- Article Header -->
+        <header class="article-header">
+            <div class="article-meta">
+                <a href="/new-york/blog/">← Retour au blog</a>
+                <span>•</span>
+                <span class="article-category">Quartiers</span>
+                <span>•</span>
+                <time datetime="2026-01-19">19 janvier 2026</time>
+            </div>
+
+            <h1 class="article-title">Le Lower East Side, mémoire vivante de New York</h1>
+
+            <p class="article-excerpt">Dans ce quartier de Manhattan, les couches du temps se superposent comme des palimpsestes. Ici, les murs racontent l'histoire de ceux qui ont tout quitté pour tout recommencer.</p>
+        </header>
+
+        <!-- Featured Image -->
+        <div class="featured-image">
+            <img src="featured.jpg" alt="Le Lower East Side, mémoire vivante de New York" loading="eager" width="900" height="506">
+        </div>
+
+        <!-- Article Content -->
+        <div class="article-content">
+            <p>Il y a des quartiers qu'on traverse. Et puis il y a ceux qui vous traversent. Le Lower East Side appartient à la seconde catégorie. La première fois que j'y ai mis les pieds, je cherchais une adresse, un restaurant dont un ami m'avait vanté les pickles. J'ai trouvé bien plus : une fissure dans le temps, un endroit où New York accepte encore de montrer ses cicatrices.</p>
+
+<p>Ce n'est pas le New York des cartes postales. Pas de skyline vertigineuse, pas de taxis jaunes pressés, pas de cette énergie fébrile qui épuise autant qu'elle enivre. Le Lower East Side murmure là où le reste de Manhattan hurle. Il faut tendre l'oreille. Il faut ralentir.</p>
+
+<h2>Les fantômes d'Orchard Street</h2>
+
+<p>Je me souviens d'un dimanche matin sur Orchard Street. La lumière d'hiver rasait les façades de brique, révélant des enseignes à demi effacées en lettres hébraïques. Un siècle plus tôt, ces mêmes trottoirs débordaient de marchands ambulants, de tissus empilés, de voix mêlées dans une dizaine de langues. Aujourd'hui, les boutiques vendent des vêtements de créateurs et du café à six dollars. Mais quelque chose persiste. Une texture. Une mémoire inscrite dans la pierre.</p>
+
+<p>C'est peut-être ce qui m'a d'abord déstabilisée : cette cohabitation entre passé et présent, si visible qu'elle en devient presque indécente. Les escaliers de secours en fer forgé, noirs de suie et de temps, surplombent des terrasses de brunch. Les immeubles qui abritaient six familles par appartement accueillent maintenant des galeries d'art. On pourrait y voir une gentrification brutale, une amnésie volontaire. Ce serait manquer l'essentiel.</p>
+
+<h2>Ce que le Tenement Museum ne vous dira pas</h2>
+
+<p>J'ai visité le Tenement Museum trois fois. Trois visites différentes, trois familles différentes reconstituées dans leurs appartements exigus du 97 Orchard Street. Les Irlandais des années 1860 fuyant la Grande Famine. Les Juifs allemands des années 1870 cherchant une vie meilleure. Les Italiens, les Polonais, les Chinois, chacun apportant ses peurs et ses espoirs dans ces quelques mètres carrés.</p>
+
+<p>Les guides racontent bien l'histoire. Ils montrent les toilettes communes dans la cour, les fenêtres qui ne donnaient sur rien, les ateliers de couture où des enfants travaillaient quatorze heures par jour. Ce qu'ils ne disent pas, ce qu'ils ne peuvent pas dire, c'est ce que cela fait de descendre ces escaliers étroits et de déboucher dans la lumière de Manhattan en 2026. De réaliser que vous marchez exactement là où quelqu'un a un jour posé le pied pour la première fois, le cœur battant, sans parler un mot d'anglais, avec pour tout bagage une adresse griffonnée et une volonté féroce.</p>
+
+<p>J'ai pensé à mes propres grands-parents. À ces récits de valises bouclées à la hâte, de traversées incertaines, de recommencements. Le Lower East Side m'a rappelé que New York n'est pas une destination. C'est une accumulation de paris fous, de ruptures choisies, de gens qui ont tout risqué sur une promesse.</p>
+
+<h2>Katz's et la religion du pastrami</h2>
+
+<p>On ne peut pas écrire sur le Lower East Side sans parler de nourriture. Plus précisément, on ne peut pas y passer sans être happé par elle. L'odeur des cornichons à l'aneth qui flotte depuis les delis, les bagels encore chauds du matin, les knishes dorés derrière les vitrines.</p>
+
+<p>Katz's Delicatessen existe depuis 1888. C'est un fait, pas une opinion. Les touristes y vont pour la photo, pour refaire la scène de Quand Harry rencontre Sally. Mais si vous y allez un mardi à onze heures, vous verrez autre chose. Des habitués qui commandent sans regarder le menu. Des conversations qui semblent durer depuis des décennies. Une certaine façon de trancher le pastrami, à la main, contre la fibre, qui relève de la cérémonie.</p>
+
+<p>J'y ai mangé seule, un jour de novembre où j'avais besoin de silence sans solitude. Le serveur m'a apporté un sandwich qui défiait les lois de la gravité, une assiette de pickles, et n'a rien dit. C'était parfait. New York sait parfois se taire.</p>
+
+<h2>Les murs qui parlent</h2>
+
+<p>Le Lower East Side est un musée à ciel ouvert, mais pas celui qu'on imagine. Pas de plaques explicatives, pas de cordons de velours. Juste des murs couverts de fresques, de tags, d'affiches superposées. Le 100 Gates Project a transformé les rideaux de fer des commerces en toiles géantes. Chaque matin, quand les boutiques ouvrent, les œuvres disparaissent. Chaque soir, elles réapparaissent.</p>
+
+<p>J'ai passé une heure un samedi soir à photographier ces portes fermées. Une tête de loup aux couleurs d'arc-en-ciel. Un portrait de femme les yeux clos. Des motifs géométriques qui semblaient pulser sous les néons des bodegas. Le quartier se déguise quand il dort.</p>
+
+<p>Il y a quelque chose de profondément new-yorkais dans cette idée : l'art éphémère, visible seulement à certaines heures, pour ceux qui prennent la peine de regarder. Le Lower East Side récompense les curieux. Il ne se donne pas aux pressés.</p>
+
+<h2>Sara D. Roosevelt Park, ou le New York des marges</h2>
+
+<p>Entre les boutiques de vintage et les bars à cocktails, il y a un parc. Sara D. Roosevelt Park s'étire sur plusieurs blocks, étroit et long, coincé entre les immeubles. Ce n'est pas Central Park. Ce n'est même pas Washington Square. C'est mieux que ça : c'est un parc de quartier, utilisé par ceux qui y vivent.</p>
+
+<p>Les joueurs de dominos dominicains ont leurs tables attitrées. Les familles chinoises pratiquent le tai-chi au lever du soleil. Les skaters ont colonisé un coin. Les joggers traversent sans s'arrêter, les écouteurs vissés aux oreilles. Tout ce petit monde cohabite dans une indifférence polie qui ressemble à du respect.</p>
+
+<p>C'est là, assise sur un banc, que j'ai compris quelque chose sur New York. Cette ville n'efface pas les différences ; elle les juxtapose. Elle ne crée pas d'harmonie ; elle permet la coexistence. C'est moins romantique, peut-être. C'est infiniment plus rare.</p>
+
+<h2>Ce qui reste quand on s'en va</h2>
+
+<p>Le Lower East Side change, comme tout change. Les loyers montent, les anciens commerces ferment, les visages dans la rue ne sont plus les mêmes qu'il y a vingt ans. Certains crient à la trahison. Ils n'ont pas tort, pas complètement. Quelque chose se perd à chaque nouvelle boutique de smoothies, à chaque loft réaménagé.</p>
+
+<p>Mais quelque chose persiste aussi. Une façon d'être, un refus de la surface lisse, une acceptation de la complexité. Le Lower East Side ne prétend pas être ce qu'il n'est pas. Il porte ses contradictions comme d'autres portent des médailles.</p>
+
+<p>La dernière fois que j'y suis retournée, j'ai retrouvé le restaurant aux pickles de mon ami. Il avait fermé depuis longtemps, remplacé par une galerie qui exposait des photos de... l'ancien Lower East Side. J'aurais pu trouver ça cynique. J'ai choisi d'y voir autre chose : une tentative maladroite, peut-être, mais sincère, de ne pas oublier.</p>
+
+<blockquote>New York est une ville de couches. Grattez la surface, et vous trouverez une autre surface. Et sous celle-ci, une autre encore. Le Lower East Side est l'un des rares endroits où ces couches restent visibles. Où le passé ne se cache pas.</blockquote>
+
+<p>Je pense souvent à ces immigrants du siècle dernier qui débarquaient ici, les yeux grands ouverts, le cœur battant. Ils ne savaient pas ce qui les attendait. Ils savaient seulement qu'ils voulaient autre chose. Cette envie-là, je la reconnais. C'est peut-être elle qui m'a amenée à New York. C'est peut-être elle qui me fait écrire.</p>
+
+<p>Le Lower East Side m'a appris ceci : on ne visite pas un quartier, on le laisse nous visiter. On arrive avec des questions, on repart avec d'autres questions, meilleures. Et parfois, entre deux rues, entre deux époques, on aperçoit quelque chose qui ressemble à une réponse.</p>
+
+<p>Elle disparaît aussitôt. Mais on sait qu'elle était là.</p>
+        </div>
+
+        <!-- Author Box - FIXED: Removed inline styles that broke centering -->
+        <aside class="author-box">
+            <div class="author-box-inner">
+                <img src="/images/sections/author-desk.png" alt="F.B. Emerson" width="80" height="80">
+                <div>
+                    <p class="author-box-label">Écrit par</p>
+                    <p class="author-box-name">F.B. Emerson</p>
+                    <p class="author-box-bio">Auteure de « New York, Mon Éveil ». Je suis allée visiter une ville. Je suis revenue éveillée.</p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- CTA Box - FIXED: Removed inline styles + added background image -->
+        <aside class="cta-box">
+            <div class="cta-box-content">
+                <h3>Envie d'aller plus loin?</h3>
+                <p>Cet article n'est qu'un aperçu. L'histoire complète est dans le livre.</p>
+                <a href="/new-york/" class="cta-button primary">Découvrir le livre</a>
+            </div>
+        </aside>
+    </article>
+
+    <!-- Related Posts -->
+    <section class="related-posts">
+        <h2>Autres articles</h2>
+        <div class="related-grid" id="related-posts">
+            <!-- Dynamically loaded -->
+        </div>
+        <div class="related-more">
+            <a href="/new-york/blog/">Voir tous les articles →</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="author-footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-copyright">© 2026 F.B. Emerson</p>
+                <nav class="footer-nav">
+                    <a href="/new-york/contact/">Contact</a>
+                    <a href="/mentions-legales/">Mentions légales</a>
+                    <a href="/newsletter/">Newsletter</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+    <script>
+        // Mobile menu
+        document.querySelector('.mobile-menu-toggle')?.addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+            this.classList.toggle('active');
+        });
+
+        // Load related posts
+        async function loadRelated() {
+            try {
+                const response = await fetch('/new-york/blog/posts.json');
+                const posts = await response.json();
+                const currentSlug = 'lower-east-side-memoire-vivante';
+                const related = posts.filter(p => p.slug !== currentSlug).slice(0, 3);
+
+                if (related.length === 0) return;
+
+                const container = document.getElementById('related-posts');
+                container.textContent = '';
+                
+                related.forEach((post, index) => {
+                    const card = document.createElement('a');
+                    card.href = '/new-york/blog/' + post.slug + '/';
+                    card.className = 'related-card';
+                    card.style.animationDelay = (0.1 + index * 0.1) + 's';
+                    
+                    const img = document.createElement('img');
+                    img.src = '/new-york/blog/' + post.slug + '/featured.jpg';
+                    img.alt = post.title;
+                    img.width = 320;
+                    img.height = 180;
+                    img.loading = 'lazy';
+                    img.onerror = function() { this.src = '/images/textures/paper.png'; };
+                    
+                    const content = document.createElement('div');
+                    content.className = 'related-card-content';
+                    
+                    const title = document.createElement('h3');
+                    title.textContent = post.title;
+                    
+                    content.appendChild(title);
+                    card.appendChild(img);
+                    card.appendChild(content);
+                    container.appendChild(card);
+                });
+            } catch (e) {
+                console.log('No related posts found');
+            }
+        }
+        loadRelated();
+    </script>
+</body>
+</html>
