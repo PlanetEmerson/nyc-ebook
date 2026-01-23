@@ -1,5 +1,20 @@
 [
     {
+        "title": "Ce que j'ai compris de New York après l'avoir quittée",
+        "description": "On croit connaître une ville quand on y vit. On se trompe. C'est en la quittant que j'ai enfin compris ce que New York m'avait appris.",
+        "slug": "ce-que-jai-compris-apres-lavoir-quittee",
+        "date": "23 janvier 2026",
+        "category": "Réflexions",
+        "tags": [
+            "réflexion",
+            "transformation",
+            "new york",
+            "voyage",
+            "retour",
+            "nostalgie"
+        ]
+    },
+    {
         "title": "Le Queens, ce New York que les touristes ne voient jamais",
         "description": "Dans ce borough oublié des guides, 130 langues cohabitent et la vraie vie new-yorkaise se déroule loin des projecteurs. Une invitation à voir la ville autrement.",
         "slug": "queens-new-york-touristes-ne-voient-jamais",
