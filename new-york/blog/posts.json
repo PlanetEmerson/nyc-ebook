@@ -1,5 +1,20 @@
 [
     {
+        "title": "La solitude new-yorkaise: ce que personne ne vous dit",
+        "description": "On vous parle du bruit, des prix, de la rudesse. Personne ne vous prépare à la solitude particulière de cette ville où huit millions de personnes vivent seules, ensemble.",
+        "slug": "solitude-new-yorkaise",
+        "date": "26 janvier 2026",
+        "category": "Réflexions",
+        "tags": [
+            "solitude",
+            "expatriation",
+            "vivre à new york",
+            "réflexion",
+            "transformation",
+            "new york"
+        ]
+    },
+    {
         "title": "Ce que j'ai compris de New York après l'avoir quittée",
         "description": "On croit connaître une ville quand on y vit. On se trompe. C'est en la quittant que j'ai enfin compris ce que New York m'avait appris.",
         "slug": "ce-que-jai-compris-apres-lavoir-quittee",

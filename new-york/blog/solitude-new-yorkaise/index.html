@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>La solitude new-yorkaise: ce que personne ne vous dit | Blog New York | F.B. Emerson</title>
+    <meta name="description" content="On vous parle du bruit, des prix, de la rudesse. Personne ne vous prépare à la solitude particulière de cette ville où huit millions de personnes vivent seules, ensemble.">
+    <meta name="keywords" content="solitude new york, vivre new york, expatriation new york, new york français, F.B. Emerson, New York Mon Éveil">
+    <meta name="author" content="F.B. Emerson">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://fbemerson.com/new-york/blog/solitude-new-yorkaise/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://fbemerson.com/new-york/blog/solitude-new-yorkaise/">
+    <meta property="og:title" content="La solitude new-yorkaise: ce que personne ne vous dit">
+    <meta property="og:description" content="On vous parle du bruit, des prix, de la rudesse. Personne ne vous prépare à la solitude particulière de cette ville où huit millions de personnes vivent seules, ensemble.">
+    <meta property="og:image" content="https://fbemerson.com/new-york/blog/solitude-new-yorkaise/featured.jpg">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="F.B. Emerson">
+    <meta property="article:published_time" content="2026-01-26">
+    <meta property="article:author" content="F.B. Emerson">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="La solitude new-yorkaise: ce que personne ne vous dit">
+    <meta name="twitter:description" content="On vous parle du bruit, des prix, de la rudesse. Personne ne vous prépare à la solitude particulière de cette ville où huit millions de personnes vivent seules, ensemble.">
+    <meta name="twitter:image" content="https://fbemerson.com/new-york/blog/solitude-new-yorkaise/featured.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗽</text></svg>">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;1,8..60,400;1,8..60,500&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../../css/variables.css">
+    <link rel="stylesheet" href="../../../css/styles.css">
+    <link rel="stylesheet" href="../../../css/animations.css">
+    <link rel="stylesheet" href="../../../css/author.css">
+
+    <!-- Blog-specific styles -->
+    <style>
+        .blog-article {
+            background: var(--color-midnight);
+            min-height: 100vh;
+        }
+
+        /* FIXED: Add 80px clearance for fixed header */
+        .article-header {
+            padding: calc(80px + var(--space-12)) var(--container-padding) var(--space-8);
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .article-meta {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: var(--space-3);
+            font-size: var(--text-sm);
+            color: var(--color-text-muted);
+            margin-bottom: var(--space-6);
+        }
+
+        .article-meta a {
+            color: var(--color-gold);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
+
+        .article-meta a:hover {
+            color: var(--color-gold-light);
+        }
+
+        .article-category {
+            color: var(--color-gold);
+            text-transform: uppercase;
+            letter-spacing: var(--tracking-wider);
+            font-weight: var(--font-medium);
+        }
+
+        .article-title {
+            font-family: var(--font-display);
+            font-size: var(--text-4xl);
+            font-weight: var(--font-bold);
+            color: var(--color-cream);
+            line-height: var(--leading-tight);
+            margin-bottom: var(--space-6);
+        }
+
+        .article-excerpt {
+            font-size: var(--text-xl);
+            color: var(--color-blush);
+            line-height: var(--leading-relaxed);
+            font-family: var(--font-accent);
+            font-style: italic;
+        }
+
+        .featured-image {
+            max-width: 900px;
+            margin: 0 auto var(--space-12);
+            padding: 0 var(--container-padding);
+            opacity: 0;
+            animation: fadeInUp 0.8s ease 0.2s forwards;
+        }
+
+        .featured-image img {
+            width: 100%;
+            height: auto;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--color-gold-dark);
+            transition: transform var(--transition-slow);
+        }
+
+        .featured-image:hover img {
+            transform: scale(1.02);
+        }
+
+        .article-content {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 0 var(--container-padding) var(--space-16);
+            opacity: 0;
+            animation: fadeIn 0.8s ease 0.4s forwards;
+        }
+
+        .article-content h2 {
+            font-family: var(--font-display);
+            font-size: var(--text-2xl);
+            font-weight: var(--font-bold);
+            color: var(--color-cream);
+            margin-top: var(--space-12);
+            margin-bottom: var(--space-4);
+            line-height: var(--leading-tight);
+            position: relative;
+            padding-bottom: var(--space-3);
+        }
+
+        .article-content h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background: var(--color-gold);
+        }
+
+        .article-content h3 {
+            font-family: var(--font-display);
+            font-size: var(--text-xl);
+            font-weight: var(--font-semibold);
+            color: var(--color-gold);
+            margin-top: var(--space-8);
+            margin-bottom: var(--space-3);
+        }
+
+        .article-content p {
+            font-family: var(--font-body);
+            font-size: var(--text-lg);
+            color: var(--color-blush);
+            line-height: var(--leading-loose);
+            margin-bottom: var(--space-6);
+        }
+
+        /* First paragraph drop cap */
+        .article-content > p:first-of-type::first-letter {
+            float: left;
+            font-family: var(--font-display);
+            font-size: 3.5em;
+            line-height: 0.8;
+            padding-right: 0.1em;
+            color: var(--color-gold);
+            font-weight: var(--font-bold);
+        }
+
+        .article-content ul,
+        .article-content ol {
+            color: var(--color-blush);
+            margin-left: var(--space-6);
+            margin-bottom: var(--space-6);
+        }
+
+        .article-content li {
+            margin-bottom: var(--space-2);
+            line-height: var(--leading-relaxed);
+            position: relative;
+        }
+
+        .article-content ul li {
+            list-style-type: none;
+            padding-left: var(--space-4);
+        }
+
+        .article-content ul li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--color-gold);
+        }
+
+        .article-content ol li {
+            list-style-type: decimal;
+        }
+
+        .article-content strong {
+            color: var(--color-cream);
+            font-weight: var(--font-semibold);
+        }
+
+        .article-content em {
+            font-style: italic;
+        }
+
+        .article-content blockquote {
+            border-left: 4px solid var(--color-gold);
+            padding-left: var(--space-6);
+            margin: var(--space-8) 0;
+            font-family: var(--font-accent);
+            font-size: var(--text-xl);
+            font-style: italic;
+            color: var(--color-cream);
+            position: relative;
+        }
+
+        .article-content blockquote::before {
+            content: '"';
+            position: absolute;
+            left: var(--space-2);
+            top: -0.5em;
+            font-size: 3em;
+            color: var(--color-gold);
+            opacity: 0.3;
+            font-family: var(--font-display);
+        }
+
+        .article-content a {
+            color: var(--color-gold);
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            transition: color var(--transition-fast);
+        }
+
+        .article-content a:hover {
+            color: var(--color-gold-light);
+        }
+
+        /* Author Box - FIXED: Proper centering with responsive padding */
+        .author-box {
+            max-width: 700px;
+            margin: 0 auto var(--space-12);
+            padding: var(--space-8);
+            background: var(--color-midnight-light);
+            border: 1px solid var(--color-gold-dark);
+            border-radius: var(--radius-lg);
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
+            transition: border-color var(--transition-base), transform var(--transition-base);
+        }
+
+        /* Responsive horizontal margins */
+        @media (max-width: 768px) {
+            .author-box {
+                margin-left: var(--container-padding);
+                margin-right: var(--container-padding);
+            }
+        }
+
+        .author-box:hover {
+            border-color: var(--color-gold);
+            transform: translateY(-4px);
+        }
+
+        .author-box-inner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: var(--space-4);
+        }
+
+        @media (min-width: 640px) {
+            .author-box-inner {
+                flex-direction: row;
+                text-align: left;
+                gap: var(--space-6);
+            }
+        }
+
+        .author-box img {
+            width: 80px;
+            height: 80px;
+            border-radius: var(--radius-full);
+            border: 2px solid var(--color-gold-dark);
+            flex-shrink: 0;
+            transition: border-color var(--transition-base);
+        }
+
+        .author-box:hover img {
+            border-color: var(--color-gold);
+        }
+
+        .author-box-label {
+            color: var(--color-gold);
+            font-size: var(--text-sm);
+            text-transform: uppercase;
+            letter-spacing: var(--tracking-wider);
+            margin-bottom: var(--space-1);
+        }
+
+        .author-box-name {
+            font-family: var(--font-display);
+            font-size: var(--text-xl);
+            color: var(--color-cream);
+            margin-bottom: var(--space-2);
+        }
+
+        .author-box-bio {
+            font-size: var(--text-sm);
+            color: var(--color-blush);
+            line-height: var(--leading-relaxed);
+        }
+
+        /* Purchase Box */
+        .purchase-box {
+            position: relative;
+            max-width: 760px;
+            margin: 0 auto var(--space-16);
+            padding: var(--space-10);
+            border: 1px solid var(--color-gold);
+            border-radius: var(--radius-lg);
+            background: linear-gradient(135deg, rgba(45, 37, 32, 0.95), rgba(77, 69, 64, 0.9));
+            overflow: hidden;
+            opacity: 0;
+            animation: fadeInUp 0.6s ease 0.1s forwards;
+            transition: transform var(--transition-base), box-shadow var(--transition-base);
+        }
+
+        /* Responsive horizontal margins */
+        @media (max-width: 768px) {
+            .purchase-box {
+                margin-left: var(--container-padding);
+                margin-right: var(--container-padding);
+                padding: var(--space-8);
+            }
+        }
+
+        .purchase-box::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('../../../images/textures/grain.png');
+            background-size: 200px 200px;
+            opacity: 0.18;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .purchase-box::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at top right, rgba(212, 168, 75, 0.18), transparent 60%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .purchase-box:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+        }
+
+        .purchase-box-inner {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: minmax(160px, 220px) 1fr;
+            gap: var(--space-10);
+            align-items: center;
+        }
+
+        .purchase-box-content {
+            text-align: left;
+        }
+
+        @media (max-width: 768px) {
+            .purchase-box-inner {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .purchase-box-content {
+                text-align: center;
+            }
+        }
+
+        .purchase-box-media {
+            display: flex;
+            justify-content: center;
+        }
+
+        .purchase-box .book-cover {
+            width: 200px;
+            transform: rotateY(-6deg);
+        }
+
+        .purchase-box .book-mockup:hover .book-cover {
+            transform: rotateY(0deg) translateY(-6px);
+        }
+
+        @media (max-width: 768px) {
+            .purchase-box .book-cover {
+                width: 170px;
+            }
+        }
+
+        .purchase-box-label {
+            color: var(--color-gold);
+            font-size: var(--text-sm);
+            text-transform: uppercase;
+            letter-spacing: var(--tracking-wider);
+            margin-bottom: var(--space-2);
+        }
+
+        .purchase-box-title {
+            font-family: var(--font-display);
+            font-size: var(--text-2xl);
+            color: var(--color-cream);
+            margin-bottom: var(--space-2);
+        }
+
+        .purchase-box-subtitle {
+            font-family: var(--font-accent);
+            font-style: italic;
+            color: var(--color-blush);
+            font-size: var(--text-lg);
+            margin-bottom: var(--space-6);
+        }
+
+        .purchase-box-details {
+            list-style: none;
+            margin: 0 0 var(--space-6);
+            padding: 0;
+            display: grid;
+            gap: var(--space-2);
+            color: var(--color-cream);
+            font-size: var(--text-sm);
+        }
+
+        .purchase-box-details li {
+            position: relative;
+            padding-left: var(--space-4);
+        }
+
+        .purchase-box-details li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--color-gold);
+        }
+
+        .purchase-box-actions {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: var(--space-6);
+            margin-bottom: var(--space-4);
+        }
+
+        @media (max-width: 768px) {
+            .purchase-box-actions {
+                justify-content: center;
+            }
+        }
+
+        .purchase-box-price {
+            font-family: var(--font-display);
+            font-size: var(--text-2xl);
+            color: var(--color-cream);
+        }
+
+        .purchase-box-guarantee {
+            color: var(--color-blush);
+            font-size: var(--text-sm);
+            margin-bottom: var(--space-2);
+        }
+
+        .purchase-box-trust {
+            color: var(--color-cream);
+            font-size: var(--text-sm);
+            opacity: 0.75;
+        }
+
+        .purchase-box .cta-button {
+            padding: var(--space-4) var(--space-8);
+        }
+
+        .related-posts {
+            background: var(--color-midnight-light);
+            padding: var(--space-16) var(--container-padding);
+            position: relative;
+        }
+
+        .related-posts::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('../../../images/textures/grain.png');
+            background-size: 200px 200px;
+            opacity: 0.1;
+            pointer-events: none;
+        }
+
+        .related-posts h2 {
+            font-family: var(--font-display);
+            font-size: var(--text-2xl);
+            color: var(--color-cream);
+            text-align: center;
+            margin-bottom: var(--space-10);
+            position: relative;
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-6);
+            max-width: 1000px;
+            margin: 0 auto var(--space-8);
+            position: relative;
+        }
+
+        @media (min-width: 768px) {
+            .related-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .related-card {
+            background: var(--color-midnight);
+            border: 1px solid var(--color-gold-dark);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            text-decoration: none;
+            transition: border-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .related-card:nth-child(1) { animation-delay: 0.1s; }
+        .related-card:nth-child(2) { animation-delay: 0.2s; }
+        .related-card:nth-child(3) { animation-delay: 0.3s; }
+
+        .related-card:hover {
+            border-color: var(--color-gold);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .related-card img {
+            width: 100%;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+            transition: transform var(--transition-slow);
+            opacity: 1 !important;
+        }
+
+        .related-card:hover img {
+            transform: scale(1.08);
+        }
+
+        .related-card-content {
+            padding: var(--space-4);
+        }
+
+        .related-card h3 {
+            font-family: var(--font-display);
+            font-size: var(--text-base);
+            color: var(--color-cream);
+            line-height: var(--leading-snug);
+            transition: color var(--transition-fast);
+        }
+
+        .related-card:hover h3 {
+            color: var(--color-gold-light);
+        }
+
+        .related-more {
+            text-align: center;
+            position: relative;
+        }
+
+        .related-more a {
+            color: var(--color-gold);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+            font-weight: var(--font-medium);
+        }
+
+        .related-more a:hover {
+            color: var(--color-gold-light);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "La solitude new-yorkaise: ce que personne ne vous dit",
+        "description": "On vous parle du bruit, des prix, de la rudesse. Personne ne vous prépare à la solitude particulière de cette ville où huit millions de personnes vivent seules, ensemble.",
+        "image": "https://fbemerson.com/new-york/blog/solitude-new-yorkaise/featured.jpg",
+        "author": {
+            "@type": "Person",
+            "name": "F.B. Emerson",
+            "url": "https://fbemerson.com/a-propos/"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "F.B. Emerson",
+            "url": "https://fbemerson.com"
+        },
+        "datePublished": "2026-01-26",
+        "dateModified": "2026-01-26",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://fbemerson.com/new-york/blog/solitude-new-yorkaise/"
+        },
+        "inLanguage": "fr-FR"
+    }
+    </script>
+</head>
+
+<body class="author-page blog-article">
+
+    <!-- Header -->
+    <header class="author-header">
+        <nav class="author-nav container">
+            <a href="/" class="nav-logo">F.B. Emerson</a>
+            <ul class="nav-links">
+                <li><a href="/">Accueil</a></li>
+                <li class="has-dropdown">
+                    <a href="/new-york/" class="active">New York</a>
+                    <div class="nav-dropdown">
+                        <a href="/new-york/">Le Livre</a>
+                        <a href="/new-york/blog/">Le Blog</a>
+                    </div>
+                </li>
+                <li><a href="/a-propos/">À propos</a></li>
+                <li><a href="/newsletter/">Newsletter</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Article -->
+    <article>
+        <!-- Article Header -->
+        <header class="article-header">
+            <div class="article-meta">
+                <a href="/new-york/blog/">← Retour au blog</a>
+                <span>•</span>
+                <span class="article-category">Réflexions</span>
+                <span>•</span>
+                <time datetime="2026-01-26">26 janvier 2026</time>
+            </div>
+
+            <h1 class="article-title">La solitude new-yorkaise: ce que personne ne vous dit</h1>
+
+            <p class="article-excerpt">On vous parle du bruit, des prix, de la rudesse. Personne ne vous prépare à la solitude particulière de cette ville où huit millions de personnes vivent seules, ensemble.</p>
+        </header>
+
+        <!-- Featured Image -->
+        <div class="featured-image">
+            <img src="featured.jpg" alt="La solitude new-yorkaise: ce que personne ne vous dit" loading="eager" width="900" height="506">
+        </div>
+
+        <!-- Article Content -->
+        <div class="article-content">
+            <p>Il y a une heure précise où New York révèle son vrai visage. Pas midi, quand les trottoirs débordent. Pas minuit, quand les bars recrachent leurs derniers clients. C'est vers six heures du soir, un dimanche d'hiver, quand la lumière décline et que les fenêtres des immeubles commencent à s'allumer une à une. Des milliers de rectangles dorés dans le crépuscule. Autant de vies parallèles qui ne se croiseront jamais.</p>
+
+<p>J'ai regardé ces fenêtres pendant des mois sans comprendre ce qu'elles me disaient. Il m'a fallu une éternité pour entendre leur murmure: bienvenue dans la ville la plus peuplée du pays, où la solitude est un art de vivre.</p>
+
+<h2>Le paradoxe de la proximité</h2>
+
+<p>On vous prévient pour beaucoup de choses avant de partir. Les loyers qui dévorent la moitié du salaire. Le métro qui sent l'humanité compressée. Les New-Yorkais qui marchent comme s'ils avaient un train à prendre, même quand ils n'ont nulle part où aller. Personne ne vous prépare à ce qui vient après.</p>
+
+<p>Personne ne vous dit que vous pouvez vivre des mois sans que quelqu'un prononce votre prénom. Que votre voisin de palier, celui dont vous entendez la télévision à travers le mur, restera à jamais un inconnu. Que les conversations les plus longues de votre semaine seront avec le caissier du deli qui vous demande « regular coffee? » sans lever les yeux.</p>
+
+<p>Il y a quelque chose de vertigineux dans cette contradiction. Plus on s'entasse, plus on s'isole. Dans le métro aux heures de pointe, corps contre corps, souffle contre souffle, on n'a jamais été aussi seul. Chaque passager construit autour de lui une bulle invisible, un petit territoire d'absence. Les écouteurs sont des frontières. Les yeux fixés sur l'écran, des murs.</p>
+
+<h2>L'amitié à l'américaine</h2>
+
+<p>J'ai mis du temps à comprendre les règles du jeu. En France, on ne devient pas ami facilement, mais quand on le devient, c'est pour de bon. Ici, c'est l'inverse. Tout le monde est « so nice to meet you », tout le monde veut « grab coffee sometime », tout le monde trouve tout « amazing ». La chaleur est immédiate. Et souvent, superficielle.</p>
+
+<p>Ce n'est pas de l'hypocrisie. C'est une autre façon d'être au monde. Les Américains sont sincères dans leur enthousiasme du moment. Ils le sont aussi dans leur oubli du lendemain. « Let's do this again » ne signifie pas qu'on se reverra. C'est une ponctuation agréable, rien de plus. J'ai rempli des carnets de numéros de téléphone qui n'ont jamais sonné.</p>
+
+<p>La difficulté n'est pas de rencontrer des gens. C'est de transformer ces rencontres en quelque chose qui dure. Dans une ville où tout le monde court, où les agendas débordent et les distances sont immenses, maintenir un lien demande une énergie que peu ont à donner. Les amitiés se font et se défont au gré des déménagements, des changements de travail, des hasards. On apprend à tenir légèrement ce qu'on aurait voulu serrer fort.</p>
+
+<h2>Le dimanche, ce révélateur</h2>
+
+<p>C'est le dimanche que la solitude new-yorkaise montre son vrai visage. La semaine, on peut se raconter des histoires. Le travail structure, les obligations remplissent, le mouvement perpétuel masque le vide. Mais le dimanche, quand la ville ralentit enfin, quand les brunchs sont finis et que l'après-midi s'étire, quelque chose se déchire.</p>
+
+<p>J'ai passé des dimanches entiers sans parler à personne. À marcher dans des quartiers que je ne connaissais pas, juste pour avoir l'impression d'être quelque part. À m'asseoir dans des cafés bondés pour me sentir moins seule, entourée de gens qui étaient là pour la même raison sans jamais l'avouer. Il y avait quelque chose de réconfortant et de terrible dans cette solitude partagée.</p>
+
+<p>New York est pleine de ces lieux où l'on vient être seul ensemble. Les parcs, les bibliothèques, les salles de cinéma en milieu d'après-midi. Des refuges pour ceux qui ne supportent plus les murs de leur appartement mais n'ont personne à appeler.</p>
+
+<h2>Ce que la solitude enseigne</h2>
+
+<p>Je pourrais m'arrêter là et vous laisser avec ce portrait sombre. Ce serait mentir par omission. Parce que cette solitude, aussi dure soit-elle, m'a appris quelque chose que je n'aurais pas appris autrement.</p>
+
+<p>Elle m'a forcée à faire connaissance avec moi-même. Sans le bruit constant des autres, sans le filet de sécurité des vieilles amitiés, j'ai dû affronter mes propres silences. Me demander qui j'étais vraiment, pas qui les autres voulaient que je sois. C'est inconfortable au début. Puis ça devient une forme de liberté.</p>
+
+<p>À Paris, j'étais définie par mes cercles. Les amis d'enfance, les collègues, la famille. Tout le monde savait qui j'étais censée être. À New York, personne ne savait rien. J'étais une page blanche. La solitude n'était pas un vide, c'était un espace. L'espace de devenir quelqu'un d'autre.</p>
+
+<p>Il y a une phrase qu'on attribue parfois à E.B. White, l'auteur de Charlotte's Web, sur New York: « La solitude a cette vertu qu'elle vous permet de vous choisir vous-même. » Je ne sais pas s'il l'a vraiment écrite, mais je sais qu'elle est vraie.</p>
+
+<h2>Les connexions qui comptent</h2>
+
+<p>Quand tout est difficile, ce qui reste est précieux. Les amitiés qui survivent à New York ne sont pas des accidents. Elles sont des choix répétés, des efforts conscients, des traversées de la ville un soir de semaine quand on aurait préféré rester chez soi.</p>
+
+<p>J'ai fini par trouver mes gens. Pas beaucoup. Quelques-uns. Ceux qui répondent vraiment quand on appelle. Ceux qui se souviennent des dates importantes. Ceux qui comprennent, sans qu'on ait besoin de l'expliquer, pourquoi certains soirs sont plus durs que d'autres. Ces amitiés-là sont plus solides que toutes celles que j'avais avant. Elles ont été forgées dans le feu de la solitude partagée.</p>
+
+<p>Et puis il y a les connexions plus légères, mais pas moins vraies. Le serveur du restaurant où je vais toujours, qui finit par me tutoyer. Le propriétaire de la bodega qui met de côté mon journal préféré. La voisine du dessus avec qui j'échange des sourires dans l'escalier depuis trois ans sans avoir jamais appris son nom. Ces fils ténus, presque invisibles, qui nous rattachent au monde.</p>
+
+<h2>À ceux qui vont partir</h2>
+
+<p>Si vous lisez ceci en rêvant de New York, ne vous laissez pas décourager. Mais ne partez pas non plus les yeux fermés. Cette ville va vous offrir des choses extraordinaires. Elle va aussi vous prendre quelque chose. Le confort d'être connu. La facilité d'appartenir.</p>
+
+<p>Vous allez avoir des soirées où votre téléphone restera muet. Des week-ends où personne ne sera libre. Des moments où vous vous demanderez ce que vous faites là, si loin de tout ce que vous connaissiez. C'est normal. Ça fait partie du voyage.</p>
+
+<p>Mais si vous tenez bon, si vous acceptez cette solitude comme une professeure sévère plutôt qu'une ennemie, elle va vous transformer. Vous allez apprendre à être votre propre compagnie. À trouver de la joie dans des choses que vous n'auriez pas remarquées avant. À valoriser chaque connexion humaine à sa juste mesure, c'est-à-dire infiniment.</p>
+
+<p>New York m'a appris que la solitude n'est pas le contraire de l'amour. C'est peut-être ce qui nous rend capables d'aimer vraiment. Quand on a été seul, profondément seul, on ne prend plus rien pour acquis. Chaque ami devient un miracle. Chaque conversation un cadeau.</p>
+
+<p>Le soir, parfois, je regarde encore les fenêtres qui s'allument. Je ne vois plus des vies qui s'ignorent. Je vois des vies qui attendent. Qui espèrent. Qui cherchent. Comme moi. Comme nous tous.</p>
+
+<p>Et dans cette ville de huit millions de solitudes, il y a quelque chose qui ressemble étrangement à de la communion.</p>
+        </div>
+
+        <!-- Author Box - FIXED: Removed inline styles that broke centering -->
+        <aside class="author-box">
+            <div class="author-box-inner">
+                <img src="/images/sections/author-desk.png" alt="F.B. Emerson" width="80" height="80">
+                <div>
+                    <p class="author-box-label">Écrit par</p>
+                    <p class="author-box-name">F.B. Emerson</p>
+                    <p class="author-box-bio">Auteure de « New York, Mon Éveil ». Je suis allée visiter une ville. Je suis revenue éveillée.</p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Purchase Box -->
+        <aside class="purchase-box">
+            <div class="purchase-box-inner">
+                <div class="purchase-box-media">
+                    <div class="book-mockup compact">
+                        <img src="/images/book/cover.jpg" alt="New York, Mon Éveil" class="book-cover" loading="lazy" width="220" height="330">
+                    </div>
+                </div>
+                <div class="purchase-box-content">
+                    <p class="purchase-box-label">Le livre complet</p>
+                    <h3 class="purchase-box-title">New York, Mon Éveil</h3>
+                    <p class="purchase-box-subtitle">Récit de transformation par F.B. Emerson</p>
+                    <ul class="purchase-box-details">
+                        <li>12 chapitres + Prologue</li>
+                        <li>Appendices pratiques inclus</li>
+                        <li>Format: PDF premium</li>
+                        <li>Livraison instantanée par email</li>
+                    </ul>
+                    <div class="purchase-box-actions">
+                        <span class="purchase-box-price">$14.99</span>
+                        <a href="https://new-york-mon-eveil.lemonsqueezy.com/checkout/buy/629edd26-dec8-40f4-ac3b-f3f91fcc50e6?embed=1" class="lemonsqueezy-button cta-button primary">Acheter le livre</a>
+                    </div>
+                    <p class="purchase-box-guarantee"><span class="guarantee-icon">🛡️</span> Satisfait ou remboursé sous 30 jours.</p>
+                    <p class="purchase-box-trust">🔒 Paiement sécurisé · 📧 Livraison instantanée</p>
+                </div>
+            </div>
+        </aside>
+    </article>
+
+    <!-- Related Posts -->
+    <section class="related-posts">
+        <h2>Autres articles</h2>
+        <div class="related-grid" id="related-posts">
+            <!-- Dynamically loaded -->
+        </div>
+        <div class="related-more">
+            <a href="/new-york/blog/">Voir tous les articles →</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="author-footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-copyright">© 2026 F.B. Emerson</p>
+                <nav class="footer-nav">
+                    <a href="/new-york/contact/">Contact</a>
+                    <a href="/mentions-legales/">Mentions légales</a>
+                    <a href="/newsletter/">Newsletter</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>
+    <script src="/js/main.js"></script>
+    <script>
+        // Mobile menu
+        document.querySelector('.mobile-menu-toggle')?.addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+            this.classList.toggle('active');
+        });
+
+        // Load related posts
+        async function loadRelated() {
+            try {
+                const response = await fetch('/new-york/blog/posts.json');
+                const posts = await response.json();
+                const currentSlug = 'solitude-new-yorkaise';
+                const related = posts.filter(p => p.slug !== currentSlug).slice(0, 3);
+
+                if (related.length === 0) return;
+
+                const container = document.getElementById('related-posts');
+                container.textContent = '';
+                
+                related.forEach((post, index) => {
+                    const card = document.createElement('a');
+                    card.href = '/new-york/blog/' + post.slug + '/';
+                    card.className = 'related-card';
+                    card.style.animationDelay = (0.1 + index * 0.1) + 's';
+                    
+                    const img = document.createElement('img');
+                    img.src = '/new-york/blog/' + post.slug + '/featured.jpg';
+                    img.alt = post.title;
+                    img.width = 320;
+                    img.height = 180;
+                    img.loading = 'lazy';
+                    img.onerror = function() { this.src = '/images/textures/paper.png'; };
+                    
+                    const content = document.createElement('div');
+                    content.className = 'related-card-content';
+                    
+                    const title = document.createElement('h3');
+                    title.textContent = post.title;
+                    
+                    content.appendChild(title);
+                    card.appendChild(img);
+                    card.appendChild(content);
+                    container.appendChild(card);
+                });
+            } catch (e) {
+                console.log('No related posts found');
+            }
+        }
+        loadRelated();
+    </script>
+</body>
+</html>

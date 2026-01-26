@@ -5,8 +5,16 @@
     <link>https://fbemerson.com/new-york/blog/</link>
     <description>Découvrez New York autrement. Secrets de quartiers, réflexions de voyage, et les coulisses du livre Ce Que New York M'a Fait.</description>
     <language>fr-fr</language>
-    <lastBuildDate>Fri, 23 Jan 2026 08:05:42 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 26 Jan 2026 08:07:47 GMT</lastBuildDate>
     <atom:link href="https://fbemerson.com/new-york/blog/feed.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>La solitude new-yorkaise: ce que personne ne vous dit</title>
+      <link>https://fbemerson.com/new-york/blog/solitude-new-yorkaise/</link>
+      <description>On vous parle du bruit, des prix, de la rudesse. Personne ne vous prépare à la solitude particulière de cette ville où huit millions de personnes vivent seules, ensemble.</description>
+      <pubDate>Sun, 25 Jan 2026 23:00:00 GMT</pubDate>
+      <guid>https://fbemerson.com/new-york/blog/solitude-new-yorkaise/</guid>
+    </item>
 
     <item>
       <title>Ce que j'ai compris de New York après l'avoir quittée</title>
