@@ -43,6 +43,67 @@
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/author.css">
 
+    <!-- Blog Preview Styles -->
+    <style>
+        .blog-preview-section {
+            padding: var(--space-16) var(--container-padding);
+            background: var(--color-midnight);
+        }
+        .blog-preview-section .section-subtitle {
+            text-align: center;
+            margin-bottom: var(--space-2);
+        }
+        .blog-preview-intro {
+            text-align: center;
+            color: var(--color-blush);
+            font-family: var(--font-accent);
+            font-style: italic;
+            margin-bottom: var(--space-8);
+        }
+        .blog-preview-list {
+            max-width: 700px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-4);
+        }
+        .blog-preview-item {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-1);
+            padding: var(--space-4) var(--space-5);
+            background: var(--color-midnight-light);
+            border: 1px solid var(--color-gold-dark);
+            border-radius: var(--radius-md);
+            text-decoration: none;
+            transition: all var(--transition-base);
+        }
+        .blog-preview-item:hover {
+            border-color: var(--color-gold);
+            transform: translateX(4px);
+        }
+        .blog-preview-category {
+            font-size: var(--text-xs);
+            color: var(--color-gold);
+            text-transform: uppercase;
+            letter-spacing: var(--tracking-wider);
+        }
+        .blog-preview-title {
+            font-family: var(--font-display);
+            font-size: var(--text-lg);
+            color: var(--color-cream);
+            line-height: var(--leading-snug);
+        }
+        .blog-preview-item:hover .blog-preview-title {
+            color: var(--color-gold-light);
+        }
+        .blog-preview-more {
+            display: block;
+            text-align: center;
+            margin-top: var(--space-8);
+        }
+    </style>
+
     <!-- Schema.org Markup -->
     <script type="application/ld+json">
     {
@@ -124,6 +185,29 @@
                     <p>Je suis allée visiter une ville. Je suis revenue éveillée.</p>
                     <a href="/a-propos/" class="text-link">En savoir plus →</a>
                 </div>
+            </div>
+        </section>
+
+        <!-- Blog Preview Section (Static for SEO) -->
+        <section class="blog-preview-section">
+            <div class="container">
+                <h2 class="section-subtitle">Du Blog</h2>
+                <p class="blog-preview-intro">Ce que les guides ne racontent pas</p>
+                <div class="blog-preview-list">
+                    <a href="/new-york/blog/solitude-new-yorkaise/" class="blog-preview-item">
+                        <span class="blog-preview-category">Réflexions</span>
+                        <span class="blog-preview-title">La solitude new-yorkaise: ce que personne ne vous dit</span>
+                    </a>
+                    <a href="/new-york/blog/queens-new-york-touristes-ne-voient-jamais/" class="blog-preview-item">
+                        <span class="blog-preview-category">Quartiers</span>
+                        <span class="blog-preview-title">Le Queens, ce New York que les touristes ne voient jamais</span>
+                    </a>
+                    <a href="/new-york/blog/secrets-brooklyn-locaux/" class="blog-preview-item">
+                        <span class="blog-preview-category">Secrets</span>
+                        <span class="blog-preview-title">Les secrets de Brooklyn que seuls les locaux connaissent</span>
+                    </a>
+                </div>
+                <a href="/new-york/blog/" class="text-link blog-preview-more">Tous les articles →</a>
             </div>
         </section>
 
