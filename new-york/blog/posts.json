@@ -1,5 +1,22 @@
 [
     {
+        "title": "Harlem, le rythme de la réinvention",
+        "description": "On m'avait dit d'aller à Harlem pour le gospel et le jazz. J'y suis allée. J'ai trouvé autre chose : un quartier qui se réinvente sans jamais renier ce qu'il a été. Une leçon que New York ne donne qu'à ceux qui savent écouter.",
+        "slug": "harlem-rythme-reinvention",
+        "date": "13 février 2026",
+        "category": "Quartiers",
+        "tags": [
+            "harlem",
+            "quartier",
+            "jazz",
+            "gospel",
+            "culture",
+            "new york",
+            "transformation",
+            "renaissance"
+        ]
+    },
+    {
         "title": "New York en hiver: ce que le froid révèle",
         "description": "Tout le monde rêve de New York en été. Mais c'est l'hiver qui dit la vérité. Quand le froid vide les rues et que la ville se dépouille, quelque chose d'essentiel apparaît enfin.",
         "slug": "new-york-en-hiver-ce-que-le-froid-revele",
