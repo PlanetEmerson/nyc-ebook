@@ -1337,3 +1337,75 @@ h1, h2, h3, h4, h5, h6 {
     clip: rect(0, 0, 0, 0);
     border: 0;
 }
+
+/* ============================================
+   COOKIE CONSENT BANNER
+   ============================================ */
+
+.cookie-consent {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #2c2c2c;
+    color: #e0dbd5;
+    padding: 16px 24px;
+    z-index: 10000;
+    font-family: var(--font-body, Georgia, serif);
+    font-size: 14px;
+    line-height: 1.5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
+}
+
+.cookie-consent.visible {
+    transform: translateY(0);
+}
+
+.cookie-consent p {
+    margin: 0;
+    flex: 1 1 300px;
+}
+
+.cookie-consent a {
+    color: #d4a574;
+    text-decoration: underline;
+}
+
+.cookie-consent-buttons {
+    display: flex;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.cookie-consent-buttons button {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 3px;
+    font-family: var(--font-body, Georgia, serif);
+    font-size: 13px;
+    cursor: pointer;
+    letter-spacing: 0.3px;
+    transition: opacity 0.2s;
+}
+
+.cookie-consent-buttons button:hover {
+    opacity: 0.85;
+}
+
+.cookie-btn-accept {
+    background: #d4a574;
+    color: #fff;
+}
+
+.cookie-btn-decline {
+    background: transparent;
+    color: #a0a0a0;
+    border: 1px solid #555 !important;
+}

@@ -4,6 +4,7 @@
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
+    initCookieConsent();
     initStickyHeader();
     initSmoothScroll();
     initFAQAccordion();
@@ -14,6 +15,58 @@ document.addEventListener('DOMContentLoaded', () => {
     initMobileFloatingCTA();
     initExitIntent();
 });
+
+/* ============================================
+   COOKIE CONSENT (GDPR)
+   ============================================ */
+
+function initCookieConsent() {
+    if (localStorage.getItem('cookie-consent')) return;
+
+    var banner = document.createElement('div');
+    banner.className = 'cookie-consent';
+
+    var text = document.createElement('p');
+    text.textContent = 'Ce site utilise Google Analytics pour comprendre comment les visiteurs interagissent avec le contenu. ';
+    var link = document.createElement('a');
+    link.href = '/mentions-legales/';
+    link.textContent = 'En savoir plus';
+    text.appendChild(link);
+
+    var buttons = document.createElement('div');
+    buttons.className = 'cookie-consent-buttons';
+    var acceptBtn = document.createElement('button');
+    acceptBtn.className = 'cookie-btn-accept';
+    acceptBtn.textContent = 'Accepter';
+    var declineBtn = document.createElement('button');
+    declineBtn.className = 'cookie-btn-decline';
+    declineBtn.textContent = 'Refuser';
+    buttons.appendChild(acceptBtn);
+    buttons.appendChild(declineBtn);
+
+    banner.appendChild(text);
+    banner.appendChild(buttons);
+    document.body.appendChild(banner);
+
+    requestAnimationFrame(function() {
+        requestAnimationFrame(function() { banner.classList.add('visible'); });
+    });
+
+    acceptBtn.addEventListener('click', function() {
+        localStorage.setItem('cookie-consent', 'accepted');
+        if (typeof gtag !== 'undefined') {
+            gtag('consent', 'update', {'analytics_storage': 'granted'});
+        }
+        banner.classList.remove('visible');
+        setTimeout(function() { banner.remove(); }, 400);
+    });
+
+    declineBtn.addEventListener('click', function() {
+        localStorage.setItem('cookie-consent', 'declined');
+        banner.classList.remove('visible');
+        setTimeout(function() { banner.remove(); }, 400);
+    });
+}
 
 /* ============================================
    STICKY HEADER
