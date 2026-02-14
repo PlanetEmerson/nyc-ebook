@@ -41,6 +41,8 @@
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/animations.css">
     <link rel="stylesheet" href="../css/author.css">
+    <!-- Plausible Analytics -->
+    <script defer data-domain="fbemerson.com" src="https://plausible.io/js/script.js"></script>
 </head>
 <body class="author-page content-page">
 
@@ -104,11 +106,13 @@
                     Pas de spam. Pas de vente agressive. Juste des mots.
                 </p>
 
-                <form class="newsletter-form" action="#" method="POST" style="max-width: 450px; margin: 0 auto var(--space-8);">
+                <form class="newsletter-form" id="newsletter-form-page" action="#" method="POST" style="max-width: 450px; margin: 0 auto var(--space-8);">
                     <div class="form-group" style="display: flex; gap: var(--space-3);">
                         <input type="email" name="email" placeholder="votre@email.com" required style="flex: 1; padding: var(--space-4) var(--space-5); font-size: var(--text-base); border: 2px solid var(--color-cream-dark); border-radius: var(--radius-md); background: var(--color-cream-light);">
                         <button type="submit" class="cta-button primary">S'inscrire</button>
                     </div>
+                    <p class="form-success" style="display:none; color: var(--color-gold); margin-top: var(--space-3); text-align: center;">Merci ! Vous êtes inscrit(e).</p>
+                    <p class="form-error" style="display:none; color: var(--color-rust); margin-top: var(--space-3); text-align: center;">Une erreur est survenue. Réessayez.</p>
                 </form>
 
                 <hr style="margin: var(--space-16) auto; max-width: 100px;">

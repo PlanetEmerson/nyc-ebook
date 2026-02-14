@@ -117,6 +117,8 @@
         "sameAs": []
     }
     </script>
+    <!-- Plausible Analytics -->
+    <script defer data-domain="fbemerson.com" src="https://plausible.io/js/script.js"></script>
 </head>
 <body class="author-page">
 
@@ -219,11 +221,13 @@
                     <p class="newsletter-description">
                         Nouveaux projets, réflexions sur l'écriture, et peut-être quelques secrets sur New York.
                     </p>
-                    <form class="newsletter-form" action="#" method="POST">
+                    <form class="newsletter-form" id="newsletter-form-home" action="#" method="POST">
                         <div class="form-group">
                             <input type="email" name="email" placeholder="votre@email.com" required>
                             <button type="submit" class="cta-button">S'inscrire</button>
                         </div>
+                        <p class="form-success" style="display:none; color: var(--color-gold); margin-top: var(--space-3);">Merci ! Vous êtes inscrit(e).</p>
+                        <p class="form-error" style="display:none; color: var(--color-rust); margin-top: var(--space-3);">Une erreur est survenue. Réessayez.</p>
                     </form>
                     <p class="newsletter-note">Pas de spam. Promis.</p>
                 </div>

@@ -64,13 +64,22 @@
         },
         "description": "Un témoignage personnel sur ce que New York peut vous faire. Pas un guide. Une confession.",
         "publisher": "F.B. Emerson",
-        "offers": {
-            "@type": "Offer",
-            "price": "14.99",
-            "priceCurrency": "USD",
-            "availability": "https://schema.org/InStock",
-            "url": "https://fbemerson.com/new-york/"
-        }
+        "offers": [
+            {
+                "@type": "Offer",
+                "price": "14.99",
+                "priceCurrency": "EUR",
+                "availability": "https://schema.org/InStock",
+                "url": "https://fbemerson.com/new-york/"
+            },
+            {
+                "@type": "Offer",
+                "price": "14.99",
+                "priceCurrency": "USD",
+                "availability": "https://schema.org/InStock",
+                "url": "https://fbemerson.com/new-york/"
+            }
+        ]
     }
     </script>
     <script type="application/ld+json">
@@ -121,6 +130,8 @@
         ]
     }
     </script>
+    <!-- Plausible Analytics -->
+    <script defer data-domain="fbemerson.com" src="https://plausible.io/js/script.js"></script>
 </head>
 <body class="book-page">
     <!-- Author Navigation -->
@@ -139,7 +150,7 @@
                 <li><a href="/a-propos/">À propos</a></li>
                 <li><a href="/newsletter/">Newsletter</a></li>
             </ul>
-            <a href="https://new-york-mon-eveil.lemonsqueezy.com/checkout/buy/629edd26-dec8-40f4-ac3b-f3f91fcc50e6?embed=1" class="lemonsqueezy-button nav-cta cta-button">Acheter</a>
+            <a href="https://new-york-mon-eveil.lemonsqueezy.com/checkout/buy/629edd26-dec8-40f4-ac3b-f3f91fcc50e6?embed=1" class="lemonsqueezy-button nav-cta cta-button" onclick="plausible('Purchase Click', {props: {location: 'nav'}})">Acheter</a>
             <button class="mobile-menu-toggle" aria-label="Menu">
                 <span></span>
                 <span></span>
@@ -152,7 +163,7 @@
     <header class="sticky-header" id="sticky-header">
         <div class="header-content">
             <span class="header-title">New York, Mon Éveil</span>
-            <a href="https://new-york-mon-eveil.lemonsqueezy.com/checkout/buy/629edd26-dec8-40f4-ac3b-f3f91fcc50e6?embed=1" class="lemonsqueezy-button header-cta">Acheter le livre</a>
+            <a href="https://new-york-mon-eveil.lemonsqueezy.com/checkout/buy/629edd26-dec8-40f4-ac3b-f3f91fcc50e6?embed=1" class="lemonsqueezy-button header-cta" onclick="plausible('Purchase Click', {props: {location: 'sticky'}})">Acheter le livre</a>
         </div>
     </header>
 
@@ -240,7 +251,7 @@
                         </div>
                         <div class="excerpt-fade"></div>
                     </div>
-                    <a href="https://new-york-mon-eveil.lemonsqueezy.com/checkout/buy/629edd26-dec8-40f4-ac3b-f3f91fcc50e6?embed=1" class="lemonsqueezy-button cta-link">Lire la suite dans le livre <span class="arrow">→</span></a>
+                    <a href="https://new-york-mon-eveil.lemonsqueezy.com/checkout/buy/629edd26-dec8-40f4-ac3b-f3f91fcc50e6?embed=1" class="lemonsqueezy-button cta-link" onclick="plausible('Purchase Click', {props: {location: 'excerpt'}})">Lire la suite dans le livre <span class="arrow">→</span></a>
                 </div>
             </div>
         </section>
@@ -502,11 +513,18 @@
                             <li>Livraison instantanée par email</li>
                         </ul>
 
+                        <div class="launch-pricing">Prix de lancement</div>
+
                         <div class="purchase-price">
-                            <span class="price">$14.99</span>
+                            <span class="price-primary">14,99 €</span>
+                            <span class="price-secondary">($14.99 USD)</span>
                         </div>
 
-                        <a href="https://new-york-mon-eveil.lemonsqueezy.com/checkout/buy/629edd26-dec8-40f4-ac3b-f3f91fcc50e6?embed=1" class="lemonsqueezy-button cta-button primary large purchase-cta">
+                        <p class="price-context">
+                            Moins qu'un cocktail à Manhattan. Plus qu'un guide de voyage.
+                        </p>
+
+                        <a href="https://new-york-mon-eveil.lemonsqueezy.com/checkout/buy/629edd26-dec8-40f4-ac3b-f3f91fcc50e6?embed=1" class="lemonsqueezy-button cta-button primary large purchase-cta" onclick="plausible('Purchase Click', {props: {location: 'purchase'}})">
                             Acheter le livre
                         </a>
 
@@ -606,11 +624,13 @@
                     <p class="email-capture-description">
                         Recevez le premier chapitre gratuitement, et découvrez si ce livre est fait pour vous.
                     </p>
-                    <form class="email-capture-form" action="#" method="POST">
+                    <form class="email-capture-form" id="free-chapter-form" action="#" method="POST">
                         <div class="form-group">
                             <input type="email" name="email" placeholder="votre@email.com" required>
                             <button type="submit" class="cta-button">Recevoir l'extrait</button>
                         </div>
+                        <p class="form-success" style="display:none; color: var(--color-gold); margin-top: var(--space-3);">Merci ! Vérifiez votre boîte email.</p>
+                        <p class="form-error" style="display:none; color: var(--color-rust); margin-top: var(--space-3);">Une erreur est survenue. Réessayez.</p>
                     </form>
                     <p class="email-capture-note">
                         + Vous serez informé(e) des prochains projets de F.B. Emerson
@@ -657,7 +677,7 @@
                     <h2 class="final-headline">New York vous attend.</h2>
                     <p class="final-subheadline">Ce livre vous y prépare.</p>
                     <p class="final-text">Pas avec des listes. Avec la vérité.</p>
-                    <a href="https://new-york-mon-eveil.lemonsqueezy.com/checkout/buy/629edd26-dec8-40f4-ac3b-f3f91fcc50e6?embed=1" class="lemonsqueezy-button cta-button primary large">Commencer la lecture</a>
+                    <a href="https://new-york-mon-eveil.lemonsqueezy.com/checkout/buy/629edd26-dec8-40f4-ac3b-f3f91fcc50e6?embed=1" class="lemonsqueezy-button cta-button primary large" onclick="plausible('Purchase Click', {props: {location: 'final-cta'}})">Commencer la lecture</a>
                 </div>
             </div>
         </section>
@@ -676,6 +696,27 @@
             </div>
         </div>
     </footer>
+
+    <!-- Mobile Floating CTA -->
+    <div class="mobile-floating-cta" id="mobile-cta">
+        <a href="https://new-york-mon-eveil.lemonsqueezy.com/checkout/buy/629edd26-dec8-40f4-ac3b-f3f91fcc50e6?embed=1" class="lemonsqueezy-button cta-button primary" onclick="plausible('Purchase Click', {props: {location: 'mobile-float'}})">
+            Acheter · 14,99 €
+        </a>
+    </div>
+
+    <!-- Exit-Intent Overlay (desktop only) -->
+    <div class="exit-intent-overlay" id="exit-intent-overlay">
+        <div class="exit-intent-modal">
+            <button class="exit-intent-close" aria-label="Fermer">&times;</button>
+            <h3>Avant de partir...</h3>
+            <p>Recevez le premier chapitre gratuitement, et découvrez si ce livre est fait pour vous.</p>
+            <form class="exit-intent-form" action="#" method="POST" onsubmit="if(typeof plausible!=='undefined')plausible('Email Signup',{props:{type:'free-chapter',page:'exit-intent'}})">
+                <input type="email" name="email" placeholder="votre@email.com" required>
+                <button type="submit" class="cta-button primary">Recevoir l'extrait</button>
+            </form>
+            <p class="exit-intent-note">Pas de spam. Promis.</p>
+        </div>
+    </div>
 
     <script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>
     <script src="../js/main.js"></script>

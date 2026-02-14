@@ -1117,6 +1117,213 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ============================================
+   LAUNCH PRICING BADGE
+   ============================================ */
+
+.launch-pricing {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    font-weight: var(--font-medium);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wider);
+    color: var(--color-cream);
+    background: var(--color-rust);
+    padding: var(--space-1) var(--space-3);
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--space-3);
+}
+
+/* ============================================
+   EUR PRICE DISPLAY
+   ============================================ */
+
+.price-primary {
+    font-family: var(--font-display);
+    font-size: var(--text-4xl);
+    font-weight: var(--font-bold);
+    color: var(--color-midnight);
+}
+
+.price-secondary {
+    font-size: var(--text-base);
+    color: var(--color-text-muted);
+    margin-left: var(--space-2);
+}
+
+.price-context {
+    font-family: var(--font-accent);
+    font-size: var(--text-base);
+    font-style: italic;
+    color: var(--color-text-light);
+    margin-bottom: var(--space-6);
+}
+
+/* ============================================
+   MOBILE FLOATING CTA
+   ============================================ */
+
+.mobile-floating-cta {
+    display: none;
+    position: fixed;
+    bottom: 1rem;
+    left: var(--container-padding);
+    right: var(--container-padding);
+    z-index: var(--z-sticky);
+    text-align: center;
+}
+
+.mobile-floating-cta .cta-button {
+    width: 100%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    font-size: var(--text-lg);
+    padding: var(--space-4) var(--space-6);
+}
+
+@media (max-width: 768px) {
+    .mobile-floating-cta.visible {
+        display: block;
+    }
+}
+
+/* ============================================
+   EXIT-INTENT OVERLAY
+   ============================================ */
+
+.exit-intent-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(13, 27, 42, 0.85);
+    backdrop-filter: blur(4px);
+    align-items: center;
+    justify-content: center;
+}
+
+.exit-intent-overlay.visible {
+    display: flex;
+}
+
+.exit-intent-modal {
+    background: var(--color-cream);
+    border-radius: var(--radius-lg);
+    padding: var(--space-10) var(--space-8);
+    max-width: 440px;
+    width: 90%;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.exit-intent-close {
+    position: absolute;
+    top: var(--space-3);
+    right: var(--space-4);
+    font-size: var(--text-2xl);
+    color: var(--color-text-muted);
+    background: none;
+    border: none;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.exit-intent-close:hover {
+    color: var(--color-text);
+}
+
+.exit-intent-modal h3 {
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    color: var(--color-midnight);
+    margin-bottom: var(--space-3);
+}
+
+.exit-intent-modal p {
+    font-size: var(--text-base);
+    color: var(--color-text-light);
+    margin-bottom: var(--space-6);
+    line-height: var(--leading-relaxed);
+}
+
+.exit-intent-form {
+    display: flex;
+    gap: var(--space-3);
+    margin-bottom: var(--space-3);
+}
+
+.exit-intent-form input[type="email"] {
+    flex: 1;
+    padding: var(--space-3) var(--space-4);
+    font-size: var(--text-base);
+    border: 2px solid var(--color-cream-dark);
+    border-radius: var(--radius-sm);
+    font-family: var(--font-body);
+}
+
+.exit-intent-form input[type="email"]:focus {
+    outline: none;
+    border-color: var(--color-gold);
+}
+
+.exit-intent-note {
+    font-size: var(--text-xs) !important;
+    color: var(--color-text-muted) !important;
+    margin-bottom: 0 !important;
+}
+
+@media (max-width: 480px) {
+    .exit-intent-form {
+        flex-direction: column;
+    }
+}
+
+/* ============================================
+   INLINE BOOK CTA (Blog Posts)
+   ============================================ */
+
+.inline-book-cta {
+    margin: var(--space-10) 0;
+    padding: var(--space-6) var(--space-8);
+    border-left: 3px solid var(--color-gold);
+    background: rgba(201, 162, 39, 0.08);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.inline-book-cta p {
+    font-family: var(--font-accent);
+    font-size: var(--text-base);
+    font-style: italic;
+    color: var(--color-cream);
+    line-height: var(--leading-relaxed);
+    margin: 0;
+}
+
+.inline-book-cta a {
+    color: var(--color-gold);
+    text-decoration: none;
+    font-weight: var(--font-medium);
+    transition: color var(--transition-fast);
+}
+
+.inline-book-cta a:hover {
+    color: var(--color-gold-light);
+}
+
+/* Blog purchase box EUR pricing */
+.purchase-box-price-primary {
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    color: var(--color-cream);
+}
+
+.purchase-box-price-secondary {
+    font-size: var(--text-sm);
+    color: var(--color-blush);
+    margin-left: var(--space-2);
+}
+
+/* ============================================
    UTILITY CLASSES
    ============================================ */
 

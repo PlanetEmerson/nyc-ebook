@@ -10,6 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollAnimations();
     initImageLoading();
     initScrollProgress();
+    initScrollDepthTracking();
+    initMobileFloatingCTA();
+    initExitIntent();
 });
 
 /* ============================================
@@ -218,43 +221,174 @@ function initScrollProgress() {
 }
 
 /* ============================================
-   PURCHASE BUTTON PLACEHOLDER
+   SCROLL DEPTH TRACKING (Plausible)
    ============================================ */
 
-// This will be replaced with actual PayHip integration
-document.querySelectorAll('[data-purchase="true"]').forEach(button => {
-    button.addEventListener('click', (e) => {
-        e.preventDefault();
+function initScrollDepthTracking() {
+    if (typeof plausible === 'undefined') return;
+    if (!document.body.classList.contains('book-page')) return;
 
-        // Placeholder behavior - scroll to show the book is coming soon
-        // Replace this with PayHip checkout URL when ready
-        alert('Le livre sera bientôt disponible ! Revenez nous voir.');
+    const sections = ['excerpt', 'chapters', 'testimonials', 'purchase', 'email-capture'];
+    const tracked = new Set();
 
-        // Future implementation:
-        // window.location.href = 'https://payhip.com/b/XXXXX';
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !tracked.has(entry.target.id)) {
+                tracked.add(entry.target.id);
+                plausible('Scroll Depth', {props: {section: entry.target.id}});
+            }
+        });
+    }, { threshold: 0.3 });
+
+    sections.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) observer.observe(el);
     });
-});
+}
 
 /* ============================================
-   PARALLAX EFFECT (Subtle)
+   MOBILE FLOATING CTA
    ============================================ */
 
-function initParallax() {
-    const parallaxElements = document.querySelectorAll('.parallax-slow');
+function initMobileFloatingCTA() {
+    const cta = document.getElementById('mobile-cta');
+    const hero = document.getElementById('hero');
+    const purchase = document.getElementById('purchase');
 
-    if (parallaxElements.length === 0) return;
+    if (!cta || !hero) return;
 
-    const handleParallax = () => {
-        const scrollY = window.scrollY;
+    const handleScroll = () => {
+        const heroBottom = hero.getBoundingClientRect().bottom;
+        const purchaseVisible = purchase && purchase.getBoundingClientRect().top < window.innerHeight;
 
-        parallaxElements.forEach(el => {
-            const speed = el.dataset.parallaxSpeed || 0.5;
-            const yPos = -(scrollY * speed);
-            el.style.transform = `translateY(${yPos}px)`;
-        });
+        if (heroBottom < 0 && !purchaseVisible) {
+            cta.classList.add('visible');
+        } else {
+            cta.classList.remove('visible');
+        }
     };
 
-    window.addEventListener('scroll', handleParallax, { passive: true });
+    window.addEventListener('scroll', throttle(handleScroll, 100), { passive: true });
+}
+
+/* ============================================
+   EXIT-INTENT EMAIL CAPTURE
+   ============================================ */
+
+function initExitIntent() {
+    if (!document.body.classList.contains('book-page')) return;
+    if (sessionStorage.getItem('exit-intent-shown')) return;
+
+    const overlay = document.getElementById('exit-intent-overlay');
+    if (!overlay) return;
+
+    const showOverlay = () => {
+        overlay.classList.add('visible');
+        sessionStorage.setItem('exit-intent-shown', '1');
+        if (typeof plausible !== 'undefined') {
+            plausible('Exit Intent Shown');
+        }
+    };
+
+    // Desktop: mouse leaves viewport toward top
+    document.documentElement.addEventListener('mouseleave', (e) => {
+        if (e.clientY <= 0 && !sessionStorage.getItem('exit-intent-shown')) {
+            showOverlay();
+        }
+    });
+
+    // Close handlers
+    overlay.addEventListener('click', (e) => {
+        if (e.target === overlay || e.target.closest('.exit-intent-close')) {
+            overlay.classList.remove('visible');
+        }
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') overlay.classList.remove('visible');
+    });
+}
+
+/* ============================================
+   EMAIL FORM HANDLING (Brevo)
+   ============================================ */
+
+// TODO: Replace with your Brevo form action URLs after account setup
+const BREVO_CONFIG = {
+    // Set these after creating Brevo forms:
+    // freeChapter: 'https://sibforms.com/serve/YOUR_FREE_CHAPTER_FORM_ID',
+    // newsletter: 'https://sibforms.com/serve/YOUR_NEWSLETTER_FORM_ID',
+    freeChapter: null,
+    newsletter: null
+};
+
+function initEmailForms() {
+    document.querySelectorAll('form[id]').forEach(form => {
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const email = form.querySelector('input[type="email"]').value;
+            const successEl = form.querySelector('.form-success');
+            const errorEl = form.querySelector('.form-error');
+            const submitBtn = form.querySelector('button[type="submit"]');
+
+            if (!email) return;
+
+            // Determine form type and endpoint
+            const isChapter = form.id === 'free-chapter-form' || form.closest('.exit-intent-modal');
+            const endpoint = isChapter ? BREVO_CONFIG.freeChapter : BREVO_CONFIG.newsletter;
+
+            // Track with Plausible
+            if (typeof plausible !== 'undefined') {
+                const type = isChapter ? 'free-chapter' : 'newsletter';
+                const page = window.location.pathname;
+                plausible('Email Signup', {props: {type: type, page: page}});
+            }
+
+            if (!endpoint) {
+                // Brevo not configured yet - show success anyway for UX
+                // Remove this block once Brevo is connected
+                if (successEl) successEl.style.display = 'block';
+                if (errorEl) errorEl.style.display = 'none';
+                if (submitBtn) submitBtn.textContent = 'Envoyé !';
+                form.querySelector('input[type="email"]').value = '';
+                console.warn('Email form submitted but Brevo not configured. Email:', email);
+                return;
+            }
+
+            // Submit to Brevo
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Envoi...';
+
+            try {
+                const formData = new FormData();
+                formData.append('EMAIL', email);
+
+                const response = await fetch(endpoint, {
+                    method: 'POST',
+                    body: formData,
+                    mode: 'no-cors'
+                });
+
+                if (successEl) successEl.style.display = 'block';
+                if (errorEl) errorEl.style.display = 'none';
+                submitBtn.textContent = 'Envoyé !';
+                form.querySelector('input[type="email"]').value = '';
+            } catch (err) {
+                if (errorEl) errorEl.style.display = 'block';
+                if (successEl) successEl.style.display = 'none';
+                submitBtn.textContent = isChapter ? 'Recevoir l\'extrait' : 'S\'inscrire';
+                submitBtn.disabled = false;
+            }
+        });
+    });
+}
+
+// Init email forms after DOM ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initEmailForms);
+} else {
+    initEmailForms();
 }
 
 /* ============================================
