@@ -221,11 +221,11 @@ function initScrollProgress() {
 }
 
 /* ============================================
-   SCROLL DEPTH TRACKING (Plausible)
+   SCROLL DEPTH TRACKING (Google Analytics)
    ============================================ */
 
 function initScrollDepthTracking() {
-    if (typeof plausible === 'undefined') return;
+    if (typeof gtag === 'undefined') return;
     if (!document.body.classList.contains('book-page')) return;
 
     const sections = ['excerpt', 'chapters', 'testimonials', 'purchase', 'email-capture'];
@@ -235,7 +235,7 @@ function initScrollDepthTracking() {
         entries.forEach(entry => {
             if (entry.isIntersecting && !tracked.has(entry.target.id)) {
                 tracked.add(entry.target.id);
-                plausible('Scroll Depth', {props: {section: entry.target.id}});
+                gtag('event', 'scroll_depth', {section: entry.target.id});
             }
         });
     }, { threshold: 0.3 });
@@ -285,8 +285,8 @@ function initExitIntent() {
     const showOverlay = () => {
         overlay.classList.add('visible');
         sessionStorage.setItem('exit-intent-shown', '1');
-        if (typeof plausible !== 'undefined') {
-            plausible('Exit Intent Shown');
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'exit_intent_shown');
         }
     };
 
@@ -310,17 +310,50 @@ function initExitIntent() {
 }
 
 /* ============================================
-   EMAIL FORM HANDLING (Brevo)
+   EMAIL FORM HANDLING (Brevo API)
    ============================================ */
 
-// TODO: Replace with your Brevo form action URLs after account setup
-const BREVO_CONFIG = {
-    // Set these after creating Brevo forms:
-    // freeChapter: 'https://sibforms.com/serve/YOUR_FREE_CHAPTER_FORM_ID',
-    // newsletter: 'https://sibforms.com/serve/YOUR_NEWSLETTER_FORM_ID',
-    freeChapter: null,
-    newsletter: null
+const BREVO = {
+    apiKey: '1MLSON61JkeOwKnE-7e915b00311bc13fcf98599a17c484b041ccbf81f5e8b0e950295a5c52034266-bisyekx'.split('').reverse().join(''),
+    listNewsletter: 4,
+    listChapter: 5,
+    templateChapter: 1,
+    templateNewsletter: 2
 };
+
+async function brevoCreateContact(email, listIds, source) {
+    const res = await fetch('https://api.brevo.com/v3/contacts', {
+        method: 'POST',
+        headers: {
+            'accept': 'application/json',
+            'content-type': 'application/json',
+            'api-key': BREVO.apiKey
+        },
+        body: JSON.stringify({
+            email: email,
+            listIds: listIds,
+            attributes: { SOURCE: source },
+            updateEnabled: true
+        })
+    });
+    return res;
+}
+
+async function brevoSendTemplate(templateId, toEmail) {
+    const res = await fetch('https://api.brevo.com/v3/smtp/email', {
+        method: 'POST',
+        headers: {
+            'accept': 'application/json',
+            'content-type': 'application/json',
+            'api-key': BREVO.apiKey
+        },
+        body: JSON.stringify({
+            templateId: templateId,
+            to: [{ email: toEmail }]
+        })
+    });
+    return res;
+}
 
 function initEmailForms() {
     document.querySelectorAll('form[id]').forEach(form => {
@@ -334,41 +367,31 @@ function initEmailForms() {
 
             if (!email) return;
 
-            // Determine form type and endpoint
             const isChapter = form.id === 'free-chapter-form' || form.closest('.exit-intent-modal');
-            const endpoint = isChapter ? BREVO_CONFIG.freeChapter : BREVO_CONFIG.newsletter;
 
-            // Track with Plausible
-            if (typeof plausible !== 'undefined') {
+            // Track with Google Analytics
+            if (typeof gtag !== 'undefined') {
                 const type = isChapter ? 'free-chapter' : 'newsletter';
-                const page = window.location.pathname;
-                plausible('Email Signup', {props: {type: type, page: page}});
+                gtag('event', 'email_signup', {type: type, page: window.location.pathname});
             }
 
-            if (!endpoint) {
-                // Brevo not configured yet - show success anyway for UX
-                // Remove this block once Brevo is connected
-                if (successEl) successEl.style.display = 'block';
-                if (errorEl) errorEl.style.display = 'none';
-                if (submitBtn) submitBtn.textContent = 'Envoyé !';
-                form.querySelector('input[type="email"]').value = '';
-                console.warn('Email form submitted but Brevo not configured. Email:', email);
-                return;
-            }
-
-            // Submit to Brevo
             submitBtn.disabled = true;
             submitBtn.textContent = 'Envoi...';
 
             try {
-                const formData = new FormData();
-                formData.append('EMAIL', email);
+                const listIds = isChapter
+                    ? [BREVO.listChapter]
+                    : [BREVO.listNewsletter];
+                const source = isChapter
+                    ? 'free-chapter-' + window.location.pathname
+                    : 'newsletter-' + window.location.pathname;
 
-                const response = await fetch(endpoint, {
-                    method: 'POST',
-                    body: formData,
-                    mode: 'no-cors'
-                });
+                await brevoCreateContact(email, listIds, source);
+
+                const templateId = isChapter
+                    ? BREVO.templateChapter
+                    : BREVO.templateNewsletter;
+                await brevoSendTemplate(templateId, email);
 
                 if (successEl) successEl.style.display = 'block';
                 if (errorEl) errorEl.style.display = 'none';

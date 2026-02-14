@@ -130,8 +130,14 @@
         ]
     }
     </script>
-    <!-- Plausible Analytics -->
-    <script defer data-domain="fbemerson.com" src="https://plausible.io/js/script.js"></script>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F80QWXZV7M"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-F80QWXZV7M');
+    </script>
 </head>
 <body class="book-page">
     <!-- Author Navigation -->
@@ -150,7 +156,7 @@
                 <li><a href="/a-propos/">À propos</a></li>
                 <li><a href="/newsletter/">Newsletter</a></li>
             </ul>
-            <a href="https://new-york-mon-eveil.lemonsqueezy.com/checkout/buy/629edd26-dec8-40f4-ac3b-f3f91fcc50e6?embed=1" class="lemonsqueezy-button nav-cta cta-button" onclick="plausible('Purchase Click', {props: {location: 'nav'}})">Acheter</a>
+            <a href="https://new-york-mon-eveil.lemonsqueezy.com/checkout/buy/629edd26-dec8-40f4-ac3b-f3f91fcc50e6?embed=1" class="lemonsqueezy-button nav-cta cta-button" onclick="gtag('event','purchase_click',{location:'nav'})">Acheter</a>
             <button class="mobile-menu-toggle" aria-label="Menu">
                 <span></span>
                 <span></span>
@@ -163,7 +169,7 @@
     <header class="sticky-header" id="sticky-header">
         <div class="header-content">
             <span class="header-title">New York, Mon Éveil</span>
-            <a href="https://new-york-mon-eveil.lemonsqueezy.com/checkout/buy/629edd26-dec8-40f4-ac3b-f3f91fcc50e6?embed=1" class="lemonsqueezy-button header-cta" onclick="plausible('Purchase Click', {props: {location: 'sticky'}})">Acheter le livre</a>
+            <a href="https://new-york-mon-eveil.lemonsqueezy.com/checkout/buy/629edd26-dec8-40f4-ac3b-f3f91fcc50e6?embed=1" class="lemonsqueezy-button header-cta" onclick="gtag('event','purchase_click',{location:'sticky'})">Acheter le livre</a>
         </div>
     </header>
 
@@ -251,7 +257,7 @@
                         </div>
                         <div class="excerpt-fade"></div>
                     </div>
-                    <a href="https://new-york-mon-eveil.lemonsqueezy.com/checkout/buy/629edd26-dec8-40f4-ac3b-f3f91fcc50e6?embed=1" class="lemonsqueezy-button cta-link" onclick="plausible('Purchase Click', {props: {location: 'excerpt'}})">Lire la suite dans le livre <span class="arrow">→</span></a>
+                    <a href="https://new-york-mon-eveil.lemonsqueezy.com/checkout/buy/629edd26-dec8-40f4-ac3b-f3f91fcc50e6?embed=1" class="lemonsqueezy-button cta-link" onclick="gtag('event','purchase_click',{location:'excerpt'})">Lire la suite dans le livre <span class="arrow">→</span></a>
                 </div>
             </div>
         </section>
@@ -524,7 +530,7 @@
                             Moins qu'un cocktail à Manhattan. Plus qu'un guide de voyage.
                         </p>
 
-                        <a href="https://new-york-mon-eveil.lemonsqueezy.com/checkout/buy/629edd26-dec8-40f4-ac3b-f3f91fcc50e6?embed=1" class="lemonsqueezy-button cta-button primary large purchase-cta" onclick="plausible('Purchase Click', {props: {location: 'purchase'}})">
+                        <a href="https://new-york-mon-eveil.lemonsqueezy.com/checkout/buy/629edd26-dec8-40f4-ac3b-f3f91fcc50e6?embed=1" class="lemonsqueezy-button cta-button primary large purchase-cta" onclick="gtag('event','purchase_click',{location:'purchase'})">
                             Acheter le livre
                         </a>
 
@@ -677,7 +683,7 @@
                     <h2 class="final-headline">New York vous attend.</h2>
                     <p class="final-subheadline">Ce livre vous y prépare.</p>
                     <p class="final-text">Pas avec des listes. Avec la vérité.</p>
-                    <a href="https://new-york-mon-eveil.lemonsqueezy.com/checkout/buy/629edd26-dec8-40f4-ac3b-f3f91fcc50e6?embed=1" class="lemonsqueezy-button cta-button primary large" onclick="plausible('Purchase Click', {props: {location: 'final-cta'}})">Commencer la lecture</a>
+                    <a href="https://new-york-mon-eveil.lemonsqueezy.com/checkout/buy/629edd26-dec8-40f4-ac3b-f3f91fcc50e6?embed=1" class="lemonsqueezy-button cta-button primary large" onclick="gtag('event','purchase_click',{location:'final-cta'})">Commencer la lecture</a>
                 </div>
             </div>
         </section>
@@ -699,7 +705,7 @@
 
     <!-- Mobile Floating CTA -->
     <div class="mobile-floating-cta" id="mobile-cta">
-        <a href="https://new-york-mon-eveil.lemonsqueezy.com/checkout/buy/629edd26-dec8-40f4-ac3b-f3f91fcc50e6?embed=1" class="lemonsqueezy-button cta-button primary" onclick="plausible('Purchase Click', {props: {location: 'mobile-float'}})">
+        <a href="https://new-york-mon-eveil.lemonsqueezy.com/checkout/buy/629edd26-dec8-40f4-ac3b-f3f91fcc50e6?embed=1" class="lemonsqueezy-button cta-button primary" onclick="gtag('event','purchase_click',{location:'mobile-float'})">
             Acheter · 14,99 €
         </a>
     </div>
@@ -710,9 +716,11 @@
             <button class="exit-intent-close" aria-label="Fermer">&times;</button>
             <h3>Avant de partir...</h3>
             <p>Recevez le premier chapitre gratuitement, et découvrez si ce livre est fait pour vous.</p>
-            <form class="exit-intent-form" action="#" method="POST" onsubmit="if(typeof plausible!=='undefined')plausible('Email Signup',{props:{type:'free-chapter',page:'exit-intent'}})">
+            <form id="exit-intent-form" class="exit-intent-form" action="#" method="POST">
                 <input type="email" name="email" placeholder="votre@email.com" required>
                 <button type="submit" class="cta-button primary">Recevoir l'extrait</button>
+                <p class="form-success" style="display:none;color:#4a7c59;margin-top:8px;">Consultez votre boîte mail !</p>
+                <p class="form-error" style="display:none;color:#c0392b;margin-top:8px;">Erreur. Veuillez réessayer.</p>
             </form>
             <p class="exit-intent-note">Pas de spam. Promis.</p>
         </div>
