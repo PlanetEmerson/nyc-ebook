@@ -41,3 +41,19 @@ npm-debug.log*
 
 # Dependencies (if we add a website later)
 node_modules/
+
+# Claude Code context files (keep .claude/CLAUDE.md tracked)
+**/CLAUDE.md
+!.claude/CLAUDE.md
+
+# Build/dev artifacts
+build/
+docs/
+scripts/
+src/
+tests/
+web/
+
+# Image backups
+images/book/cover-1024-backup.jpg
+images/textures/originals/
