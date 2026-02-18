@@ -1,5 +1,22 @@
 [
     {
+        "title": "Ce que la nourriture de New York dit de vous",
+        "description": "Les guides vous disent où manger à New York. Personne ne vous explique comment la ville, bouchée après bouchée, finit par vous transformer. Du premier café de bodega au bagel du dimanche matin.",
+        "slug": "nourriture-new-york-dit-de-vous",
+        "date": "18 février 2026",
+        "category": "Secrets",
+        "tags": [
+            "nourriture",
+            "cuisine",
+            "bodega",
+            "diner",
+            "bagel",
+            "secrets",
+            "new york",
+            "transformation"
+        ]
+    },
+    {
         "title": "Le métro de New York : ce qu'il m'a fallu comprendre",
         "description": "Tout le monde vous explique comment prendre le métro de New York. Personne ne vous dit ce qu'il vous apprend. Sur la ville, sur les autres, et sur la personne que vous étiez avant d'y descendre.",
         "slug": "metro-new-york-ce-quil-faut-comprendre",
