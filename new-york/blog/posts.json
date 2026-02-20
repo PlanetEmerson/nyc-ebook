@@ -1,5 +1,21 @@
 [
     {
+        "title": "New York au printemps, la douceur que personne n'attend",
+        "description": "Tout le monde rêve de New York sous la neige ou en plein été. Personne ne vous prépare au printemps, cette douceur soudaine qui change tout ce qu'on croyait savoir de cette ville.",
+        "slug": "new-york-au-printemps",
+        "date": "20 février 2026",
+        "category": "Voyage",
+        "tags": [
+            "printemps",
+            "new york",
+            "voyage",
+            "cerisiers",
+            "central park",
+            "saisons",
+            "transformation"
+        ]
+    },
+    {
         "title": "Ce que la nourriture de New York dit de vous",
         "description": "Les guides vous disent où manger à New York. Personne ne vous explique comment la ville, bouchée après bouchée, finit par vous transformer. Du premier café de bodega au bagel du dimanche matin.",
         "slug": "nourriture-new-york-dit-de-vous",
