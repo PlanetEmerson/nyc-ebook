@@ -32,8 +32,14 @@
   </url>
   <url>
     <loc>https://fbemerson.com/new-york/blog/</loc>
-    <lastmod>2026-02-27</lastmod>
+    <lastmod>2026-03-02</lastmod>
     <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fbemerson.com/new-york/blog/new-york-ne-montre-qua-ceux-qui-marchent/</loc>
+    <lastmod>2026-03-02</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>

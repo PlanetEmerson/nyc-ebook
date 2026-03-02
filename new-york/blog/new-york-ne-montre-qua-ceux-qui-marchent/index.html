@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Ce que New York ne montre qu'à ceux qui marchent | Blog New York | F.B. Emerson</title>
+    <meta name="description" content="On vous dit de prendre le métro, le taxi, le ferry. Personne ne vous dit que New York garde ses plus belles vérités pour ceux qui la parcourent à pied.">
+    <meta name="keywords" content="new york à pied, marcher new york, new york, voyage, F.B. Emerson, New York, Mon Éveil">
+    <meta name="author" content="F.B. Emerson">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://fbemerson.com/new-york/blog/new-york-ne-montre-qua-ceux-qui-marchent/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://fbemerson.com/new-york/blog/new-york-ne-montre-qua-ceux-qui-marchent/">
+    <meta property="og:title" content="Ce que New York ne montre qu'à ceux qui marchent">
+    <meta property="og:description" content="On vous dit de prendre le métro, le taxi, le ferry. Personne ne vous dit que New York garde ses plus belles vérités pour ceux qui la parcourent à pied.">
+    <meta property="og:image" content="https://fbemerson.com/new-york/blog/new-york-ne-montre-qua-ceux-qui-marchent/featured.jpg">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="F.B. Emerson">
+    <meta property="article:published_time" content="2026-03-02">
+    <meta property="article:author" content="F.B. Emerson">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ce que New York ne montre qu'à ceux qui marchent">
+    <meta name="twitter:description" content="On vous dit de prendre le métro, le taxi, le ferry. Personne ne vous dit que New York garde ses plus belles vérités pour ceux qui la parcourent à pied.">
+    <meta name="twitter:image" content="https://fbemerson.com/new-york/blog/new-york-ne-montre-qua-ceux-qui-marchent/featured.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗽</text></svg>">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;1,8..60,400;1,8..60,500&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../../css/variables.css">
+    <link rel="stylesheet" href="../../../css/styles.css">
+    <link rel="stylesheet" href="../../../css/animations.css">
+    <link rel="stylesheet" href="../../../css/author.css">
+
+    <!-- Blog-specific styles -->
+    <style>
+        .blog-article {
+            background: var(--color-midnight);
+            min-height: 100vh;
+        }
+
+        /* FIXED: Add 80px clearance for fixed header */
+        .article-header {
+            padding: calc(80px + var(--space-12)) var(--container-padding) var(--space-8);
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .article-meta {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: var(--space-3);
+            font-size: var(--text-sm);
+            color: var(--color-text-muted);
+            margin-bottom: var(--space-6);
+        }
+
+        .article-meta a {
+            color: var(--color-gold);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
+
+        .article-meta a:hover {
+            color: var(--color-gold-light);
+        }
+
+        .article-category {
+            color: var(--color-gold);
+            text-transform: uppercase;
+            letter-spacing: var(--tracking-wider);
+            font-weight: var(--font-medium);
+        }
+
+        .article-title {
+            font-family: var(--font-display);
+            font-size: var(--text-4xl);
+            font-weight: var(--font-bold);
+            color: var(--color-cream);
+            line-height: var(--leading-tight);
+            margin-bottom: var(--space-6);
+        }
+
+        .article-excerpt {
+            font-size: var(--text-xl);
+            color: var(--color-blush);
+            line-height: var(--leading-relaxed);
+            font-family: var(--font-accent);
+            font-style: italic;
+        }
+
+        .featured-image {
+            max-width: 900px;
+            margin: 0 auto var(--space-12);
+            padding: 0 var(--container-padding);
+            opacity: 0;
+            animation: fadeInUp 0.8s ease 0.2s forwards;
+        }
+
+        .featured-image img {
+            width: 100%;
+            height: auto;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--color-gold-dark);
+            transition: transform var(--transition-slow);
+        }
+
+        .featured-image:hover img {
+            transform: scale(1.02);
+        }
+
+        .article-content {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 0 var(--container-padding) var(--space-16);
+            opacity: 0;
+            animation: fadeIn 0.8s ease 0.4s forwards;
+        }
+
+        .article-content h2 {
+            font-family: var(--font-display);
+            font-size: var(--text-2xl);
+            font-weight: var(--font-bold);
+            color: var(--color-cream);
+            margin-top: var(--space-12);
+            margin-bottom: var(--space-4);
+            line-height: var(--leading-tight);
+            position: relative;
+            padding-bottom: var(--space-3);
+        }
+
+        .article-content h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background: var(--color-gold);
+        }
+
+        .article-content h3 {
+            font-family: var(--font-display);
+            font-size: var(--text-xl);
+            font-weight: var(--font-semibold);
+            color: var(--color-gold);
+            margin-top: var(--space-8);
+            margin-bottom: var(--space-3);
+        }
+
+        .article-content p {
+            font-family: var(--font-body);
+            font-size: var(--text-lg);
+            color: var(--color-blush);
+            line-height: var(--leading-loose);
+            margin-bottom: var(--space-6);
+        }
+
+        /* First paragraph drop cap */
+        .article-content > p:first-of-type::first-letter {
+            float: left;
+            font-family: var(--font-display);
+            font-size: 3.5em;
+            line-height: 0.8;
+            padding-right: 0.1em;
+            color: var(--color-gold);
+            font-weight: var(--font-bold);
+        }
+
+        .article-content ul,
+        .article-content ol {
+            color: var(--color-blush);
+            margin-left: var(--space-6);
+            margin-bottom: var(--space-6);
+        }
+
+        .article-content li {
+            margin-bottom: var(--space-2);
+            line-height: var(--leading-relaxed);
+            position: relative;
+        }
+
+        .article-content ul li {
+            list-style-type: none;
+            padding-left: var(--space-4);
+        }
+
+        .article-content ul li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--color-gold);
+        }
+
+        .article-content ol li {
+            list-style-type: decimal;
+        }
+
+        .article-content strong {
+            color: var(--color-cream);
+            font-weight: var(--font-semibold);
+        }
+
+        .article-content em {
+            font-style: italic;
+        }
+
+        .article-content blockquote {
+            border-left: 4px solid var(--color-gold);
+            padding-left: var(--space-6);
+            margin: var(--space-8) 0;
+            font-family: var(--font-accent);
+            font-size: var(--text-xl);
+            font-style: italic;
+            color: var(--color-cream);
+            position: relative;
+        }
+
+        .article-content blockquote::before {
+            content: '"';
+            position: absolute;
+            left: var(--space-2);
+            top: -0.5em;
+            font-size: 3em;
+            color: var(--color-gold);
+            opacity: 0.3;
+            font-family: var(--font-display);
+        }
+
+        .article-content a {
+            color: var(--color-gold);
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            transition: color var(--transition-fast);
+        }
+
+        .article-content a:hover {
+            color: var(--color-gold-light);
+        }
+
+        /* Author Box - FIXED: Proper centering with responsive padding */
+        .author-box {
+            max-width: 700px;
+            margin: 0 auto var(--space-12);
+            padding: var(--space-8);
+            background: var(--color-midnight-light);
+            border: 1px solid var(--color-gold-dark);
+            border-radius: var(--radius-lg);
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
+            transition: border-color var(--transition-base), transform var(--transition-base);
+        }
+
+        /* Responsive horizontal margins */
+        @media (max-width: 768px) {
+            .author-box {
+                margin-left: var(--container-padding);
+                margin-right: var(--container-padding);
+            }
+        }
+
+        .author-box:hover {
+            border-color: var(--color-gold);
+            transform: translateY(-4px);
+        }
+
+        .author-box-inner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: var(--space-4);
+        }
+
+        @media (min-width: 640px) {
+            .author-box-inner {
+                flex-direction: row;
+                text-align: left;
+                gap: var(--space-6);
+            }
+        }
+
+        .author-box img {
+            width: 80px;
+            height: 80px;
+            border-radius: var(--radius-full);
+            border: 2px solid var(--color-gold-dark);
+            flex-shrink: 0;
+            transition: border-color var(--transition-base);
+        }
+
+        .author-box:hover img {
+            border-color: var(--color-gold);
+        }
+
+        .author-box-label {
+            color: var(--color-gold);
+            font-size: var(--text-sm);
+            text-transform: uppercase;
+            letter-spacing: var(--tracking-wider);
+            margin-bottom: var(--space-1);
+        }
+
+        .author-box-name {
+            font-family: var(--font-display);
+            font-size: var(--text-xl);
+            color: var(--color-cream);
+            margin-bottom: var(--space-2);
+        }
+
+        .author-box-bio {
+            font-size: var(--text-sm);
+            color: var(--color-blush);
+            line-height: var(--leading-relaxed);
+        }
+
+        /* Purchase Box */
+        .purchase-box {
+            position: relative;
+            max-width: 760px;
+            margin: 0 auto var(--space-16);
+            padding: var(--space-10);
+            border: 1px solid var(--color-gold);
+            border-radius: var(--radius-lg);
+            background: linear-gradient(135deg, rgba(45, 37, 32, 0.95), rgba(77, 69, 64, 0.9));
+            overflow: hidden;
+            opacity: 0;
+            animation: fadeInUp 0.6s ease 0.1s forwards;
+            transition: transform var(--transition-base), box-shadow var(--transition-base);
+        }
+
+        /* Responsive horizontal margins */
+        @media (max-width: 768px) {
+            .purchase-box {
+                margin-left: var(--container-padding);
+                margin-right: var(--container-padding);
+                padding: var(--space-8);
+            }
+        }
+
+        .purchase-box::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('../../../images/textures/grain.png');
+            background-size: 200px 200px;
+            opacity: 0.18;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .purchase-box::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at top right, rgba(212, 168, 75, 0.18), transparent 60%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .purchase-box:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+        }
+
+        .purchase-box-inner {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: minmax(160px, 220px) 1fr;
+            gap: var(--space-10);
+            align-items: center;
+        }
+
+        .purchase-box-content {
+            text-align: left;
+        }
+
+        @media (max-width: 768px) {
+            .purchase-box-inner {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .purchase-box-content {
+                text-align: center;
+            }
+        }
+
+        .purchase-box-media {
+            display: flex;
+            justify-content: center;
+        }
+
+        .purchase-box .book-cover {
+            width: 200px;
+            transform: rotateY(-6deg);
+        }
+
+        .purchase-box .book-mockup:hover .book-cover {
+            transform: rotateY(0deg) translateY(-6px);
+        }
+
+        @media (max-width: 768px) {
+            .purchase-box .book-cover {
+                width: 170px;
+            }
+        }
+
+        .purchase-box-label {
+            color: var(--color-gold);
+            font-size: var(--text-sm);
+            text-transform: uppercase;
+            letter-spacing: var(--tracking-wider);
+            margin-bottom: var(--space-2);
+        }
+
+        .purchase-box-title {
+            font-family: var(--font-display);
+            font-size: var(--text-2xl);
+            color: var(--color-cream);
+            margin-bottom: var(--space-2);
+        }
+
+        .purchase-box-subtitle {
+            font-family: var(--font-accent);
+            font-style: italic;
+            color: var(--color-blush);
+            font-size: var(--text-lg);
+            margin-bottom: var(--space-6);
+        }
+
+        .purchase-box-details {
+            list-style: none;
+            margin: 0 0 var(--space-6);
+            padding: 0;
+            display: grid;
+            gap: var(--space-2);
+            color: var(--color-cream);
+            font-size: var(--text-sm);
+        }
+
+        .purchase-box-details li {
+            position: relative;
+            padding-left: var(--space-4);
+        }
+
+        .purchase-box-details li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--color-gold);
+        }
+
+        .purchase-box-actions {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: var(--space-6);
+            margin-bottom: var(--space-4);
+        }
+
+        @media (max-width: 768px) {
+            .purchase-box-actions {
+                justify-content: center;
+            }
+        }
+
+        .purchase-box-price {
+            font-family: var(--font-display);
+            font-size: var(--text-2xl);
+            color: var(--color-cream);
+        }
+
+        .purchase-box-guarantee {
+            color: var(--color-blush);
+            font-size: var(--text-sm);
+            margin-bottom: var(--space-2);
+        }
+
+        .purchase-box-trust {
+            color: var(--color-cream);
+            font-size: var(--text-sm);
+            opacity: 0.75;
+        }
+
+        .purchase-box .cta-button {
+            padding: var(--space-4) var(--space-8);
+        }
+
+        .related-posts {
+            background: var(--color-midnight-light);
+            padding: var(--space-16) var(--container-padding);
+            position: relative;
+        }
+
+        .related-posts::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('../../../images/textures/grain.png');
+            background-size: 200px 200px;
+            opacity: 0.1;
+            pointer-events: none;
+        }
+
+        .related-posts h2 {
+            font-family: var(--font-display);
+            font-size: var(--text-2xl);
+            color: var(--color-cream);
+            text-align: center;
+            margin-bottom: var(--space-10);
+            position: relative;
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-6);
+            max-width: 1000px;
+            margin: 0 auto var(--space-8);
+            position: relative;
+        }
+
+        @media (min-width: 768px) {
+            .related-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .related-card {
+            background: var(--color-midnight);
+            border: 1px solid var(--color-gold-dark);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            text-decoration: none;
+            transition: border-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .related-card:nth-child(1) { animation-delay: 0.1s; }
+        .related-card:nth-child(2) { animation-delay: 0.2s; }
+        .related-card:nth-child(3) { animation-delay: 0.3s; }
+
+        .related-card:hover {
+            border-color: var(--color-gold);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .related-card img {
+            width: 100%;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+            transition: transform var(--transition-slow);
+            opacity: 1 !important;
+        }
+
+        .related-card:hover img {
+            transform: scale(1.08);
+        }
+
+        .related-card-content {
+            padding: var(--space-4);
+        }
+
+        .related-card h3 {
+            font-family: var(--font-display);
+            font-size: var(--text-base);
+            color: var(--color-cream);
+            line-height: var(--leading-snug);
+            transition: color var(--transition-fast);
+        }
+
+        .related-card:hover h3 {
+            color: var(--color-gold-light);
+        }
+
+        .related-more {
+            text-align: center;
+            position: relative;
+        }
+
+        .related-more a {
+            color: var(--color-gold);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+            font-weight: var(--font-medium);
+        }
+
+        .related-more a:hover {
+            color: var(--color-gold-light);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Ce que New York ne montre qu'à ceux qui marchent",
+        "description": "On vous dit de prendre le métro, le taxi, le ferry. Personne ne vous dit que New York garde ses plus belles vérités pour ceux qui la parcourent à pied.",
+        "image": "https://fbemerson.com/new-york/blog/new-york-ne-montre-qua-ceux-qui-marchent/featured.jpg",
+        "author": {
+            "@type": "Person",
+            "name": "F.B. Emerson",
+            "url": "https://fbemerson.com/a-propos/"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "F.B. Emerson",
+            "url": "https://fbemerson.com"
+        },
+        "datePublished": "2026-03-02",
+        "dateModified": "2026-03-02",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://fbemerson.com/new-york/blog/new-york-ne-montre-qua-ceux-qui-marchent/"
+        },
+        "inLanguage": "fr-FR"
+    }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F80QWXZV7M"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {'analytics_storage': localStorage.getItem('cookie-consent') === 'accepted' ? 'granted' : 'denied'});
+    gtag('js', new Date());
+    gtag('config', 'G-F80QWXZV7M');
+    </script>
+</head>
+
+<body class="author-page blog-article">
+
+    <!-- Header -->
+    <header class="author-header">
+        <nav class="author-nav container">
+            <a href="/" class="nav-logo">F.B. Emerson</a>
+            <ul class="nav-links">
+                <li><a href="/">Accueil</a></li>
+                <li class="has-dropdown">
+                    <a href="/new-york/" class="active">New York</a>
+                    <div class="nav-dropdown">
+                        <a href="/new-york/">Le Livre</a>
+                        <a href="/new-york/blog/">Le Blog</a>
+                    </div>
+                </li>
+                <li><a href="/a-propos/">À propos</a></li>
+                <li><a href="/newsletter/">Newsletter</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Article -->
+    <article>
+        <!-- Article Header -->
+        <header class="article-header">
+            <div class="article-meta">
+                <a href="/new-york/blog/">← Retour au blog</a>
+                <span>•</span>
+                <span class="article-category">Réflexions</span>
+                <span>•</span>
+                <time datetime="2026-03-02">2 mars 2026</time>
+            </div>
+
+            <h1 class="article-title">Ce que New York ne montre qu'à ceux qui marchent</h1>
+
+            <p class="article-excerpt">On vous dit de prendre le métro, le taxi, le ferry. Personne ne vous dit que New York garde ses plus belles vérités pour ceux qui la parcourent à pied.</p>
+        </header>
+
+        <!-- Featured Image -->
+        <div class="featured-image">
+            <img src="featured.jpg" alt="Ce que New York ne montre qu'à ceux qui marchent" loading="eager" width="900" height="506">
+        </div>
+
+        <!-- Article Content -->
+        <div class="article-content">
+            <!-- INLINE_CTA: Insert after ~40% of content -->
+<aside class="inline-book-cta">
+    <p><em>Ce sujet est au coeur de New York, Mon Eveil.</em> <a href="/new-york/">Decouvrir le livre →</a></p>
+</aside>
+
+            <p>Il y a un moment, quand on marche à New York, où les pieds prennent les décisions à votre place.</p>
+
+<p>C'était un dimanche de mars. Je marchais sur Houston Street sans destination, sans plan, avec cette fatigue particulière des lendemains de nuit blanche qui vous rend à la fois lourde et légère. Au croisement d'une rue dont je ne connais toujours pas le nom, mes pieds ont tourné à gauche.</p>
+
+<p>Ils m'ont conduite dans une ruelle que je n'avais jamais vue. Des briques rouges, une glycine en avance sur le printemps, un chat sur un rebord de fenêtre qui m'a regardée passer avec une indifférence souveraine. Au bout de cette ruelle, un jardin communautaire grand comme un salon, avec un cerisier en fleurs et un banc sous lequel quelqu'un avait oublié un livre.</p>
+
+<p>J'ai ramassé le livre. C'était un recueil de poèmes de Frank O'Hara. Je me suis assise. Et j'ai compris, ce matin-là, quelque chose que trois mois de métro et de taxis ne m'avaient pas appris : New York ne se donne pas à ceux qui la traversent. Elle se donne à ceux qui la marchent.</p>
+
+<h2>La ville au rythme des pas</h2>
+
+<p>On vous recommande le métro. C'est rapide, c'est efficace, c'est le choix raisonnable. On vous recommande le taxi quand il pleut, le ferry quand vous voulez la carte postale, le bus quand vous êtes perdu. Personne ne vous dit de marcher.</p>
+
+<p>Personne ne vous dit que la seule manière de comprendre cette ville, c'est de la prendre au rythme de vos pas.</p>
+
+<p>Le <a href="/new-york/blog/metro-new-york-ce-quil-faut-comprendre/">métro est un raccourci</a>. Vous entrez à Chinatown, vous sortez à Harlem. La ville entre les deux n'existe pas. Elle a été avalée, résumée, court-circuitée. Vous avez gagné vingt minutes et perdu vingt quartiers.</p>
+
+<p>À pied, ces vingt quartiers existent. Ils ont des odeurs, des textures, des frontières invisibles que seules vos semelles connaissent. Le passage de Little Italy à NoLita, ce n'est pas un panneau de rue. C'est un changement dans l'air, dans les vitrines, dans la façon dont les gens marchent autour de vous. On passe du bruyant au feutré en trois blocs, sans comprendre comment.</p>
+
+<h2>Ce que la vitesse vole</h2>
+
+<p>J'ai longtemps pris le taxi pour traverser Manhattan d'est en ouest. C'est une course de quelques minutes, un défilé de feux rouges et de piétons pressés vus à travers une vitre sale.</p>
+
+<p>Un jour, j'ai fait le même trajet à pied. Il m'a fallu quarante minutes. J'ai vu un antiquaire qui vendait des lampes Tiffany au sous-sol d'un immeuble sans étage. J'ai senti l'odeur de cannelle qui sortait d'une boulangerie coréenne dont personne ne m'avait parlé. J'ai longé un terrain de basket où quatre adolescents jouaient en silence, sans musique, sans cris, juste le bruit du ballon sur le bitume.</p>
+
+<p>Rien de tout cela n'existe depuis un taxi.</p>
+
+<p>La vitesse est une forme d'oubli. New York le sait. C'est pour ça qu'elle a mis ses secrets à hauteur de pas : dans les détails des façades, dans les jardins qui se cachent derrière les grilles, dans ces plaques de bronze fichées dans les trottoirs qui racontent des histoires que plus personne ne lit.</p>
+
+<h2>Le corps qui apprend la ville</h2>
+
+<p>Il y a une connaissance que seuls les pieds possèdent.</p>
+
+<p>Après quelques semaines de marche, mon corps savait des choses que ma tête ignorait encore. Il savait que la 5e Avenue monte imperceptiblement vers le nord. Que les trottoirs de <a href="/new-york/blog/greenwich-village-ralentir/">Greenwich Village</a>, ce quartier qui m'a appris à ralentir, sont plus étroits que ceux de Midtown. Que la pente de Brooklyn Heights vers le waterfront est assez raide pour faire travailler les mollets.</p>
+
+<p>Mon corps avait cartographié la ville en sensations. Il connaissait les zones de vent, là où les rues s'alignent avec le fleuve et où le courant d'air vous attrape par surprise. Il connaissait les poches de chaleur devant les bouches de métro en hiver. Il connaissait la différence entre le pavé lisse de SoHo et l'asphalte craquelé du Bronx.</p>
+
+<p>Cette carte-là, aucune application ne peut la dessiner.</p>
+
+<h2>Les quartiers qui ne se livrent qu'aux marcheurs</h2>
+
+<p>Chaque quartier a un seuil de révélation. C'est la durée qu'il faut passer à le parcourir avant qu'il vous montre sa vraie nature.</p>
+
+<p>Le <a href="/new-york/blog/lower-east-side-memoire-vivante/">Lower East Side</a>, par exemple, ne se révèle pas en une promenade. Il lui faut trois, quatre passages pour que vous commenciez à voir ses couches d'histoire, la mémoire que ses murs portent encore. C'est un quartier qui récompense la patience.</p>
+
+<p><a href="/new-york/blog/chelsea-jardin-de-ses-ruines/">Chelsea</a> vous accueille vite, avec ses galeries et sa promenade suspendue. Mais descendez de la High Line, quittez les allées touristiques, marchez vers l'ouest jusqu'à la lisière du fleuve. Là, dans ces rues plus calmes où les entrepôts se souviennent encore de leur première vie, le quartier vous montre quelque chose de plus tendre.</p>
+
+<p><a href="/new-york/blog/harlem-rythme-reinvention/">Harlem</a> demande du respect. On n'y marche pas comme on marche à SoHo. Le rythme est différent, plus posé, plus habité. Les gens vous regardent. Pas avec hostilité, mais avec cette curiosité franche de ceux qui vivent dans un quartier qu'on traverse trop souvent sans s'arrêter.</p>
+
+<p>Et puis il y a les quartiers que personne ne recommande, ceux qui n'apparaissent dans aucun itinéraire. Sunset Park, avec sa vue impossible sur Manhattan et ses boulangeries chinoises. Red Hook, au bout de nulle part, avec ses docks silencieux et son odeur de sel. Inwood, tout au nord, où Manhattan finit dans une forêt que personne ne soupçonne.</p>
+
+<h2>Marcher seul, marcher accompagné</h2>
+
+<p>Il y a deux villes différentes selon que vous marchez seul ou avec quelqu'un.</p>
+
+<p>Seul, vous êtes poreux. La ville entre en vous par tous les pores. Vous entendez plus, vous voyez plus, vous ressentez plus. Vous êtes disponible pour l'inattendu. Le graffiti que vous n'auriez pas remarqué, la conversation que vous n'auriez pas surprise, la lumière entre deux immeubles que vous n'auriez pas eu le temps de regarder.</p>
+
+<p>Accompagné, la ville devient un prétexte. On ne marche plus pour voir, on marche pour parler. Le paysage se transforme en décor, et les mots qu'on échange deviennent le vrai sujet du trajet. J'ai eu des conversations à New York, en marchant, que je n'aurais jamais eues assise en face de quelqu'un dans un café.</p>
+
+<p>Il y a quelque chose dans le mouvement parallèle, dans le fait de regarder devant soi ensemble plutôt que de se faire face, qui libère la parole. Les confidences sortent plus facilement quand les pieds avancent. Comme si le mouvement donnait au silence la permission d'exister entre les phrases, et aux phrases la permission d'être vraies.</p>
+
+<h2>Ce que la marche m'a changé</h2>
+
+<p>Je suis arrivée à New York pressée. Pressée d'arriver, de voir, de comprendre, de raconter. Le métro était mon allié, le taxi mon raccourci. Marcher me semblait une perte de temps, un luxe de flâneur dans une ville qui n'avait pas de temps à perdre.</p>
+
+<p>Il m'a fallu six mois pour comprendre que la lenteur n'est pas l'ennemie de l'urgence. Qu'on peut marcher lentement dans une ville qui court, et que c'est peut-être la seule manière de la voir vraiment.</p>
+
+<p>New York m'a appris à marcher. Pas au sens physique. Au sens d'être présente dans le trajet, pas seulement dans l'arrivée. De laisser mes pieds me guider parfois, d'accepter le détour, la ruelle inconnue, le bloc supplémentaire.</p>
+
+<p>C'est un apprentissage qui déborde de la ville. Depuis New York, je marche différemment partout. À Paris, à Lisbonne, dans la rue devant chez moi. Je ne cherche plus seulement à arriver. Je cherche ce que le chemin a à me dire.</p>
+
+<p>Et chaque fois que je marche, où que je sois, c'est un peu New York que je retrouve sous mes pas. Cette ville qui m'a appris que le monde n'appartient pas à ceux qui vont vite. Il appartient à ceux qui savent regarder.</p>
+        </div>
+
+        <!-- Author Box - FIXED: Removed inline styles that broke centering -->
+        <aside class="author-box">
+            <div class="author-box-inner">
+                <img src="/images/sections/author-desk.png" alt="F.B. Emerson" width="80" height="80">
+                <div>
+                    <p class="author-box-label">Écrit par</p>
+                    <p class="author-box-name">F.B. Emerson</p>
+                    <p class="author-box-bio">Auteure de « New York, Mon Éveil ». Je suis allée visiter une ville. Je suis revenue éveillée.</p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Purchase Box -->
+        <aside class="purchase-box">
+            <div class="purchase-box-inner">
+                <div class="purchase-box-media">
+                    <div class="book-mockup compact">
+                        <img src="/images/book/cover.jpg" alt="New York, Mon Éveil" class="book-cover" loading="lazy" width="220" height="330">
+                    </div>
+                </div>
+                <div class="purchase-box-content">
+                    <p class="purchase-box-label">Le livre complet</p>
+                    <h3 class="purchase-box-title">New York, Mon Éveil</h3>
+                    <p class="purchase-box-subtitle">Récit de transformation par F.B. Emerson</p>
+                    <ul class="purchase-box-details">
+                        <li>12 chapitres + Prologue</li>
+                        <li>Appendices pratiques inclus</li>
+                        <li>Format: PDF premium</li>
+                        <li>Livraison instantanée par email</li>
+                    </ul>
+                    <div class="purchase-box-actions">
+                        <span class="purchase-box-price-primary">14,99 €</span>
+                        <a href="https://new-york-mon-eveil.lemonsqueezy.com/checkout/buy/629edd26-dec8-40f4-ac3b-f3f91fcc50e6?embed=1" class="lemonsqueezy-button cta-button primary">Acheter le livre</a>
+                    </div>
+                    <p class="purchase-box-guarantee"><span class="guarantee-icon">🛡️</span> Satisfait ou remboursé sous 30 jours.</p>
+                    <p class="purchase-box-trust">🔒 Paiement sécurisé · 📧 Livraison instantanée</p>
+                </div>
+            </div>
+        </aside>
+    </article>
+
+    <!-- Related Posts -->
+    <section class="related-posts">
+        <h2>Autres articles</h2>
+        <div class="related-grid" id="related-posts">
+            <!-- Dynamically loaded -->
+        </div>
+        <div class="related-more">
+            <a href="/new-york/blog/">Voir tous les articles →</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="author-footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-copyright">© 2026 F.B. Emerson</p>
+                <nav class="footer-nav">
+                    <a href="/new-york/contact/">Contact</a>
+                    <a href="/mentions-legales/">Mentions légales</a>
+                    <a href="/newsletter/">Newsletter</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>
+    <script src="/js/main.js"></script>
+    <script>
+        // Mobile menu
+        document.querySelector('.mobile-menu-toggle')?.addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+            this.classList.toggle('active');
+        });
+
+        // Load related posts
+        async function loadRelated() {
+            try {
+                const response = await fetch('/new-york/blog/posts.json');
+                const posts = await response.json();
+                const currentSlug = 'new-york-ne-montre-qua-ceux-qui-marchent';
+                const related = posts.filter(p => p.slug !== currentSlug).slice(0, 3);
+
+                if (related.length === 0) return;
+
+                const container = document.getElementById('related-posts');
+                container.textContent = '';
+                
+                related.forEach((post, index) => {
+                    const card = document.createElement('a');
+                    card.href = '/new-york/blog/' + post.slug + '/';
+                    card.className = 'related-card';
+                    card.style.animationDelay = (0.1 + index * 0.1) + 's';
+                    
+                    const img = document.createElement('img');
+                    img.src = '/new-york/blog/' + post.slug + '/featured.jpg';
+                    img.alt = post.title;
+                    img.width = 320;
+                    img.height = 180;
+                    img.loading = 'lazy';
+                    img.onerror = function() { this.src = '/images/textures/paper.png'; };
+                    
+                    const content = document.createElement('div');
+                    content.className = 'related-card-content';
+                    
+                    const title = document.createElement('h3');
+                    title.textContent = post.title;
+                    
+                    content.appendChild(title);
+                    card.appendChild(img);
+                    card.appendChild(content);
+                    container.appendChild(card);
+                });
+            } catch (e) {
+                console.log('No related posts found');
+            }
+        }
+        loadRelated();
+    </script>
+</body>
+</html>
