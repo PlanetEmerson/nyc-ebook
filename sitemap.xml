@@ -32,8 +32,14 @@
   </url>
   <url>
     <loc>https://fbemerson.com/new-york/blog/</loc>
-    <lastmod>2026-03-04</lastmod>
+    <lastmod>2026-03-06</lastmod>
     <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fbemerson.com/new-york/blog/east-village-quartier-qui-a-dit-non/</loc>
+    <lastmod>2026-03-06</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
