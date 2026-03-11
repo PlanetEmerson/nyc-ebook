@@ -1,5 +1,24 @@
 [
     {
+        "title": "New York en été, la ville à ceux qui restent",
+        "description": "On vous vante New York sous la neige ou au printemps. Personne ne vous prévient pour l'été, cette saison où la ville perd ses masques et appartient enfin à ceux qui restent.",
+        "slug": "new-york-en-ete-ville-a-ceux-qui-restent",
+        "date": "11 mars 2026",
+        "category": "Voyage",
+        "tags": [
+            "été",
+            "new york en été",
+            "chaleur",
+            "voyage",
+            "saisons",
+            "brooklyn",
+            "coney island",
+            "stoops",
+            "new york",
+            "transformation"
+        ]
+    },
+    {
         "title": "Les librairies de New York, ces refuges que la ville s'est inventés",
         "description": "Les librairies de New York ne vendent pas que des livres. Elles gardent des mondes entiers pour ceux qui savent pousser la porte.",
         "slug": "librairies-new-york-refuges-ville-inventes",
