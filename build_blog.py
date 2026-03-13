@@ -9,8 +9,8 @@ Usage:
 """
 
 import json
-import os
 import re
+import subprocess
 import sys
 from datetime import datetime
 from pathlib import Path
@@ -19,6 +19,7 @@ from pathlib import Path
 BLOG_DIR = Path(__file__).parent / "new-york" / "blog"
 POSTS_JSON = BLOG_DIR / "posts.json"
 TEMPLATE_FILE = BLOG_DIR / "_template.html"
+BUILD_ARTIFACTS_SCRIPT = Path(__file__).parent / "scripts" / "build_marketing_artifacts.py"
 
 # French month names
 FRENCH_MONTHS = {
@@ -203,6 +204,9 @@ def build_post(data: dict) -> None:
 
     POSTS_JSON.write_text(json.dumps(posts, indent=4, ensure_ascii=False))
     print(f"Mis à jour: {POSTS_JSON}")
+
+    subprocess.run([sys.executable, str(BUILD_ARTIFACTS_SCRIPT)], check=True)
+    print(f"Régénéré: {BUILD_ARTIFACTS_SCRIPT.name}")
 
     print(f"\n✅ Article créé: /new-york/blog/{slug}/")
     print(f"📸 N'oubliez pas d'ajouter l'image: /new-york/blog/{slug}/featured.jpg")

@@ -234,8 +234,8 @@
     text-align: center;
     padding: var(--space-32) var(--container-padding);
     background:
-        url('../images/textures/grain.png'),
-        url('../images/textures/hero-texture.png');
+        url('../images/textures/grain.webp'),
+        url('../images/textures/hero-texture.webp');
     background-size: 200px 200px, cover;
     background-position: center, center;
     background-blend-mode: overlay, normal;
@@ -918,7 +918,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: url('../images/textures/grain.png');
+    background: url('../images/textures/grain.webp');
     background-size: 200px 200px;
     opacity: 0.1;
     pointer-events: none;
@@ -1152,7 +1152,7 @@
 /* Paper texture for content sections */
 .content-body {
     background:
-        url('../images/textures/paper.png'),
+        url('../images/textures/paper.webp'),
         var(--color-cream);
     background-size: 400px 400px, auto;
     background-blend-mode: soft-light, normal;
@@ -1161,7 +1161,7 @@
 /* Featured work section texture */
 .featured-work {
     background:
-        url('../images/textures/paper.png'),
+        url('../images/textures/paper.webp'),
         var(--color-cream-light);
     background-size: 400px 400px, auto;
     background-blend-mode: soft-light, normal;
@@ -1170,7 +1170,7 @@
 /* About teaser section */
 .about-teaser {
     background:
-        url('../images/textures/grain.png'),
+        url('../images/textures/grain.webp'),
         var(--color-cream);
     background-size: 200px 200px, auto;
     background-blend-mode: overlay, normal;
@@ -1179,7 +1179,7 @@
 /* Content hero with subtle texture */
 .content-hero {
     background:
-        url('../images/textures/hero-texture.png');
+        url('../images/textures/hero-texture.webp');
     background-size: cover;
     background-position: center;
 }

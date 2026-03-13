@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Premier voyage à New York | Guide de départ | F.B. Emerson</title>
+    <meta name="title" content="Premier voyage à New York | Guide de départ | F.B. Emerson">
+    <meta name="description" content="Préparez votre premier voyage à New York: rythme, quartiers, métro, saisons, lectures utiles et ressources choisies par F.B. Emerson.">
+    <meta name="author" content="F.B. Emerson">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://fbemerson.com/new-york/premier-voyage/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fbemerson.com/new-york/premier-voyage/">
+    <meta property="og:title" content="Premier voyage à New York | F.B. Emerson">
+    <meta property="og:description" content="Une page de départ pour comprendre New York avant le billet d'avion, la valise, et le premier pas sur le trottoir.">
+    <meta property="og:image" content="https://fbemerson.com/images/og-image.jpg">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="F.B. Emerson">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://fbemerson.com/new-york/premier-voyage/">
+    <meta name="twitter:title" content="Premier voyage à New York | F.B. Emerson">
+    <meta name="twitter:description" content="Commencez ici si vous préparez votre premier voyage à New York.">
+    <meta name="twitter:image" content="https://fbemerson.com/images/og-image.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗽</text></svg>">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;1,8..60,400;1,8..60,500&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../css/variables.css">
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/animations.css">
+    <link rel="stylesheet" href="../../css/author.css">
+
+    <style>
+        .journey-grid {
+            display: grid;
+            gap: var(--space-6);
+            margin: var(--space-10) 0 var(--space-12);
+        }
+
+        @media (min-width: 900px) {
+            .journey-grid {
+                grid-template-columns: 1.15fr 0.85fr;
+                align-items: start;
+            }
+        }
+
+        .journey-card,
+        .reading-card,
+        .support-card {
+            background: var(--color-cream-light);
+            border: 1px solid var(--color-cream-dark);
+            border-radius: var(--radius-lg);
+            padding: var(--space-7);
+            box-shadow: 0 14px 32px rgba(7, 15, 23, 0.08);
+        }
+
+        .journey-card h2,
+        .reading-card h2,
+        .support-card h2 {
+            margin-top: 0;
+            margin-bottom: var(--space-4);
+        }
+
+        .journey-steps,
+        .reading-links,
+        .faq-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .journey-steps li,
+        .reading-links li,
+        .faq-list li {
+            padding: var(--space-4) 0;
+            border-top: 1px solid var(--color-cream-dark);
+        }
+
+        .journey-steps li:first-child,
+        .reading-links li:first-child,
+        .faq-list li:first-child {
+            border-top: 0;
+            padding-top: 0;
+        }
+
+        .reading-links a {
+            display: inline-block;
+            font-family: var(--font-display);
+            font-size: var(--text-lg);
+            color: var(--color-midnight);
+            text-decoration: none;
+            margin-bottom: var(--space-2);
+        }
+
+        .reading-links a:hover {
+            color: var(--color-gold-dark);
+        }
+
+        .reading-links p,
+        .journey-steps p,
+        .faq-list p {
+            margin: 0;
+            color: var(--color-text-muted);
+        }
+
+        .page-cta {
+            margin: var(--space-12) 0;
+            padding: var(--space-8);
+            border-radius: var(--radius-lg);
+            background: var(--color-midnight);
+            color: var(--color-cream);
+            text-align: center;
+        }
+
+        .page-cta h2,
+        .page-cta p {
+            color: inherit;
+        }
+
+        .page-cta .cta-button {
+            margin-top: var(--space-4);
+        }
+
+        .support-grid {
+            display: grid;
+            gap: var(--space-6);
+            margin-top: var(--space-12);
+        }
+
+        @media (min-width: 780px) {
+            .support-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .support-card p {
+            margin-bottom: var(--space-5);
+        }
+    </style>
+
+    <!-- Schema.org Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Premier voyage à New York",
+        "headline": "Premier voyage à New York",
+        "description": "Une feuille de route pour comprendre New York avant un premier voyage: rythme, quartiers, métro, saisons et lectures utiles.",
+        "url": "https://fbemerson.com/new-york/premier-voyage/",
+        "inLanguage": "fr-FR",
+        "isPartOf": {
+            "@type": "WebSite",
+            "name": "F.B. Emerson",
+            "url": "https://fbemerson.com/"
+        },
+        "about": {
+            "@type": "Place",
+            "name": "New York City"
+        },
+        "author": {
+            "@type": "Person",
+            "name": "F.B. Emerson",
+            "url": "https://fbemerson.com/a-propos/",
+            "sameAs": [
+                "https://www.instagram.com/f.b.emerson/",
+                "https://www.pinterest.com/FBEmerson/"
+            ]
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "F.B. Emerson",
+            "url": "https://fbemerson.com/"
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://fbemerson.com/" },
+            { "@type": "ListItem", "position": 2, "name": "New York", "item": "https://fbemerson.com/new-york/" },
+            { "@type": "ListItem", "position": 3, "name": "Premier voyage à New York", "item": "https://fbemerson.com/new-york/premier-voyage/" }
+        ]
+    }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F80QWXZV7M"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {'analytics_storage': localStorage.getItem('cookie-consent') === 'accepted' ? 'granted' : 'denied'});
+    gtag('js', new Date());
+    gtag('config', 'G-F80QWXZV7M');
+    </script>
+</head>
+<body class="author-page content-page">
+
+    <!-- Header -->
+    <header class="author-header">
+        <nav class="author-nav container">
+            <a href="/" class="nav-logo">F.B. Emerson</a>
+            <ul class="nav-links">
+                <li><a href="/">Accueil</a></li>
+                <li class="has-dropdown">
+                    <a href="/new-york/" class="active">New York</a>
+                    <div class="nav-dropdown">
+                        <a href="/new-york/">Le Livre</a>
+                        <a href="/new-york/blog/">Le Blog</a>
+                    </div>
+                </li>
+                <li><a href="/a-propos/">À propos</a></li>
+                <li><a href="/newsletter/">Newsletter</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="content-hero">
+            <h1>Premier voyage à New York</h1>
+        </section>
+
+        <section class="content-body">
+            <div class="container">
+                <p style="font-size: var(--text-lg); margin-bottom: var(--space-6);">
+                    Si vous partez bientôt à New York, commencez ici. Pas pour collectionner des adresses à la chaîne, mais pour comprendre le rythme de cette ville avant le décalage horaire, la première rame de métro, et le premier trottoir traversé trop vite.
+                </p>
+                <p style="font-size: var(--text-lg); margin-bottom: var(--space-10);">
+                    Cette page relie les articles les plus utiles du site, les questions que l'on me pose le plus souvent, et le livre <a href="/new-york/" class="text-link">New York, Mon Éveil</a> si vous voulez préparer votre voyage avec plus qu'un simple itinéraire.
+                </p>
+
+                <div class="journey-grid">
+                    <div class="journey-card">
+                        <h2>Une bonne préparation en 4 temps</h2>
+                        <ol class="journey-steps">
+                            <li>
+                                <strong>Comprendre la ville avant de la consommer.</strong>
+                                <p>Commencez par la page <a href="/new-york/blog/avant-votre-premier-new-york/" class="text-link">Avant votre premier New York</a> pour remettre les attentes au bon endroit.</p>
+                            </li>
+                            <li>
+                                <strong>Choisir votre rythme.</strong>
+                                <p>New York ne se visite pas de la même façon selon la saison, la fatigue, et ce que vous cherchez à y trouver.</p>
+                            </li>
+                            <li>
+                                <strong>Apprendre les codes concrets.</strong>
+                                <p>Le <a href="/new-york/blog/metro-new-york-ce-quil-faut-comprendre/" class="text-link">métro</a>, les quartiers, et les transitions d'un borough à l'autre changent tout.</p>
+                            </li>
+                            <li>
+                                <strong>Garder une place pour l'imprévu.</strong>
+                                <p>Les meilleurs souvenirs arrivent souvent quand vous cessez de vouloir tout rentabiliser.</p>
+                            </li>
+                        </ol>
+                    </div>
+
+                    <div class="reading-card">
+                        <h2>Le parcours de lecture conseillé</h2>
+                        <ul class="reading-links">
+                            <li>
+                                <a href="/new-york/blog/avant-votre-premier-new-york/">Avant votre premier New York</a>
+                                <p>Le point d'entrée le plus utile si vous n'y avez jamais mis les pieds.</p>
+                            </li>
+                            <li>
+                                <a href="/new-york/blog/metro-new-york-ce-quil-faut-comprendre/">Le métro de New York : ce qu'il m'a fallu comprendre</a>
+                                <p>Pour apprivoiser le réseau sans vous laisser écraser par lui.</p>
+                            </li>
+                            <li>
+                                <a href="/new-york/blog/ce-que-les-guides-ne-disent-pas/">Ce que les guides de New York ne vous disent pas</a>
+                                <p>Pour distinguer la ville vécue de la ville vendue.</p>
+                            </li>
+                            <li>
+                                <a href="/new-york/blog/new-york-ne-montre-qua-ceux-qui-marchent/">Ce que New York ne montre qu'à ceux qui marchent</a>
+                                <p>Pour ralentir et laisser la ville se révéler à pied.</p>
+                            </li>
+                            <li>
+                                <a href="/new-york/blog/queens-new-york-touristes-ne-voient-jamais/">Le Queens, ce New York que les touristes ne voient jamais</a>
+                                <p>Pour élargir votre regard au-delà de Manhattan.</p>
+                            </li>
+                            <li>
+                                <a href="/new-york/blog/librairies-new-york-refuges-ville-inventes/">Les librairies de New York, ces refuges que la ville s'est inventés</a>
+                                <p>Pour repérer les lieux où l'on peut reprendre son souffle.</p>
+                            </li>
+                            <li>
+                                <a href="/new-york/blog/new-york-au-printemps/">New York au printemps, la douceur que personne n'attend</a>
+                                <p>Si vous partez quand la ville recommence à respirer.</p>
+                            </li>
+                            <li>
+                                <a href="/new-york/blog/new-york-en-hiver-ce-que-le-froid-revele/">New York en hiver: ce que le froid révèle</a>
+                                <p>Si votre voyage se joue dans le froid, la lumière basse, et les rues plus nues.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="page-cta">
+                    <h2>Vous voulez plus qu'une checklist?</h2>
+                    <p>
+                        <a href="/new-york/" class="text-link">New York, Mon Éveil</a> prépare votre voyage autrement: par la sensation, les détails que l'on n'anticipe pas, et ce que la ville change en vous quand elle vous attrape pour de bon.
+                    </p>
+                    <a href="/new-york/" class="cta-button primary">Découvrir le livre</a>
+                </div>
+
+                <h2>Les vraies questions à vous poser avant le départ</h2>
+                <ul class="faq-list" style="margin-bottom: var(--space-12);">
+                    <li>
+                        <strong>Faut-il tout réserver avant de partir?</strong>
+                        <p>Réservez ce qui vous sécurise, pas chaque heure. New York récompense ceux qui gardent une marge de respiration.</p>
+                    </li>
+                    <li>
+                        <strong>Quel quartier choisir pour une première fois?</strong>
+                        <p>Choisissez d'abord un rythme, puis un quartier. La proximité du métro compte, mais la sensation du quartier compte plus encore.</p>
+                    </li>
+                    <li>
+                        <strong>Le livre est-il utile si je cherche un voyage concret?</strong>
+                        <p>Oui. Il ne remplace pas un guide pratique, mais il vous évite d'arriver à New York avec des attentes qui vous empêchent de la voir.</p>
+                    </li>
+                    <li>
+                        <strong>Où continuer si j'ai encore des questions?</strong>
+                        <p>Le <a href="/new-york/blog/" class="text-link">blog New York</a> creuse les quartiers et les saisons. Si votre question est précise, utilisez la page <a href="/new-york/contact/" class="text-link">contact</a>.</p>
+                    </li>
+                </ul>
+
+                <div class="support-grid">
+                    <div class="support-card">
+                        <h2>Lire davantage</h2>
+                        <p>Le <a href="/new-york/blog/" class="text-link">blog</a> rassemble les articles de fond sur les quartiers, les saisons, le métro, la solitude, et ce que les guides ne racontent pas.</p>
+                        <a href="/new-york/blog/" class="text-link">Explorer tous les articles →</a>
+                    </div>
+                    <div class="support-card">
+                        <h2>Poser une vraie question</h2>
+                        <p>Si vous avez un itinéraire, une saison, ou une hésitation très précise, la page <a href="/new-york/contact/" class="text-link">contact</a> est faite pour cela.</p>
+                        <a href="/new-york/contact/" class="text-link">Poser ma question →</a>
+                    </div>
+                    <div class="support-card">
+                        <h2>Rester dans la boucle</h2>
+                        <p>La <a href="/newsletter/" class="text-link">newsletter</a> prolonge le voyage avec des recommandations, des coulisses, et des notes que je ne publie pas ailleurs.</p>
+                        <a href="/newsletter/" class="text-link">Rejoindre la newsletter →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section style="padding: var(--space-12) var(--container-padding); background: var(--color-cream-light); text-align: center;">
+            <a href="/new-york/" class="text-link">← Retour à New York, Mon Éveil</a>
+        </section>
+    </main>
+
+    <footer class="author-footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-copyright">© 2026 F.B. Emerson</p>
+                <nav class="footer-nav">
+                    <a href="/new-york/contact/">Contact</a>
+                    <a href="/mentions-legales/">Mentions légales</a>
+                    <a href="/newsletter/">Newsletter</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+    <script>
+        document.querySelector('.mobile-menu-toggle')?.addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+            this.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

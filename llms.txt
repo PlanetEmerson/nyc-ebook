@@ -1,17 +1,28 @@
 # F.B. Emerson — Auteure
 
-> F.B. Emerson est une auteure française connue pour « New York, Mon Éveil », un récit de transformation personnelle à travers New York.
+> F.B. Emerson est une auteure française installée à Amsterdam, connue pour « New York, Mon Éveil », un récit personnel sur New York, le voyage et la transformation.
 
 ## Pages principales
 - [Accueil](https://fbemerson.com/): Site officiel de F.B. Emerson
-- [New York, Mon Éveil](https://fbemerson.com/new-york/): Le livre — récit, extraits, achat
-- [À propos](https://fbemerson.com/a-propos/): Biographie de l'auteure
-- [Blog](https://fbemerson.com/new-york/blog/): Articles sur New York
-- [FAQ](https://fbemerson.com/new-york/#faq): Questions fréquentes sur le livre
+- [New York, Mon Éveil](https://fbemerson.com/new-york/): Le livre, ses extraits et l'achat
+- [Premier voyage à New York](https://fbemerson.com/new-york/premier-voyage/): Guide de lecture pour un premier séjour
+- [À propos](https://fbemerson.com/a-propos/): Biographie et contexte de l'auteure
+- [Blog](https://fbemerson.com/new-york/blog/): Articles sur New York, ses quartiers et ses saisons
+- [Newsletter](https://fbemerson.com/newsletter/): Inscription pour recevoir extraits et coulisses
 
 ## Faits clés
-- Auteure : F.B. Emerson
-- Livre : « New York, Mon Éveil »
-- Genre : Récit personnel / Memoir / Transformation
-- Langue : Français
-- Sujet : New York City vu à travers une expérience personnelle
+- Nom canonique : F.B. Emerson
+- Métier : auteure
+- Langue : français
+- Ville de référence : New York City
+- Livre principal : « New York, Mon Éveil »
+
+## Articles récents
+- [Écrire sur New York, la ville qui refuse d'être décrite](https://fbemerson.com/new-york/blog/ecrire-sur-new-york-ville-qui-refuse-etre-decrite/): Chaque écrivain qui s'est attaqué à New York a buté sur le même mur. La ville change plus vite que l'encre ne sèche. Alors pourquoi continuer? Parce que c'est justement cette résistance qui rend l'exercice vital.
+- [New York en été, la ville à ceux qui restent](https://fbemerson.com/new-york/blog/new-york-en-ete-ville-a-ceux-qui-restent/): On vous vante New York sous la neige ou au printemps. Personne ne vous prévient pour l'été, cette saison où la ville perd ses masques et appartient enfin à ceux qui restent.
+- [Les librairies de New York, ces refuges que la ville s'est inventés](https://fbemerson.com/new-york/blog/librairies-new-york-refuges-ville-inventes/): Les librairies de New York ne vendent pas que des livres. Elles gardent des mondes entiers pour ceux qui savent pousser la porte.
+- [L'East Village, le quartier qui a dit non](https://fbemerson.com/new-york/blog/east-village-quartier-qui-a-dit-non/): Les guides vous envoient à Greenwich Village pour la bohème et au Lower East Side pour l'histoire. Mais entre les deux survit un quartier qui a passé un siècle à dire non. Et c'est peut-être lui qui m'a le plus appris.
+- [New York en automne, la saison que la ville garde pour elle](https://fbemerson.com/new-york/blog/new-york-en-automne/): Tout le monde rêve de New York sous la neige ou en plein été. Personne ne vous prépare à l'automne, cette saison où la ville ôte ses masques et vous montre enfin qui elle est vraiment.
+- [Ce que New York ne montre qu'à ceux qui marchent](https://fbemerson.com/new-york/blog/new-york-ne-montre-qua-ceux-qui-marchent/): On vous dit de prendre le métro, le taxi, le ferry. Personne ne vous dit que New York garde ses plus belles vérités pour ceux qui la parcourent à pied.
+- [Les matins de New York, ce rituel que personne ne vous raconte](https://fbemerson.com/new-york/blog/matins-new-york-rituel-personne-ne-raconte/): On vous parle des nuits de New York, de l'énergie des rues. Personne ne vous raconte ses matins, ces heures où la ville se montre sans fard et où tout redevient possible.
+- [Chelsea, le quartier qui a fait un jardin de ses ruines](https://fbemerson.com/new-york/blog/chelsea-jardin-de-ses-ruines/): Sous les galeries et la High Line, Chelsea cache l'histoire d'un quartier qui a refusé de raser ses ruines. Il a choisi d'y faire pousser des jardins.
