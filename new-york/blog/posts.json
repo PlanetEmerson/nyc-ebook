@@ -1,5 +1,23 @@
 [
     {
+        "title": "Le Bronx, le borough qu'on vous a appris à craindre",
+        "description": "On vous a raconté le Bronx en trois mots : danger, déclin, désolation. Personne ne vous a dit que ce borough a inventé le hip-hop, cache le plus grand jardin de New York, et renaît de ses cendres avec une grâce qui force le respect.",
+        "slug": "bronx-borough-quon-vous-a-appris-a-craindre",
+        "date": "18 mars 2026",
+        "category": "Quartiers",
+        "tags": [
+            "bronx",
+            "le bronx",
+            "quartier",
+            "hip-hop",
+            "arthur avenue",
+            "grand concourse",
+            "jardin botanique",
+            "new york",
+            "transformation"
+        ]
+    },
+    {
         "title": "Les gens de New York, ceux qu'on n'oublie jamais",
         "description": "On vous parle des gratte-ciels, des avenues, de l'énergie. Personne ne vous prévient que ce sont les gens, des inconnus croisés le temps d'un instant, qui finiront par définir votre New York.",
         "slug": "gens-de-new-york-ceux-quon-noublie-jamais",
