@@ -1,5 +1,24 @@
 [
     {
+        "title": "Les cafés de New York, ces confessionnaux à ciel ouvert",
+        "description": "On vous parle du café à New York comme d'un carburant. Personne ne vous dit que derrière chaque comptoir se cache un rituel, une histoire, un lieu où la ville consent enfin à ralentir.",
+        "slug": "cafes-new-york-confessionnaux-a-ciel-ouvert",
+        "date": "20 mars 2026",
+        "category": "Secrets",
+        "tags": [
+            "cafés",
+            "coffee",
+            "bodega",
+            "rituel",
+            "culture",
+            "brooklyn",
+            "east village",
+            "secrets",
+            "new york",
+            "transformation"
+        ]
+    },
+    {
         "title": "Le Bronx, le borough qu'on vous a appris à craindre",
         "description": "On vous a raconté le Bronx en trois mots : danger, déclin, désolation. Personne ne vous a dit que ce borough a inventé le hip-hop, cache le plus grand jardin de New York, et renaît de ses cendres avec une grâce qui force le respect.",
         "slug": "bronx-borough-quon-vous-a-appris-a-craindre",
