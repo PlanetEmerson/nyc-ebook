@@ -173,9 +173,39 @@ def replace_between_markers(content: str, start: str, end: str, replacement: str
     return pattern.sub(block, content, count=1)
 
 
+def select_diverse_preview(posts: list[Post], count: int = 3, exclude: list[Post] | None = None) -> list[Post]:
+    """Pick posts ensuring category diversity: 1 newest, then fill from different categories."""
+    excluded_slugs = {p.slug for p in (exclude or [])}
+    available = [p for p in posts if p.slug not in excluded_slugs]
+    if not available:
+        return []
+
+    selected: list[Post] = [available[0]]  # newest first
+    used_categories = {available[0].category}
+
+    # Fill with posts from different categories
+    for p in available[1:]:
+        if len(selected) >= count:
+            break
+        if p.category not in used_categories:
+            selected.append(p)
+            used_categories.add(p.category)
+
+    # If still need more, fill from remaining
+    for p in available[1:]:
+        if len(selected) >= count:
+            break
+        if p not in selected:
+            selected.append(p)
+
+    return selected
+
+
 def render_home_blog_preview(posts: Iterable[Post]) -> str:
+    all_posts = list(posts)
+    preview = select_diverse_preview(all_posts, 3)
     lines = []
-    for post in list(posts)[:3]:
+    for post in preview:
         lines.extend(
             [
                 f'                <a href="/new-york/blog/{post.slug}/" class="blog-preview-item">',
@@ -188,8 +218,11 @@ def render_home_blog_preview(posts: Iterable[Post]) -> str:
 
 
 def render_book_blog_preview(posts: Iterable[Post]) -> str:
+    all_posts = list(posts)
+    home_picks = select_diverse_preview(all_posts, 3)
+    preview = select_diverse_preview(all_posts, 3, exclude=home_picks)
     lines = []
-    for post in list(posts)[:3]:
+    for post in preview:
         lines.extend(
             [
                 f'                    <a href="/new-york/blog/{post.slug}/" class="blog-preview-card">',
@@ -258,15 +291,57 @@ def render_blog_itemlist_schema(posts: Iterable[Post]) -> str:
     return '<script type="application/ld+json">\n' + json.dumps(schema, ensure_ascii=False, indent=4) + "\n    </script>"
 
 
-def select_related_posts(current: Post, posts: list[Post]) -> list[Post]:
-    same_category = [post for post in posts if post.slug != current.slug and post.category == current.category]
-    remainder = [post for post in posts if post.slug != current.slug and post.category != current.category]
-    selected = (same_category + remainder)[:3]
+def select_related_posts(
+    current: Post,
+    posts: list[Post],
+    inbound_counts: dict[str, int] | None = None,
+) -> list[Post]:
+    """Pick 2 same-category + 1 cross-category, preferring posts with fewer inbound links."""
+    if inbound_counts is None:
+        inbound_counts = {}
+
+    def by_least_linked(p: Post) -> tuple[int, int]:
+        return (inbound_counts.get(p.slug, 0), -int(p.date_dt.timestamp()))
+
+    same_cat = sorted(
+        [p for p in posts if p.slug != current.slug and p.category == current.category],
+        key=by_least_linked,
+    )
+    cross_cat = sorted(
+        [p for p in posts if p.slug != current.slug and p.category != current.category],
+        key=by_least_linked,
+    )
+
+    selected: list[Post] = []
+    for p in same_cat:
+        if len(selected) >= 2:
+            break
+        selected.append(p)
+    for p in cross_cat:
+        if len(selected) >= 3:
+            break
+        selected.append(p)
+    # Fill from whatever remains if a category is too small
+    if len(selected) < 3:
+        remaining = same_cat + cross_cat
+        for p in remaining:
+            if p not in selected:
+                selected.append(p)
+            if len(selected) >= 3:
+                break
+
+    for p in selected:
+        inbound_counts[p.slug] = inbound_counts.get(p.slug, 0) + 1
+
     return selected
 
 
-def render_related_cards(current: Post, posts: list[Post]) -> str:
-    related = select_related_posts(current, posts)
+def render_related_cards(
+    current: Post,
+    posts: list[Post],
+    inbound_counts: dict[str, int] | None = None,
+) -> str:
+    related = select_related_posts(current, posts, inbound_counts)
     lines = []
     for post in related:
         lines.extend(
@@ -321,7 +396,7 @@ def render_sitemap(posts: list[Post]) -> str:
         lastmod = datetime.fromtimestamp(file_path.stat().st_mtime, timezone.utc).strftime("%Y-%m-%d")
         entries.append((f"{SITE_URL}{url_path}", lastmod, changefreq, priority))
     for post in posts:
-        entries.append((post.url, post.lastmod, "monthly", "0.8"))
+        entries.append((post.url, post.date_iso, "monthly", "0.8"))
     lines = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for loc, lastmod, changefreq, priority in entries:
         lines.extend(
@@ -360,9 +435,9 @@ def render_llms(posts: list[Post]) -> str:
         "- Ville de référence : New York City",
         "- Livre principal : « New York, Mon Éveil »",
         "",
-        "## Articles récents",
+        "## Tous les articles",
     ]
-    for post in posts[:8]:
+    for post in posts:
         lines.append(f"- [{post.title}]({post.url}): {post.description}")
     lines.append("")
     return "\n".join(lines)
@@ -414,7 +489,12 @@ def patch_blog_index(posts: list[Post]) -> None:
     write_text(path, content)
 
 
-def patch_blog_post(path: Path, post: Post, posts: list[Post]) -> None:
+def patch_blog_post(
+    path: Path,
+    post: Post,
+    posts: list[Post],
+    inbound_counts: dict[str, int] | None = None,
+) -> None:
     content = read_text(path)
     seo_title = f"{post.title} | F.B. Emerson"
     meta_description = trim_meta_description(post.description)
@@ -447,7 +527,7 @@ def patch_blog_post(path: Path, post: Post, posts: list[Post]) -> None:
             count=1,
             flags=re.S,
         )
-    content = replace_between_markers(content, RELATED_START, RELATED_END, render_related_cards(post, posts))
+    content = replace_between_markers(content, RELATED_START, RELATED_END, render_related_cards(post, posts, inbound_counts))
     content = re.sub(
         r"\n\s*// Load related posts.*?loadRelated\(\);\n",
         "\n",
@@ -523,8 +603,9 @@ def main() -> None:
     patch_book_page(posts)
     patch_blog_index(posts)
     patch_blog_template(posts)
+    inbound_counts: dict[str, int] = {}
     for post in posts:
-        patch_blog_post(post.file_path, post, posts)
+        patch_blog_post(post.file_path, post, posts, inbound_counts)
 
     write_text(RSS_FILE, render_rss(posts))
     write_text(SITEMAP_FILE, render_sitemap(posts))
