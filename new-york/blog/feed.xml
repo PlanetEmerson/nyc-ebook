@@ -5,9 +5,16 @@
     <link>https://fbemerson.com/new-york/blog/</link>
     <description>Découvrez New York autrement. Secrets de quartiers, réflexions de voyage, et les coulisses du livre New York, Mon Éveil.</description>
     <language>fr-fr</language>
-    <lastBuildDate>Mon, 30 Mar 2026 07:10:01 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 01 Apr 2026 07:09:13 +0000</lastBuildDate>
     <atom:link href="https://fbemerson.com/new-york/blog/feed.xml" rel="self" type="application/rss+xml"/>
 
+    <item>
+      <title>Les carnets de New York, ce que je n'ai jamais montré</title>
+      <link>https://fbemerson.com/new-york/blog/carnets-new-york-jamais-montre/</link>
+      <description>Avant de devenir un livre, New York était des dizaines de carnets noircis dans le métro, sur les bancs et dans les cafés. Pour la première fois, j'ouvre ces pages que personne n'a jamais lues.</description>
+      <pubDate>Wed, 01 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://fbemerson.com/new-york/blog/carnets-new-york-jamais-montre/</guid>
+    </item>
     <item>
       <title>Le dimanche à New York, le jour où la ville consent à être elle-même</title>
       <link>https://fbemerson.com/new-york/blog/dimanche-new-york-jour-ou-ville-consent-etre-elle-meme/</link>
@@ -105,13 +112,6 @@
       <description>On vous parle des nuits de New York, de l'énergie des rues. Personne ne vous raconte ses matins, ces heures où la ville se montre sans fard et où tout redevient possible.</description>
       <pubDate>Fri, 27 Feb 2026 00:00:00 +0000</pubDate>
       <guid>https://fbemerson.com/new-york/blog/matins-new-york-rituel-personne-ne-raconte/</guid>
-    </item>
-    <item>
-      <title>Chelsea, le quartier qui a fait un jardin de ses ruines</title>
-      <link>https://fbemerson.com/new-york/blog/chelsea-jardin-de-ses-ruines/</link>
-      <description>Sous les galeries et la High Line, Chelsea cache l'histoire d'un quartier qui a refusé de raser ses ruines. Il a choisi d'y faire pousser des jardins.</description>
-      <pubDate>Wed, 25 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>https://fbemerson.com/new-york/blog/chelsea-jardin-de-ses-ruines/</guid>
     </item>
   </channel>
 </rss>
